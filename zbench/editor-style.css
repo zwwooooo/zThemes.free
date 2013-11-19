@@ -1,0 +1,45 @@
+/*
+Theme Name: zBench
+Used to style the TinyMCE editor.
+*/
+html .mceContentBody{max-width:620px;font-size:13px;font-family:Tahoma,Arial,Helvetica,sans-serif;color:#333;background:#f7f7f7;}
+* {margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;}
+h1{font-size:24px;line-height:30px;}
+h2{font-size:20px;line-height:26px;}
+h3{font-size:16px;line-height:24px;}
+h4{font-size:14px;line-height:20px;}
+h5{font-size:14px;line-height:20px;}
+h6{font-size:14px;line-height:20px;}
+small{font-size:10px;line-height:16px;}
+dl{font-size:12px;}
+dt{font-weight:bold;}
+a{color:#047;text-decoration:none;outline:none;}
+a:hover{color:#4a630f;text-decoration:none;}
+fieldset,img{border:none;}
+hr{color:#ddd;background-color:#ddd;height:1px;border:0px;}
+ul,ol{margin:0 30px 22px;}
+li{line-height:18px;}
+hr{display:block;}
+p{line-height:22px;margin:0 0 22px 0;}
+h1,h2,h3,h4,h5,h6{margin:0 0 22px 0;color:#555;}
+a{color:#333;text-decoration:underline;}
+a:hover{color:#4a630f;text-decoration:none;}
+img{max-width:610px;height:auto;margin:10px 0;padding:4px;background:#fff;border:1px solid #ddd;}
+img.wp-smiley{background:#fff;border:none;padding:0;}
+.alignleft,img.alignleft{display:inline;float:left;margin:10px 10px 10px 0;}
+.alignright,img.alignright{display:inline;float:right;margin:10px 0 10px 10px;}
+.aligncenter,img.aligncenter{clear:both;display:block;margin:10px auto;}
+table{background:#fff;border:1px solid #ccc;border-width:2px;border-collapse:collapse;margin:5px 0 10px;}
+th,td{border:1px solid #ccc;padding:3px 10px;text-align:left;vertical-align:top;}
+tr.even td{background:#f7f7f7;}
+th{background:#edeff0;}
+blockquote{color:#555;padding:10px;margin:0 0 22px;border:1px solid #ddd;background:#eee;}
+code{background:#333;color:#ddd;}
+pre{overflow:auto;width:95%;line-height:16px;margin:0 0 22px;padding:0 5px 16px;color:#555;font-family:"Courier New",FixedSys;font-size:12px;background:#fafafa;border:1px solid #ccc;border-left:15px solid #ccc;}
+p.read-more a,p a.more-link{display:inline;font-weight:bold;color:#4a630f;text-decoration:none;background-position:0 -20px;}
+p a.more-link{display:block;margin-top:18px;}
+p.read-more a:hover,p a.more-link:hover{color:#345;}
+.wp-caption{text-align:center;margin-top:10px;margin-bottom:10px;padding:4px;border-radius:3px;background:#fff;border:1px solid #ddd;}
+.wp-caption img{margin:0;padding:0;background:none;}
+.wp-caption-dd,.wp-caption p.wp-caption-text{font-size:12px;line-height:20px;padding:4px 0 0;margin:0;}

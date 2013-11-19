@@ -1,0 +1,511 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zbench\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-01 20:05+0800\n"
+"PO-Revision-Date: 2012-04-01 20:05+0800\n"
+"Last-Translator: zwwooooo <zwwblog@gmail.com>\n"
+"Language-Team: www.all-info4you.com <ivo.idham@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Indonesian\n"
+"X-Poedit-Country: INDONESIA\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:4
+#: archive.php:41
+#: index.php:34
+msgid "Error 404 - Not Found"
+msgstr "Kesalahan 404 - Tidak ditemukan"
+
+#: 404.php:6
+#: archive.php:44
+#: index.php:37
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "Maaf, sepertinya Anda mencari sesuatu yang tidak ada di sini."
+
+#: 404.php:7
+#: archive.php:45
+#: index.php:38
+#: sidebar.php:46
+msgid "Random Posts"
+msgstr "Postingan Acak"
+
+#: 404.php:16
+#: archive.php:54
+#: index.php:47
+msgid "Tag Cloud"
+msgstr "Label Web"
+
+#: archive.php:3
+#: header.php:14
+#: index.php:7
+#, php-format
+msgid "Page %s"
+msgstr "Halaman %s"
+
+#: archive.php:6
+msgid "Daily Archives:"
+msgstr "Arsip Harian:"
+
+#: archive.php:8
+msgid "Monthly Archives:"
+msgstr "Arsip Bulanan:"
+
+#: archive.php:10
+msgid "Yearly Archives:"
+msgstr "Arsip Tahunan:"
+
+#: archive.php:12
+msgid "Category Archives:"
+msgstr "Kategori Arsip:"
+
+#: archive.php:14
+msgid "Tag Archives:"
+msgstr "Label Arsip:"
+
+#: archive.php:17
+msgid "Author Archives:"
+msgstr "Arsip Penulis:"
+
+#: archive.php:20
+msgid "Blog Archives"
+msgstr "Arsip blog"
+
+#: archive.php:25
+#: index.php:14
+#, php-format
+msgid "Permalink to %s"
+msgstr "Tautan ke %s"
+
+#: archive.php:28
+#: index.php:17
+#: single.php:8
+msgid "Posted by"
+msgstr "Diposting oleh"
+
+#: archive.php:28
+#: index.php:17
+#: single.php:8
+#, php-format
+msgid "View all posts by %s"
+msgstr "Lihat semua postingan oleh  %s"
+
+#: archive.php:29
+#: index.php:18
+#: single.php:9
+msgid "on"
+msgstr "pada"
+
+#: archive.php:30
+#: index.php:19
+#: single.php:11
+msgid "Edit"
+msgstr "Sunting"
+
+#: archive.php:32
+#: index.php:21
+msgid "No comments"
+msgstr "Tidak ada komentar"
+
+#: archive.php:32
+#: index.php:21
+msgid "comment"
+msgstr "komentar"
+
+#: archive.php:32
+#: index.php:21
+msgid "comments"
+msgstr "komentar"
+
+#: archive.php:36
+#: functions.php:113
+#: index.php:25
+msgid "Read more &raquo;"
+msgstr "Baca lebih lanjut &raquo;"
+
+#: archive.php:70
+#: index.php:63
+msgid "&laquo; Previous page"
+msgstr "&laquo; Halaman sebelumnya"
+
+#: archive.php:70
+#: index.php:63
+msgid "Next page &raquo;"
+msgstr "Halaman berikutnya &raquo;"
+
+#: comments.php:10
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Postingan ini menggunakan kata sandi. Masukan kata sandi untuk melihat komentar."
+
+#: comments.php:18
+#: comments.php:25
+#: page-without-sidebar.php:12
+#: page.php:8
+#: single.php:14
+msgid "Leave a comment ?"
+msgstr "Tinggalkan komentar ?"
+
+#: comments.php:18
+#: comments.php:25
+msgid "Comments."
+msgstr "Komentar"
+
+#: comments.php:27
+msgid "Comments are closed."
+msgstr "Komentar tidak diijinkan."
+
+#: comments.php:98
+msgid "NOTE - You can use these "
+msgstr "CATATAN - Anda bisa menggunakan "
+
+#: comments.php:98
+msgid "tags and attributes:"
+msgstr "Label dan atribut:"
+
+#: comments.php:102
+msgid "NAME"
+msgstr "NAMA"
+
+#: comments.php:104
+msgid "EMAIL"
+msgstr "EMAIL"
+
+#: comments.php:106
+msgid "Website URL"
+msgstr "URL Website"
+
+#: comments.php:113
+msgid "Leave a Comment"
+msgstr "Tinggalkan komentar"
+
+#: comments.php:114
+#, php-format
+msgid "Reply to %s &not;<br />"
+msgstr "Jawab ke %s &not;<br />"
+
+#: comments.php:115
+msgid "<small>Cancel reply</small>"
+msgstr "<small>Batalkan jawaban</small>"
+
+#: comments.php:116
+msgid "SUBMIT"
+msgstr "MASUK"
+
+#: comments.php:125
+msgid "Trackbacks and Pingbacks:"
+msgstr "Trackbacks dan Pingbacks:"
+
+#: footer.php:6
+msgid "Copyright"
+msgstr "Hak Cipta"
+
+#: footer.php:7
+#, php-format
+msgid "Powered by %1$s and %2$s"
+msgstr "Powered by %1$s and %2$s"
+
+#: footer.php:9
+msgid "Top"
+msgstr "Ke atas"
+
+#: functions.php:5
+msgid "Primary Widget Area"
+msgstr "Tempat Widget Utama"
+
+#: functions.php:7
+msgid "The primary widget area"
+msgstr "Tempat Widget Utama"
+
+#: functions.php:14
+msgid "Singular Widget Area"
+msgstr "Tempat Widget Singular"
+
+#: functions.php:16
+msgid "The singular widget area"
+msgstr "tempat widget singular"
+
+#: functions.php:23
+msgid "Not Singular Widget Area"
+msgstr "Bukan Tempat Widget Singular"
+
+#: functions.php:25
+msgid "Not the singular widget area"
+msgstr "bukan tempat widget singular"
+
+#: functions.php:32
+msgid "Footer Widget Area"
+msgstr "Footer Widget Area"
+
+#: functions.php:34
+msgid "The footer widget area"
+msgstr "The footer widget area"
+
+#: functions.php:53
+#: functions.php:65
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s pada %2$s"
+
+#: functions.php:65
+msgid "[Edit]"
+msgstr "[Edit]"
+
+#: functions.php:70
+msgid "Your comment is awaiting moderation."
+msgstr "Komentar Anda sedang menunggu moderasi."
+
+#: header.php:25
+msgid "Home"
+msgstr "Beranda"
+
+#: index.php:8
+msgid "Search Results for:"
+msgstr "Hasil pencarian untuk:"
+
+#: index.php:28
+msgid "This is a sticky post!"
+msgstr "Ini adalah postingan fixed"
+
+#: index.php:28
+msgid "continue reading?"
+msgstr "baca lebih lanjut?"
+
+#: page-without-sidebar.php:12
+#: page.php:8
+#: single.php:14
+msgid "Leave a comment"
+msgstr "Tinggalkan komentar"
+
+#: page-without-sidebar.php:13
+#: page.php:9
+#: single.php:15
+msgid "Go to comments ?"
+msgstr "Menuju ke komentar ?"
+
+#: page-without-sidebar.php:13
+#: page.php:9
+#: single.php:15
+msgid "Go to comments"
+msgstr "Menuju ke komentar"
+
+#: page-without-sidebar.php:21
+#: page.php:17
+#: single.php:21
+msgid "Pages:"
+msgstr "Halaman:"
+
+#: searchform.php:2
+msgid "Search: type, hit enter"
+msgstr "Pencarian: ketik dan tekan enter"
+
+#: searchform.php:3
+msgid "SEARCH"
+msgstr "CARI"
+
+#: sidebar.php:8
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: sidebar.php:10
+msgid "Follow me on twitter."
+msgstr "Ikuti saya di twitter."
+
+#: sidebar.php:13
+msgid "Facebook"
+msgstr "Facebook"
+
+#: sidebar.php:16
+msgid "Google+"
+msgstr "Google+"
+
+#: sidebar.php:34
+msgid "Recent Posts"
+msgstr "Postingan terakhir"
+
+#: sidebar.php:58
+msgid "Search by Tags!"
+msgstr "Cari berdasarkan Label!"
+
+#: sidebar.php:62
+msgid "Archives"
+msgstr "Arsip"
+
+#: sidebar.php:68
+msgid "Links"
+msgstr "Tautan"
+
+#: sidebar.php:74
+msgid "Meta"
+msgstr "Meta"
+
+#: single.php:24
+msgid "Related Posts"
+msgstr "Postingan yang berhubungan"
+
+#: library/theme-options.php:7
+msgid "Logo URL"
+msgstr "URL Logo"
+
+#: library/theme-options.php:8
+msgid "Put your full logo image address here.(with http://) Image Height: 36px"
+msgstr "Masukan alamat gambar logo di sini.(dengan  http://) Tinggi gambar: 36px"
+
+#: library/theme-options.php:12
+msgid "Hide the title and description"
+msgstr "Sembunyikan judul dan deskripsi"
+
+#: library/theme-options.php:13
+msgid "If your set the \"Header image\", you can check it to hide the title and description."
+msgstr "Jika Anda mengatur \"Gambar Header\", Anda dapat mencentangnya untuk menyembunykan judul dan deskripsi."
+
+#: library/theme-options.php:17
+msgid "Header image link"
+msgstr "Gambar Link Header"
+
+#: library/theme-options.php:18
+msgid "Custom header image link. The default is Home Page."
+msgstr "Kustomisasi gambar link header. Standarnya adalah halaman utama."
+
+#: library/theme-options.php:22
+msgid "RSS URL"
+msgstr "URL RSS"
+
+#: library/theme-options.php:23
+msgid "Put your full rss subscribe address here.(with http://)"
+msgstr "Masukan alamat URL rss subscribe Anda  di sini (dengan http://)."
+
+#: library/theme-options.php:27
+msgid "twitter URL"
+msgstr "URL twitter"
+
+#: library/theme-options.php:28
+msgid "Put your full twitter address here.(with http:// , leave it blank for display none.)"
+msgstr "Masukan alamat URL twitter Anda di sini. (dengan  http://, biarkan kosong untuk tidak ditampilkan)."
+
+#: library/theme-options.php:32
+msgid "facebook URL"
+msgstr "URL facebook"
+
+#: library/theme-options.php:33
+msgid "Put your full facebook address here.(with http:// , leave it blank for no display none.)"
+msgstr "Masukan alamat URL facebook Anda di sini. (dengan http://, biarkan kosong untuk tidak ditampilkan)."
+
+#: library/theme-options.php:37
+msgid "Google+ URL"
+msgstr "URL Google+ "
+
+#: library/theme-options.php:38
+msgid "Put your full Google+ address here.(with http:// , leave it blank for no display none.)"
+msgstr "Masukan alamat Google+ Anda di sini.(with http:// , biarkan kosong untuk tidak ditampilkan.)"
+
+#: library/theme-options.php:42
+msgid "Custom social network 1"
+msgstr "Kustomisasi jaringan sosial 1"
+
+#: library/theme-options.php:43
+#: library/theme-options.php:58
+msgid "Social network name:"
+msgstr "Nama jaringan sosial:"
+
+#: library/theme-options.php:48
+#: library/theme-options.php:63
+msgid "Social network icon address: (image size limits: 16px*16px)"
+msgstr "Alamat URL ikon sosial jaringan: (batas ukuran gambar: 16px*16px)"
+
+#: library/theme-options.php:53
+#: library/theme-options.php:68
+msgid "Social network links address:"
+msgstr "URL jaringan sosial:"
+
+#: library/theme-options.php:57
+msgid "Custom social network 2"
+msgstr "Kustomisasi jaringan sosial 2"
+
+#: library/theme-options.php:72
+msgid "The left Sidebar style?"
+msgstr "Sidebar sebelah kiri?"
+
+#: library/theme-options.php:73
+msgid "If like \"left Sidebar style\", check."
+msgstr "Centang jika suka \"Sidebar kiri\"."
+
+#: library/theme-options.php:77
+msgid "Excerpt?"
+msgstr "Kutip?"
+
+#: library/theme-options.php:78
+msgid "If excerpt of posts display in home and archive page, check."
+msgstr "Jika kutipan posting ditampilkan dalam rumah dan halaman arsip, memeriksa."
+
+#: library/theme-options.php:82
+msgid "Disable the comment notes"
+msgstr "Nonaktifkan komentar dengan html"
+
+#: library/theme-options.php:83
+msgid "Disabling this will remove the note text that displays with more options for adding to comments (html)."
+msgstr "Menonaktifkan ini akan menghilangkan banyak opsi dalam penulisan komentar (html)"
+
+#: library/theme-options.php:87
+msgid "Disable the comments smilies"
+msgstr "Nonaktifkan komentar beremosi"
+
+#: library/theme-options.php:88
+msgid "Disabling this will remove the comments smilies."
+msgstr "Menonaktifkan ini akan menghilangkan komentar beremosi "
+
+#: library/theme-options.php:100
+msgid "Theme Options"
+msgstr "Pengaturan Tampilan"
+
+#: library/theme-options.php:124
+#, php-format
+msgid "%1$s Theme Options"
+msgstr "%1$s Pengaturan Tampilan"
+
+#: library/theme-options.php:131
+#: library/theme-options.php:209
+msgid "Save Options"
+msgstr "Simpan Pengaturan"
+
+#: library/theme-options.php:134
+msgid "Header settings"
+msgstr "Header settings"
+
+#: library/theme-options.php:186
+msgid "General settings"
+msgstr "Pengaturan umum"
+
+#: library/theme-options.php:202
+msgid "Social network settings"
+msgstr "Pengaturan jaringan sosial"
+
+#: library/theme-options.php:215
+msgid "Reset All Settings"
+msgstr "Reset Semua Pengaturan"
+
+#: library/theme-options.php:215
+msgid "Click OK to reset. Any settings will be lost!"
+msgstr "Klik OK untuk mereset. Setiap pengaturan akan hilang!"
+
+#: library/theme-options.php:221
+msgid "Donation"
+msgstr "Sumbangan"
+
+#: library/theme-options.php:223
+#, php-format
+msgid "Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!"
+msgstr "Dibuat, Dikembangkan dan dirawat oleh %s . Jika Anda merasa pekerjaan saya sangat berguna dan ingin membantu mengembangkan lebih banyak sumber daya, Anda bisa membantu dengan sumbangan. Terimakasih banyak!"
+
+#~ msgid ""
+#~ "If the home page and archive pages to display excerpt of post, check."
+#~ msgstr "Si la página principal y de archivo muestran extractos compruebe."
+
+#~ msgid "Options saved"
+#~ msgstr "Opciones guardadas"
+
+#~ msgid "1 comments"
+#~ msgstr "1 commentaire"

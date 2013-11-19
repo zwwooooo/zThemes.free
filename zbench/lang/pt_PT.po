@@ -1,0 +1,514 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zBench\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-01 20:12+0800\n"
+"PO-Revision-Date: 2012-04-01 20:12+0800\n"
+"Last-Translator: zwwooooo <zwwblog@gmail.com>\n"
+"Language-Team: zwwooooo <http://zww.me/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: PORTUGAL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:4
+#: archive.php:41
+#: index.php:34
+msgid "Error 404 - Not Found"
+msgstr "Erro 404 - N?o Encontrado"
+
+#: 404.php:6
+#: archive.php:44
+#: index.php:37
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "Parece que procura por algo que n?o está aqui."
+
+#: 404.php:7
+#: archive.php:45
+#: index.php:38
+#: sidebar.php:46
+msgid "Random Posts"
+msgstr "Posts Aleatórios"
+
+#: 404.php:16
+#: archive.php:54
+#: index.php:47
+msgid "Tag Cloud"
+msgstr "Nuvem de Tags"
+
+#: archive.php:3
+#: header.php:14
+#: index.php:7
+#, php-format
+msgid "Page %s"
+msgstr "Páginas  %s"
+
+#: archive.php:6
+msgid "Daily Archives:"
+msgstr "Arquivos Diários:"
+
+#: archive.php:8
+msgid "Monthly Archives:"
+msgstr "Arquivos Mensais:"
+
+#: archive.php:10
+msgid "Yearly Archives:"
+msgstr "Arquivos Anuais:"
+
+#: archive.php:12
+msgid "Category Archives:"
+msgstr "Arquivos de Categorias:"
+
+#: archive.php:14
+msgid "Tag Archives:"
+msgstr "Arquivos de Tags:"
+
+#: archive.php:17
+msgid "Author Archives:"
+msgstr "Arquivos de Categorias:"
+
+#: archive.php:20
+msgid "Blog Archives"
+msgstr "Arquivos de Blog:"
+
+#: archive.php:25
+#: index.php:14
+#, php-format
+msgid "Permalink to %s"
+msgstr "Liga??o permanente para %s"
+
+#: archive.php:28
+#: index.php:17
+#: single.php:8
+msgid "Posted by"
+msgstr "Escrito por"
+
+#: archive.php:28
+#: index.php:17
+#: single.php:8
+#, php-format
+msgid "View all posts by %s"
+msgstr "Ver todos os posts de %s"
+
+#: archive.php:29
+#: index.php:18
+#: single.php:9
+msgid "on"
+msgstr "em"
+
+#: archive.php:30
+#: index.php:19
+#: single.php:11
+msgid "Edit"
+msgstr "Editar"
+
+#: archive.php:32
+#: index.php:21
+msgid "No comments"
+msgstr "Nenhum comentário"
+
+#: archive.php:32
+#: index.php:21
+msgid "comment"
+msgstr "comentário"
+
+#: archive.php:32
+#: index.php:21
+msgid "comments"
+msgstr "comentários"
+
+#: archive.php:36
+#: functions.php:113
+#: index.php:25
+msgid "Read more &raquo;"
+msgstr "Ler mais &raquo;"
+
+#: archive.php:70
+#: index.php:63
+msgid "&laquo; Previous page"
+msgstr "&laquo; Página Anterior"
+
+#: archive.php:70
+#: index.php:63
+msgid "Next page &raquo;"
+msgstr "Próxima Página &raquo;"
+
+#: comments.php:10
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Este post é protegido por senha. Digite a senha para ver os comentários."
+
+#: comments.php:18
+#: comments.php:25
+#: page-without-sidebar.php:12
+#: page.php:8
+#: single.php:14
+msgid "Leave a comment ?"
+msgstr "Deixe um Comentário"
+
+#: comments.php:18
+#: comments.php:25
+msgid "Comments."
+msgstr "Comentários."
+
+#: comments.php:27
+msgid "Comments are closed."
+msgstr "Os comentários est?o desactivados."
+
+#: comments.php:98
+msgid "NOTE - You can use these "
+msgstr "NOTA - Você pode usar estes"
+
+#: comments.php:98
+msgid "tags and attributes:"
+msgstr "Tags e atributos:"
+
+#: comments.php:102
+msgid "NAME"
+msgstr "NOME"
+
+#: comments.php:104
+msgid "EMAIL"
+msgstr "EMAIL"
+
+#: comments.php:106
+msgid "Website URL"
+msgstr "URL do Site"
+
+#: comments.php:113
+msgid "Leave a Comment"
+msgstr "Deixe um Comentário"
+
+#: comments.php:114
+#, php-format
+msgid "Reply to %s &not;<br />"
+msgstr "Responder a %s &not;<br />"
+
+#: comments.php:115
+msgid "<small>Cancel reply</small>"
+msgstr "<small>Cancelar resposta</small>"
+
+#: comments.php:116
+msgid "SUBMIT"
+msgstr "ENVIAR"
+
+#: comments.php:125
+msgid "Trackbacks and Pingbacks:"
+msgstr "Trackbacks e Pingbacks:"
+
+#: footer.php:6
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer.php:7
+#, php-format
+msgid "Powered by %1$s and %2$s"
+msgstr "Powered by %1$s and %2$s"
+
+#: footer.php:9
+msgid "Top"
+msgstr "Topo"
+
+#: functions.php:5
+msgid "Primary Widget Area"
+msgstr "área Primária de Widget"
+
+#: functions.php:7
+msgid "The primary widget area"
+msgstr "A área primária de widget"
+
+#: functions.php:14
+msgid "Singular Widget Area"
+msgstr "área Singular do Widget"
+
+#: functions.php:16
+msgid "The singular widget area"
+msgstr "A área singular de widget"
+
+#: functions.php:23
+msgid "Not Singular Widget Area"
+msgstr "área N?o Singular do Widget"
+
+#: functions.php:25
+msgid "Not the singular widget area"
+msgstr "A área n?o singular de widget"
+
+#: functions.php:32
+msgid "Footer Widget Area"
+msgstr "área de Rodapé do Widget"
+
+#: functions.php:34
+msgid "The footer widget area"
+msgstr "A área de rodapé do widget"
+
+#: functions.php:53
+#: functions.php:65
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s em %2$s"
+
+#: functions.php:65
+msgid "[Edit]"
+msgstr "[Editar]"
+
+#: functions.php:70
+msgid "Your comment is awaiting moderation."
+msgstr "O seu comentário está a aguardar modera??o."
+
+#: header.php:25
+msgid "Home"
+msgstr "Início"
+
+#: index.php:8
+msgid "Search Results for:"
+msgstr "Resultados da pesquisa para:"
+
+#: index.php:28
+msgid "This is a sticky post!"
+msgstr "Este é um post fixo!"
+
+#: index.php:28
+msgid "continue reading?"
+msgstr "continuar a ler?"
+
+#: page-without-sidebar.php:12
+#: page.php:8
+#: single.php:14
+msgid "Leave a comment"
+msgstr "Deixe um comentário"
+
+#: page-without-sidebar.php:13
+#: page.php:9
+#: single.php:15
+msgid "Go to comments ?"
+msgstr "Ir para os comentários?"
+
+#: page-without-sidebar.php:13
+#: page.php:9
+#: single.php:15
+msgid "Go to comments"
+msgstr "Ir para os comentários"
+
+#: page-without-sidebar.php:21
+#: page.php:17
+#: single.php:21
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: searchform.php:2
+msgid "Search: type, hit enter"
+msgstr "Procurar"
+
+#: searchform.php:3
+msgid "SEARCH"
+msgstr "PROCURAR"
+
+#: sidebar.php:8
+msgid "RSS Feed"
+msgstr "Feed RSS"
+
+#: sidebar.php:10
+msgid "Follow me on twitter."
+msgstr "Siga-me no Twitter"
+
+#: sidebar.php:13
+msgid "Facebook"
+msgstr "Facebook"
+
+#: sidebar.php:16
+msgid "Google+"
+msgstr "Google+"
+
+#: sidebar.php:34
+msgid "Recent Posts"
+msgstr "Posts Recentes"
+
+#: sidebar.php:58
+msgid "Search by Tags!"
+msgstr "Procurar por Tags!"
+
+#: sidebar.php:62
+msgid "Archives"
+msgstr "Arquivos"
+
+#: sidebar.php:68
+msgid "Links"
+msgstr "Links"
+
+#: sidebar.php:74
+msgid "Meta"
+msgstr "Meta"
+
+#: single.php:24
+msgid "Related Posts"
+msgstr "Posts Relacionados"
+
+#: library/theme-options.php:7
+msgid "Logo URL"
+msgstr "Link do Logotipo"
+
+#: library/theme-options.php:8
+msgid "Put your full logo image address here.(with http://) Image Height: 36px"
+msgstr "Colocar o seu endere?o completo da imagem logotipo aqui (com http://) Altura da imagem:. 36px"
+
+#: library/theme-options.php:12
+msgid "Hide the title and description"
+msgstr "Esconder o título e a descri??o"
+
+#: library/theme-options.php:13
+msgid "If your set the \"Header image\", you can check it to hide the title and description."
+msgstr "Se escolher \"Imagem de cabe?alho \", você pode seleccioná-lo para ocultar o título e descri??o."
+
+#: library/theme-options.php:17
+msgid "Header image link"
+msgstr "Link da imagem do cabe?alho"
+
+#: library/theme-options.php:18
+msgid "Custom header image link. The default is Home Page."
+msgstr "Link da imagem do cabe?alho personalizado. O padr?o é a Página Principal."
+
+#: library/theme-options.php:22
+msgid "RSS URL"
+msgstr "URL do RSS"
+
+#: library/theme-options.php:23
+msgid "Put your full rss subscribe address here.(with http://)"
+msgstr "Coloque o seu endere?o de subscri??o de RSS aqui. (com http://)"
+
+#: library/theme-options.php:27
+msgid "twitter URL"
+msgstr "URL do twitter"
+
+#: library/theme-options.php:28
+msgid "Put your full twitter address here.(with http:// , leave it blank for display none.)"
+msgstr "Coloque o seu endere?o de Twitter aqui. (com http://, deixe em branco para nenhum)"
+
+#: library/theme-options.php:32
+msgid "facebook URL"
+msgstr "URL do Facebook"
+
+#: library/theme-options.php:33
+msgid "Put your full facebook address here.(with http:// , leave it blank for no display none.)"
+msgstr "Coloque o seu endere?o de Facebook aqui. (com http://, deixe em branco para nenhum)"
+
+#: library/theme-options.php:37
+msgid "Google+ URL"
+msgstr "Link Google+"
+
+#: library/theme-options.php:38
+msgid "Put your full Google+ address here.(with http:// , leave it blank for no display none.)"
+msgstr "Coloque o seu endere?o do Google+ aqui. (com http://, deixe em branco para nenhum)"
+
+#: library/theme-options.php:42
+msgid "Custom social network 1"
+msgstr "Rede Social costumizada 1"
+
+#: library/theme-options.php:43
+#: library/theme-options.php:58
+msgid "Social network name:"
+msgstr "Nome da rede social"
+
+#: library/theme-options.php:48
+#: library/theme-options.php:63
+msgid "Social network icon address: (image size limits: 16px*16px)"
+msgstr "Link do icon da rede social: (tamanho máximo: 16px*16px)"
+
+#: library/theme-options.php:53
+#: library/theme-options.php:68
+msgid "Social network links address:"
+msgstr "Links da rede social:"
+
+#: library/theme-options.php:57
+msgid "Custom social network 2"
+msgstr "Rede Social costumizada 2"
+
+#: library/theme-options.php:72
+msgid "The left Sidebar style?"
+msgstr "The left Sidebar style?"
+
+#: library/theme-options.php:73
+msgid "If like \"left Sidebar style\", check."
+msgstr "If like \"left Sidebar style\", check."
+
+#: library/theme-options.php:77
+msgid "Excerpt?"
+msgstr "Resumo?"
+
+#: library/theme-options.php:78
+msgid "If excerpt of posts display in home and archive page, check."
+msgstr "Se for para mostrar os excertos na página principal e nos arquivos, seleccione."
+
+#: library/theme-options.php:82
+msgid "Disable the comment notes"
+msgstr "Desabilitar as notas de comentário"
+
+#: library/theme-options.php:83
+msgid "Disabling this will remove the note text that displays with more options for adding to comments (html)."
+msgstr "Desabilitar irá remover a nota de texto com mais op??es para adiconar comentários (html)."
+
+#: library/theme-options.php:87
+msgid "Disable the comments smilies"
+msgstr "Desabilitar os smiles de comentário"
+
+#: library/theme-options.php:88
+msgid "Disabling this will remove the comments smilies."
+msgstr "Desabilitar irá remover os smiles ao comentar."
+
+#: library/theme-options.php:100
+msgid "Theme Options"
+msgstr "Op??es do Tema"
+
+#: library/theme-options.php:124
+#, php-format
+msgid "%1$s Theme Options"
+msgstr "%1$s Op??es do Tema"
+
+#: library/theme-options.php:131
+#: library/theme-options.php:209
+msgid "Save Options"
+msgstr "Guardar Op??es"
+
+#: library/theme-options.php:134
+msgid "Header settings"
+msgstr "Configura??es do cabe?alho"
+
+#: library/theme-options.php:186
+msgid "General settings"
+msgstr "Configura??es gerais"
+
+#: library/theme-options.php:202
+msgid "Social network settings"
+msgstr "Configura??es da rede social"
+
+#: library/theme-options.php:215
+msgid "Reset All Settings"
+msgstr "Repor defini??es"
+
+#: library/theme-options.php:215
+msgid "Click OK to reset. Any settings will be lost!"
+msgstr "Escolha OK para repor, todas as configura??es actuais ser?o perdidas!"
+
+#: library/theme-options.php:221
+msgid "Donation"
+msgstr "Doa??o"
+
+#: library/theme-options.php:223
+#, php-format
+msgid "Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!"
+msgstr "Criado, Desenvolvido e mantido por %s. Se acha que meu trabalho é útil e deseja incentivar o desenvolvimento de mais recursos gratuitos, pode fazer-me uma doa??o. Muito obrigado!"
+
+#~ msgid ""
+#~ "If the home page and archive pages to display excerpt of post, check."
+#~ msgstr ""
+#~ "Se for para mostrar um excerto na Página Principal e nos Arquivos, "
+#~ "seleccione."
+
+#~ msgid "Options saved"
+#~ msgstr "Op??es guardadas"
+
+#~ msgid "1 comments"
+#~ msgstr "1 comentário"
