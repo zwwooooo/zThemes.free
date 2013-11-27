@@ -84,14 +84,14 @@ hr{color:#ddd;background-color:#ddd;height:1px;border:0px;}
 #search form input#searchsubmit{cursor:pointer;position:absolute;right:2px;top:0;width:30px;height:26px;padding-left:30px;background:#565657 url('images/search-input-bg.gif') no-repeat right 0;border:none;border-left:1px solid #999;text-indent:-9999px;}
 
 /* #header */
-#header{clear:both;overflow:hidden;z-index:1;position:relative;max-width:960px;margin:30px auto;}
+#header{clear:both;overflow:hidden;z-index:1;position:relative;max-width:960px;margin:30px auto 0;}
 .site_title{overflow:hidden;margin-bottom:30px;}
 .st_hidden .site_title{display:none;}
 .site_title h1{float:left;padding:0 0 0 10px;text-shadow:1px 1px 1px #999;font-size:28px;font-family:Georgia,"Times New Roman",Times,serif;}
 .site_title h1 a{color:#222;line-height:36px;}
 .site_title h1 .header_logo a{overflow:hidden;display:block;width:100%;height:36px;text-indent:-9999px;}
 .site_title h2{float:left;height:20px;overflow:hidden;line-height:18px;padding:10px 0 0 20px;color:#222;font-size:12px;font-weight:normal;text-shadow:0 1px 0 #fff;}
-#header_image{max-width:952px;max-height:182px;padding:3px;border:1px solid #ccc;}
+#header_image{max-width:952px;max-height:182px;margin-bottom:30px;padding:3px;border:1px solid #ccc;}
 .st_hidden #header_image{margin-top:10px;}
 #header_image_border{overflow:hidden;width:100%;height:100%;background:#565657;border:1px solid #fff;}
 #header_image_border img{width:100%;height:auto;}
