@@ -159,7 +159,7 @@ h2.title a:hover{color:#4a630f;}
 .entry p.read-more a,.entry p a.more-link{display:inline-block;color:#999;text-decoration:none;background-position:0 -20px;}
 .entry .zbench-more-link{display:block;margin-top:22px;}
 .entry p.read-more a:hover,.entry p a.more-link:hover{color:#4a630f;}
-.sticky{background:#f2f2f2;border:1px solid #ccc;}
+.sticky{margin-top:12px;background:#f2f2f2;border:1px solid #ccc;}
 h2.sticky-h2 a{color:#ff4e00;}
 .page_link{clear:both;padding:10px 0 22px;}
 .add-info{padding:0 10px;}
