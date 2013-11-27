@@ -120,7 +120,9 @@ add_action( 'wp_enqueue_scripts', 'zbench_enqueue_comment_reply' );
 register_nav_menus(array('primary' => 'Primary Navigation'));
 //////// Custom wp_list_pages
 function zbench_wp_list_pages(){
-	echo '<ul>' , wp_list_pages('title_li=') , '</ul>';
+	if (is_home() || is_front_page()) $isHome = ' class="current_page_item"';
+	echo '<li' . $isHome . '><a href="' . home_url('/') . '">' . __('Home', 'zbench') . '</a></li>';
+	echo wp_list_pages('title_li=');
 }
 
 //////// LOCALIZATION

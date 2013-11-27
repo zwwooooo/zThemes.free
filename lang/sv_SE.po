@@ -2,48 +2,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zBench\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-01 20:16+0800\n"
-"PO-Revision-Date: 2012-04-01 20:16+0800\n"
+"POT-Creation-Date: 2013-11-27 20:18+0800\n"
+"PO-Revision-Date: 2013-11-27 20:18+0800\n"
 "Last-Translator: zwwooooo <zwwblog@gmail.com>\n"
 "Language-Team: zwwooooo <http://zww.me/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:4
-#: archive.php:41
-#: index.php:34
+#: 404.php:4 archive.php:40 index.php:34
 msgid "Error 404 - Not Found"
 msgstr "404 - Hittades inte"
 
-#: 404.php:6
-#: archive.php:44
-#: index.php:37
+#: 404.php:6 archive.php:43 index.php:37
 msgid "Sorry, but you are looking for something that isn&#8217;t here."
 msgstr "Tyv?rr, du letar efter n?got som inte finns."
 
-#: 404.php:7
-#: archive.php:45
-#: index.php:38
-#: sidebar.php:46
+#: 404.php:7 archive.php:44 index.php:38 sidebar.php:46
 msgid "Random Posts"
 msgstr "Slumpm?ssig artikel"
 
-#: 404.php:16
-#: archive.php:54
-#: index.php:47
+#: 404.php:16 archive.php:53 index.php:47
 msgid "Tag Cloud"
 msgstr "Tag Cloud"
 
-#: archive.php:3
-#: header.php:14
-#: index.php:7
+#: archive.php:3 functions.php:102 index.php:7
 #, php-format
 msgid "Page %s"
 msgstr "Sidor %s"
@@ -72,86 +61,67 @@ msgstr "Taggarkiv:"
 msgid "Author Archives:"
 msgstr "F?rfattararkiv:"
 
-#: archive.php:20
+#: archive.php:19
 msgid "Blog Archives"
 msgstr "Bloggarkiv:"
 
-#: archive.php:25
-#: index.php:14
+#: archive.php:24 index.php:14
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink till %s"
 
-#: archive.php:28
-#: index.php:17
-#: single.php:8
+#: archive.php:27 index.php:17 single.php:8
 msgid "Posted by"
 msgstr "Inlagt av"
 
-#: archive.php:28
-#: index.php:17
-#: single.php:8
+#: archive.php:27 index.php:17 single.php:8
 #, php-format
 msgid "View all posts by %s"
 msgstr "Se alla inl?gg av %s"
 
-#: archive.php:29
-#: index.php:18
-#: single.php:9
+#: archive.php:28 index.php:18 single.php:9
 msgid "on"
 msgstr "den"
 
-#: archive.php:30
-#: index.php:19
-#: single.php:11
+#: archive.php:29 index.php:19 single.php:11
 msgid "Edit"
 msgstr "Redigera"
 
-#: archive.php:32
-#: index.php:21
+#: archive.php:31 index.php:21
 msgid "No comments"
 msgstr "Kommentarer saknas"
 
-#: archive.php:32
-#: index.php:21
+#: archive.php:31 index.php:21
 msgid "comment"
 msgstr "Kommentar"
 
-#: archive.php:32
-#: index.php:21
+#: archive.php:31 index.php:21
 msgid "comments"
 msgstr "Kommentarer"
 
-#: archive.php:36
-#: functions.php:113
-#: index.php:25
+#: archive.php:35 functions.php:138 index.php:25
 msgid "Read more &raquo;"
 msgstr "L?s mer &raquo;"
 
-#: archive.php:70
-#: index.php:63
+#: archive.php:69 index.php:63
 msgid "&laquo; Previous page"
 msgstr "&laquo; F?reg?ende sida"
 
-#: archive.php:70
-#: index.php:63
+#: archive.php:69 index.php:63
 msgid "Next page &raquo;"
 msgstr "N?sta sida &raquo;"
 
 #: comments.php:10
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Detta inl?gg ?r l?senordsskyddat. Ange l?senord f?r att visa kommentarer."
+msgstr ""
+"Detta inl?gg ?r l?senordsskyddat. Ange l?senord f?r att visa kommentarer."
 
-#: comments.php:18
-#: comments.php:25
-#: page-without-sidebar.php:12
-#: page.php:8
+#: comments.php:18 comments.php:25 page-without-sidebar.php:12 page.php:8
 #: single.php:14
 msgid "Leave a comment ?"
 msgstr "L?mna en kommentar?"
 
-#: comments.php:18
-#: comments.php:25
+#: comments.php:18 comments.php:25
 msgid "Comments."
 msgstr "Kommentarer."
 
@@ -245,8 +215,7 @@ msgstr "Sidfot widgetyta"
 msgid "The footer widget area"
 msgstr "Sidfot widgetytan"
 
-#: functions.php:53
-#: functions.php:65
+#: functions.php:53 functions.php:65
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s kl %2$s"
@@ -259,9 +228,13 @@ msgstr "[Redigera]"
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar v?ntar p? moderering."
 
-#: header.php:25
+#: functions.php:124
 msgid "Home"
 msgstr "Startsida"
+
+#: header.php:19
+msgid "Menu"
+msgstr ""
 
 #: index.php:8
 msgid "Search Results for:"
@@ -275,27 +248,19 @@ msgstr "This is a sticky post!"
 msgid "continue reading?"
 msgstr "forst?tta l?sa?"
 
-#: page-without-sidebar.php:12
-#: page.php:8
-#: single.php:14
+#: page-without-sidebar.php:12 page.php:8 single.php:14
 msgid "Leave a comment"
 msgstr "L?mna en kommentar"
 
-#: page-without-sidebar.php:13
-#: page.php:9
-#: single.php:15
+#: page-without-sidebar.php:13 page.php:9 single.php:15
 msgid "Go to comments ?"
 msgstr "G? till kommentarer?"
 
-#: page-without-sidebar.php:13
-#: page.php:9
-#: single.php:15
+#: page-without-sidebar.php:13 page.php:9 single.php:15
 msgid "Go to comments"
 msgstr "G? till kommentarer"
 
-#: page-without-sidebar.php:21
-#: page.php:17
-#: single.php:21
+#: page-without-sidebar.php:21 page.php:17 single.php:21
 msgid "Pages:"
 msgstr "Sidor:"
 
@@ -353,14 +318,17 @@ msgstr "Logo URL"
 
 #: library/theme-options.php:8
 msgid "Put your full logo image address here.(with http://) Image Height: 36px"
-msgstr "Ange komplett address till logo h?r (inklusive http://). Bildens h?jd: 36px"
+msgstr ""
+"Ange komplett address till logo h?r (inklusive http://). Bildens h?jd: 36px"
 
 #: library/theme-options.php:12
 msgid "Hide the title and description"
 msgstr "D?lj titel och beskrivning"
 
 #: library/theme-options.php:13
-msgid "If your set the \"Header image\", you can check it to hide the title and description."
+msgid ""
+"If your set the \"Header image\", you can check it to hide the title and "
+"description."
 msgstr "V?lj f?r att d?lja titel och beskrivning"
 
 #: library/theme-options.php:17
@@ -384,41 +352,47 @@ msgid "twitter URL"
 msgstr "Twitter URL"
 
 #: library/theme-options.php:28
-msgid "Put your full twitter address here.(with http:// , leave it blank for display none.)"
-msgstr "Ange din Twitteradress h?r (inklusive http://). L?mna tom f?r att d?lja."
+msgid ""
+"Put your full twitter address here.(with http:// , leave it blank for "
+"display none.)"
+msgstr ""
+"Ange din Twitteradress h?r (inklusive http://). L?mna tom f?r att d?lja."
 
 #: library/theme-options.php:32
 msgid "facebook URL"
 msgstr "Facebook URL"
 
 #: library/theme-options.php:33
-msgid "Put your full facebook address here.(with http:// , leave it blank for no display none.)"
-msgstr "Ange din Facebookadress h?r (inklusive http://). L?mna tom f?r att d?lja ."
+msgid ""
+"Put your full facebook address here.(with http:// , leave it blank for no "
+"display none.)"
+msgstr ""
+"Ange din Facebookadress h?r (inklusive http://). L?mna tom f?r att d?lja ."
 
 #: library/theme-options.php:37
 msgid "Google+ URL"
 msgstr "Google+ URL"
 
 #: library/theme-options.php:38
-msgid "Put your full Google+ address here.(with http:// , leave it blank for no display none.)"
-msgstr "Ange din Google+ address h?r (inklusive http://). L?mna tom f?r att d?lja"
+msgid ""
+"Put your full Google+ address here.(with http:// , leave it blank for no "
+"display none.)"
+msgstr ""
+"Ange din Google+ address h?r (inklusive http://). L?mna tom f?r att d?lja"
 
 #: library/theme-options.php:42
 msgid "Custom social network 1"
 msgstr "Eget socialt n?tverk 1"
 
-#: library/theme-options.php:43
-#: library/theme-options.php:58
+#: library/theme-options.php:43 library/theme-options.php:58
 msgid "Social network name:"
 msgstr "Namn:"
 
-#: library/theme-options.php:48
-#: library/theme-options.php:63
+#: library/theme-options.php:48 library/theme-options.php:63
 msgid "Social network icon address: (image size limits: 16px*16px)"
 msgstr "Address till ikon: (bildstorlek h?gst: 16px*16px)"
 
-#: library/theme-options.php:53
-#: library/theme-options.php:68
+#: library/theme-options.php:53 library/theme-options.php:68
 msgid "Social network links address:"
 msgstr "L?nkaddress:"
 
@@ -447,8 +421,12 @@ msgid "Disable the comment notes"
 msgstr "Inaktivera kommentarer"
 
 #: library/theme-options.php:83
-msgid "Disabling this will remove the note text that displays with more options for adding to comments (html)."
-msgstr "V?lj f?r att ta bort text med alternativ f?r att l?gga till i kommentarer (html)."
+msgid ""
+"Disabling this will remove the note text that displays with more options for "
+"adding to comments (html)."
+msgstr ""
+"V?lj f?r att ta bort text med alternativ f?r att l?gga till i kommentarer "
+"(html)."
 
 #: library/theme-options.php:87
 msgid "Disable the comments smilies"
@@ -467,8 +445,7 @@ msgstr "Temainst?llningar"
 msgid "%1$s Theme Options"
 msgstr "%1$s Temainst?llningar"
 
-#: library/theme-options.php:131
-#: library/theme-options.php:209
+#: library/theme-options.php:131 library/theme-options.php:209
 msgid "Save Options"
 msgstr "Spara"
 
@@ -490,7 +467,8 @@ msgstr "?terst?ll alla inst?llningar"
 
 #: library/theme-options.php:215
 msgid "Click OK to reset. Any settings will be lost!"
-msgstr "Klicka OK f?r att ?terst?lla . Alla egna inst?llningar kommer att tas bort!"
+msgstr ""
+"Klicka OK f?r att ?terst?lla . Alla egna inst?llningar kommer att tas bort!"
 
 #: library/theme-options.php:221
 msgid "Donation"
@@ -498,8 +476,14 @@ msgstr "Donation"
 
 #: library/theme-options.php:223
 #, php-format
-msgid "Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!"
-msgstr "Skapat, utvecklat och underh?llet av %s . Om du k?nner att mitt arbete ?r anv?ndbart och vill st?dja utvecklingen av mer ?ppna tillg?ngar, donera g?rna till mig. Tack!"
+msgid ""
+"Created, Developed and maintained by %s . If you feel my work is useful and "
+"want to support the development of more free resources, you can donate me. "
+"Thank you very much!"
+msgstr ""
+"Skapat, utvecklat och underh?llet av %s . Om du k?nner att mitt arbete ?r "
+"anv?ndbart och vill st?dja utvecklingen av mer ?ppna tillg?ngar, donera g?"
+"rna till mig. Tack!"
 
 #~ msgid ""
 #~ "If the home page and archive pages to display excerpt of post, check."

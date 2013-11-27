@@ -53,8 +53,9 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 == Changelog ==
 
 = 1.3.8 =
-* ?
-* ?
+* Simple Responsive for Mobile
+* Remove the custom navigation Home links
+* Adjust the structure
 
 = 1.3.7 =
 * edit: google+ page link - used rel="publisher" instead rel="me"
