@@ -59,7 +59,7 @@
 
 				$twitter_name = 'Follow me!';
 				$twitter_icon = '';
-				$twitter_url = 'https://twitter.com';
+				$twitter_url = '';
 				if ($zborder_theme_options['twitter_url'] != '') $twitter_url = esc_url( $zborder_theme_options['twitter_url'] );
 				if ($zborder_theme_options['twitter_custom_name'] != '') esc_attr( $twitter_name = $zborder_theme_options['twitter_custom_name'] );
 				if ($zborder_theme_options['twitter_custom_icon'] != '') $twitter_icon = 'style="background:url(' . esc_url( $zborder_theme_options['twitter_custom_icon'] ) . ') no-repeat center center;"';
@@ -67,7 +67,7 @@
 
 				$facebook_name = 'Facebook';
 				$facebook_icon = '';
-				$facebook_url = 'https://facebook.com';
+				$facebook_url = '';
 				if ($zborder_theme_options['facebook_url'] != '') $facebook_url = esc_url( $zborder_theme_options['facebook_url'] );
 				if ($zborder_theme_options['facebook_custom_name'] != '') $facebook_name = esc_attr( $zborder_theme_options['facebook_custom_name'] );
 				if ($zborder_theme_options['facebook_custom_icon'] != '') $facebook_icon = 'style="background:url(' . esc_url( $zborder_theme_options['facebook_custom_icon'] ) . ') no-repeat center center;"';
@@ -75,7 +75,7 @@
 
 				$googleplus_name = 'Google+';
 				$googleplus_icon = '';
-				$googleplus_url = 'https://plus.google.com';
+				$googleplus_url = '';
 				if ($zborder_theme_options['googleplus_url'] != '') $googleplus_url = esc_url( $zborder_theme_options['googleplus_url'] );
 				if ($zborder_theme_options['googleplus_custom_name'] != '') $googleplus_name = esc_attr( $zborder_theme_options['googleplus_custom_name'] );
 				if ($zborder_theme_options['googleplus_custom_icon'] != '') $googleplus_icon = 'style="background:url(' . esc_url( $zborder_theme_options['googleplus_custom_icon'] ) . ') no-repeat center center;"';
@@ -84,11 +84,17 @@
 
 				<a class="feed" href="<?php echo $rss_url; ?>" rel="bookmark" title="<?php _e('RSS Feed', 'zborder'); ?>"><span><?php _e('RSS Feed', 'zborder'); ?></span></a>
 
-				<a <?php echo $twitter_icon; ?> class="twitter" href="<?php echo $twitter_url; ?>" rel="author" title="<?php echo $twitter_name; ?>"><span><?php echo $twitter_name; ?></span></a>
+				<?php if ($twitter_url != '') { ?>
+					<a <?php echo $twitter_icon; ?> class="twitter" href="<?php echo $twitter_url; ?>" rel="author" title="<?php echo $twitter_name; ?>"><span><?php echo $twitter_name; ?></span></a>
+				<?php } ?>
 
-				<a <?php echo $facebook_icon; ?> class="facebook" href="<?php echo $facebook_url; ?>" rel="author" title="<?php echo $facebook_name; ?>"><span><?php echo $facebook_name; ?></span></a>
+				<?php if ($facebook_url != '') { ?>
+					<a <?php echo $facebook_icon; ?> class="facebook" href="<?php echo $facebook_url; ?>" rel="author" title="<?php echo $facebook_name; ?>"><span><?php echo $facebook_name; ?></span></a>
+				<?php } ?>
 
-				<a <?php echo $googleplus_icon; ?> class="googleplus" href="<?php echo $googleplus_url; ?>" rel="publisher" title="<?php echo $googleplus_name; ?>"><span><?php echo $googleplus_name; ?></span></a>
+				<?php if ($googleplus_url != '') { ?>
+					<a <?php echo $googleplus_icon; ?> class="googleplus" href="<?php echo $googleplus_url; ?>" rel="publisher" title="<?php echo $googleplus_name; ?>"><span><?php echo $googleplus_name; ?></span></a>
+				<?php } ?>
 
 				<em class="rss_text">RSS</em>
 			</div>

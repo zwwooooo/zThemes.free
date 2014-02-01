@@ -28,11 +28,35 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 2. Go into your Wordpress Admin, navigate to 'Appearance > Themes'
 3. Find the zBorder listing on this page and click 'Activate'
 
+== Theme Options ==
+
+zBorder has theme options page: Go into your Wordpress Admin, navigate to 'Appearance > Theme Options'
+
+= For example: How to upload image for 'Custom Favicon' Option =
+
+Upload favicon image via FTP or WordPress Media and get the image url, Put into favicon field.
+
+- Via WordPress Media: 
+o Go into your Wordpress Admin, navigate to 'Media'
+o Click "Add New" into 'Upload New Media' page
+o Click "Select Files" add you favicon image and upload it. When you upload, the image will list bottom.
+o Click "Edit" to 'Edit Media' page, Copy "File URL" of right sidebar
+o Paste to favicon field in Theme Options page.
+
+The others and the same.
 
 == Language Package: (Thx for volunteers) ==
 * Chinese (zh_CN): zwwooooo
 
 == Changelog ==
+
+= 0.9.3 =
+* Add a documentation of "Theme Options" in readme.txt
+* Fix: In gallery image post format with caption, the thumbnail image overlaps its white-wrapper.
+* Remove overflow:hidden for #sidebar
+* Fix: Image with larger dimension in widget
+* Fix: All text of sub menu navigation with longer text must fully readable
+* Fix: Do not show all the social media icons by default when the fields in theme options are blank.
 
 = 0.9.2 =
 * Adjust the search box style.
