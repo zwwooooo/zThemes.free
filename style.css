@@ -2,7 +2,7 @@
 Theme Name:zBorder
 Theme URI:http://zww.me/wordpress-theme-zborder.z-turn
 Description:It is a simple WordPress theme without any plugin needed, little images, custom-menu, widgets, threaded-comments. For WordPress version 3.7+
-Version:0.9.1
+Version:0.9.2
 Author:zwwooooo
 Author URI:http://zww.me/
 Tags:custom-menu, threaded-comments, two-columns, fixed-layout, right-sidebar, theme-options, responsive-layout
@@ -249,6 +249,37 @@ hr{
 #search,#search input#s,
 #search input#searchsubmit{
 	border-radius:6px;
+}
+/* search form in other area */
+#sidebar .widget #searchform{
+	padding:10px 0;
+}
+.entry #searchform #s,
+#sidebar .widget #searchform #s{
+	width:240px;
+	height:16px;
+	padding:5px 3px;
+	border:1px solid #c2c1c0;
+	background:#fff;
+}
+#sidebar .widget #searchform #s{
+	width:200px;
+}
+.entry #searchsubmit,
+#sidebar .widget #searchsubmit{
+	cursor:pointer;
+	height:28px;
+	width:50px;
+	line-height:26px;
+	height:26px;
+	border:none;
+	background:#333 url(imgs/icons.png) no-repeat 0 -30px;
+	text-indent:-9999px;
+}
+.entry input#searchsubmit:hover,
+#sidebar .widget input#searchsubmit:hover{
+	color:#fff;
+	background:#000 url(imgs/icons.png) no-repeat 0 -30px;
 }
 /* site title */
 .title_and_rss{
@@ -824,29 +855,6 @@ hr{
 	width:270px;
 	margin:15px 0;
 	padding:5px;
-}
-/* widget */
-#sidebar .widget input#s{
-	width:190px;
-	height:22px;
-	line-height:22px;
-	padding:0 5px;
-}
-#sidebar .widget input#searchsubmit{
-	width:65px;
-}
-/* WP-RecentComments */
-#sidebar ul li.rc-item,#sidebar ul li.rc-navi{
-	background:none;
-	padding:0;
-	margin:3px 0;
-}
-#sidebar ul li.rc-item div{
-	padding:0;
-	border:none;
-}
-#sidebar ul li.rc-item .rc-avatar img{
-	border:1px solid #ddd;
 }
 
 /* #comments -------- */
@@ -1454,6 +1462,9 @@ a.back_to_top:hover{
 
 	.entry p{
 		font-size:14px;
+	}
+	.entry #searchform #s{
+		width:200px;
 	}
 
 	.commentlist .children li.depth-2{

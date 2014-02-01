@@ -34,6 +34,10 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.9.2 =
+* Adjust the search box style.
+* Fix unescaped.
+
 = 0.9.1 =
 * Remove #wrapper background attribute when use custom-background.
 * Add "Back to Top" button when the width is less than 1000px.

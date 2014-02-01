@@ -3,7 +3,7 @@
 	<?php the_post(); ?>
 
 	<div class="post_path">
-		<?php _e('You are here:', 'zborder'); ?> <a class="first_home" rel="nofollow" title="<?php _e('Go to homepage', 'zborder'); ?>" href="<?php echo home_url('/'); ?>"><?php _e('Home', 'zborder'); ?></a>
+		<?php _e('You are here:', 'zborder'); ?> <a class="first_home" rel="nofollow" title="<?php _e('Go to homepage', 'zborder'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zborder'); ?></a>
 		&raquo; <?php the_title(); ?>
 	</div>
 	<div class="post post_s" id="post-<?php the_ID(); ?>">

@@ -25,7 +25,7 @@
 		<div class="navi_and_search_inner">
 			<div id="navi">
 				<ul class="navi_dt">
-					<li><a class="home" href="<?php echo home_url('/'); ?>"><?php _e('Home', 'zborder') ?></a></li>
+					<li><a class="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php _e('Home', 'zborder'); ?></a></li>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'zborder_wp_list_pages', 'container' => 'false', 'items_wrap' => '%3$s' ) ); ?>
 				</ul>
 				<ul class="navi_mobile">
@@ -47,7 +47,7 @@
 				$logo=' class="header_logo" style="background:url('.$zborder_theme_options['logo_url'].') no-repeat center center"';
 			?>
 			<h1 class="site_title">
-				<a href="<?php echo home_url('/'); ?>"<?php echo $logo; ?>><?php bloginfo('name'); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"<?php echo $logo; ?> rel="home"><?php bloginfo('name'); ?></a>
 			</h1>
 			<h2 class="site_desc"><?php bloginfo('description');?></h2>
 			<div id="rss">
@@ -55,31 +55,31 @@
 				global $zborder_theme_options;
 
 				$rss_url = get_bloginfo('rss2_url');
-				if ($zborder_theme_options['rss_url'] != '') $rss_url = $zborder_theme_options['rss_url'];
+				if ($zborder_theme_options['rss_url'] != '') $rss_url = esc_url( $zborder_theme_options['rss_url'] );
 
 				$twitter_name = 'Follow me!';
 				$twitter_icon = '';
 				$twitter_url = 'https://twitter.com';
-				if ($zborder_theme_options['twitter_url'] != '') $twitter_url = $zborder_theme_options['twitter_url'];
-				if ($zborder_theme_options['twitter_custom_name'] != '') $twitter_name = $zborder_theme_options['twitter_custom_name'];
-				if ($zborder_theme_options['twitter_custom_icon'] != '') $twitter_icon = 'style="background:url(' . $zborder_theme_options['twitter_custom_icon'] . ') no-repeat center center;"';
-				if ($zborder_theme_options['twitter_custom_url'] != '') $twitter_url = $zborder_theme_options['twitter_custom_url'];
+				if ($zborder_theme_options['twitter_url'] != '') $twitter_url = esc_url( $zborder_theme_options['twitter_url'] );
+				if ($zborder_theme_options['twitter_custom_name'] != '') esc_attr( $twitter_name = $zborder_theme_options['twitter_custom_name'] );
+				if ($zborder_theme_options['twitter_custom_icon'] != '') $twitter_icon = 'style="background:url(' . esc_url( $zborder_theme_options['twitter_custom_icon'] ) . ') no-repeat center center;"';
+				if ($zborder_theme_options['twitter_custom_url'] != '') $twitter_url = esc_url( $zborder_theme_options['twitter_custom_url'] );
 
 				$facebook_name = 'Facebook';
 				$facebook_icon = '';
 				$facebook_url = 'https://facebook.com';
-				if ($zborder_theme_options['facebook_url'] != '') $facebook_url = $zborder_theme_options['facebook_url'];
-				if ($zborder_theme_options['facebook_custom_name'] != '') $facebook_name = $zborder_theme_options['facebook_custom_name'];
-				if ($zborder_theme_options['facebook_custom_icon'] != '') $facebook_icon = 'style="background:url(' . $zborder_theme_options['facebook_custom_icon'] . ') no-repeat center center;"';
-				if ($zborder_theme_options['facebook_custom_url'] != '') $facebook_url = $zborder_theme_options['facebook_custom_url'];
+				if ($zborder_theme_options['facebook_url'] != '') $facebook_url = esc_url( $zborder_theme_options['facebook_url'] );
+				if ($zborder_theme_options['facebook_custom_name'] != '') $facebook_name = esc_attr( $zborder_theme_options['facebook_custom_name'] );
+				if ($zborder_theme_options['facebook_custom_icon'] != '') $facebook_icon = 'style="background:url(' . esc_url( $zborder_theme_options['facebook_custom_icon'] ) . ') no-repeat center center;"';
+				if ($zborder_theme_options['facebook_custom_url'] != '') $facebook_url = esc_url( $zborder_theme_options['facebook_custom_url'] );
 
 				$googleplus_name = 'Google+';
 				$googleplus_icon = '';
-				$googleplus_url = 'https://googleplus.com';
-				if ($zborder_theme_options['googleplus_url'] != '') $googleplus_url = $zborder_theme_options['googleplus_url'];
-				if ($zborder_theme_options['googleplus_custom_name'] != '') $googleplus_name = $zborder_theme_options['googleplus_custom_name'];
-				if ($zborder_theme_options['googleplus_custom_icon'] != '') $googleplus_icon = 'style="background:url(' . $zborder_theme_options['googleplus_custom_icon'] . ') no-repeat center center;"';
-				if ($zborder_theme_options['googleplus_custom_url'] != '') $googleplus_url = $zborder_theme_options['googleplus_custom_url'];
+				$googleplus_url = 'https://plus.google.com';
+				if ($zborder_theme_options['googleplus_url'] != '') $googleplus_url = esc_url( $zborder_theme_options['googleplus_url'] );
+				if ($zborder_theme_options['googleplus_custom_name'] != '') $googleplus_name = esc_attr( $zborder_theme_options['googleplus_custom_name'] );
+				if ($zborder_theme_options['googleplus_custom_icon'] != '') $googleplus_icon = 'style="background:url(' . esc_url( $zborder_theme_options['googleplus_custom_icon'] ) . ') no-repeat center center;"';
+				if ($zborder_theme_options['googleplus_custom_url'] != '') $googleplus_url = esc_url( $zborder_theme_options['googleplus_custom_url'] );
 				?>
 
 				<a class="feed" href="<?php echo $rss_url; ?>" rel="bookmark" title="<?php _e('RSS Feed', 'zborder'); ?>"><span><?php _e('RSS Feed', 'zborder'); ?></span></a>
@@ -102,7 +102,7 @@
 	<div class="wrapper_inner">
 		<?php if ( get_header_image() != '' ) { ?>
 			<div id="header_image">
-				<a href="<?php if($zborder_theme_options['header_image_url']!='') { echo $zborder_theme_options['header_image_url']; } else { echo home_url('/'); } ?>"><img src="<?php header_image(); ?>" width="970" height="200" alt="" /></a>
+				<a href="<?php if( $zborder_theme_options['header_image_url']!='' ) { echo esc_url( $zborder_theme_options['header_image_url'] ); } else { echo esc_url( home_url('/') ); } ?>"><img src="<?php header_image(); ?>" width="970" height="200" alt="" /></a>
 			</div>
 		<?php } ?>
 

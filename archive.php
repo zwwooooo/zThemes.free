@@ -43,7 +43,7 @@
 	}
 	if($paged && $paged > 1) $archive_title .= '<span class="archive_page"> - ' . sprintf(__('Page %s','zborder'), $paged) . '</span>'; ?>
 	<div class="post_path">
-		<?php _e('You are here:', 'zborder'); ?> <a class="first_home" rel="nofollow" title="<?php _e('Go to homepage', 'zborder'); ?>" href="<?php echo home_url('/'); ?>"><?php _e('Home', 'zborder'); ?></a> &raquo; <?php echo $post_path; ?>
+		<?php _e('You are here:', 'zborder'); ?> <a class="first_home" rel="nofollow" title="<?php _e('Go to homepage', 'zborder'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zborder'); ?></a> &raquo; <?php echo $post_path; ?>
 	</div>
 	<div class="archive_title"><?php echo $archive_title; ?><span class="jtxs_bg"></span></div>
 

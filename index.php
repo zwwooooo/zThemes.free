@@ -15,7 +15,7 @@
 
 	<?php if (is_search()) : ?>
 		<div class="post_path">
-			<?php _e('You are here:', 'zborder'); ?> <a class="first_home" rel="nofollow" title="<?php _e('Go to homepage', 'zborder'); ?>" href="<?php echo home_url('/'); ?>"><?php _e('Home', 'zborder'); ?></a> &raquo; <?php echo sprintf(__('<h1>Search Results for %s</h1>','zborder'), get_search_query()); ?>
+			<?php _e('You are here:', 'zborder'); ?> <a class="first_home" rel="nofollow" title="<?php _e('Go to homepage', 'zborder'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'zborder'); ?></a> &raquo; <?php echo sprintf(__('<h1>Search Results for %s</h1>','zborder'), get_search_query()); ?>
 		</div>
 		<div class="archive_title">
 			<?php echo sprintf(__('Search Results for %s','zborder'), get_search_query()); ?>

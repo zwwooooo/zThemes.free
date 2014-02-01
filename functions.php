@@ -137,7 +137,7 @@ function zborder_setup() {
 	add_filter( 'the_content', 'zborder_featured_content',1 );
 	function zborder_post_image_html( $html, $post_id, $post_image_id ) {
 		if ($html)
-			$html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+			$html = '<a href="' . esc_url(get_permalink( $post_id )) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
 		return $html;
 	}
 	add_filter( 'post_thumbnail_html', 'zborder_post_image_html', 10, 3 );

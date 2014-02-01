@@ -68,7 +68,7 @@ if ($zborder_theme_options['smilies'] != 'true') { ?>
 	/* ]]> */
 	</script>
 	<?php
-	$wpurl = site_url(); // get_bloginfo("wpurl");
+	$wpurl = esc_url( site_url('/') ); // get_bloginfo("wpurl");
 	$smilies = '
 	<a href="javascript:grin(\':?:\')"><img src="'.$wpurl.'/wp-includes/images/smilies/icon_question.gif" alt="" /></a>
 	<a href="javascript:grin(\':razz:\')"><img src="'.$wpurl.'/wp-includes/images/smilies/icon_razz.gif" alt="" /></a>
