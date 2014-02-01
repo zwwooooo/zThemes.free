@@ -1,0 +1,52 @@
+.wp-pagenavi{
+	overflow:hidden;
+	margin-top:20px;
+	padding:10px 0;
+	text-align:center;
+	color:#565758;
+}
+.wp-pagenavi a,
+.wp-pagenavi span.current,
+.wp-pagenavi span.pages,
+*+html .wp-pagenavi span.pages{
+	overflow:hidden;
+	display:inline-block;
+	width:26px;
+	height:26px;
+	line-height:26px;
+	margin-right:4px;
+	background:#999;
+	border-radius:36px;
+	color:#333;
+	text-align:center;
+}
+.wp-pagenavi a.previouspostslink,
+.wp-pagenavi a.nextpostslink{
+	background:#000;
+	color:#fff;
+}
+.wp-pagenavi a.first,
+.wp-pagenavi a.last,
+.wp-pagenavi span.pages,
+*+html .wp-pagenavi span.pages{
+	width:auto;
+	background:none;
+}
+.wp-pagenavi a.first,
+.wp-pagenavi a.last{
+	padding:0 5px;
+	color:#3f6c18;
+}
+.wp-pagenavi a.first:hover,
+.wp-pagenavi a.last:hover{
+	color:#000;
+	background:none;
+}
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current{
+	color:#fff;
+	background-color:#3f6c18;
+}
+.wp-pagenavi span.extend {
+	margin-right:4px;
+}

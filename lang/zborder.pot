@@ -1,0 +1,446 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zborder\n"
+"POT-Creation-Date: 2014-01-10 22:49+0800\n"
+"PO-Revision-Date: 2014-01-10 22:49+0800\n"
+"Last-Translator: zwwooooo <zwwblog@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:4 archive.php:85 index.php:51
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: 404.php:6 archive.php:87 index.php:53
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr ""
+
+#: archive.php:19
+msgid "Category Archives:"
+msgstr ""
+
+#: archive.php:23
+msgid "Tag Archives:"
+msgstr ""
+
+#: archive.php:34
+msgid "Date Archives:"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+msgid "All posts by <span>%s</span>"
+msgstr ""
+
+#: archive.php:39
+#, php-format
+msgid "All posts by <h1>%s</h1>"
+msgstr ""
+
+#: archive.php:41 archive.php:42
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:44 functions.php:69 index.php:10 index.php:22
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: archive.php:46 index.php:18 page.php:6 single.php:6
+msgid "You are here:"
+msgstr ""
+
+#: archive.php:46 index.php:18 page.php:6 single.php:6
+msgid "Go to homepage"
+msgstr ""
+
+#: archive.php:46 header.php:28 index.php:18 page.php:6 single.php:6
+msgid "Home"
+msgstr ""
+
+#: archive.php:55 index.php:31
+msgid "read more"
+msgstr ""
+
+#: archive.php:62 index.php:41 page.php:12 single.php:14
+msgid "Edit"
+msgstr ""
+
+#: archive.php:78 index.php:71
+msgid "&laquo; Previous page"
+msgstr ""
+
+#: archive.php:78 index.php:71
+msgid "Next page &raquo;"
+msgstr ""
+
+#: comments.php:10
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:18 comments.php:25
+msgid "Leave a comment ?"
+msgstr ""
+
+#: comments.php:18 comments.php:25
+msgid "Comments."
+msgstr ""
+
+#: comments.php:27
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:98
+msgid "NOTE - You can use these "
+msgstr ""
+
+#: comments.php:98
+msgid "tags and attributes:"
+msgstr ""
+
+#: comments.php:102
+msgid "NAME"
+msgstr ""
+
+#: comments.php:104
+msgid "EMAIL"
+msgstr ""
+
+#: comments.php:106
+msgid "Website URL"
+msgstr ""
+
+#: comments.php:113
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:114
+#, php-format
+msgid "Reply to %s &not;<br />"
+msgstr ""
+
+#: comments.php:115
+msgid "<small>Cancel reply</small>"
+msgstr ""
+
+#: comments.php:116
+msgid "SUBMIT"
+msgstr ""
+
+#: footer.php:10
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:11
+#, php-format
+msgid "%1$s powered by %2$s"
+msgstr ""
+
+#: footer.php:13
+msgid "Back to top"
+msgstr ""
+
+#: functions.php:5
+msgid "Primary Widget Area"
+msgstr ""
+
+#: functions.php:7
+msgid "The primary widget area"
+msgstr ""
+
+#: functions.php:14
+msgid "Singular Widget Area"
+msgstr ""
+
+#: functions.php:16
+msgid "The singular widget area"
+msgstr ""
+
+#: functions.php:23
+msgid "Not Singular Widget Area"
+msgstr ""
+
+#: functions.php:25
+msgid "Not the singular widget area"
+msgstr ""
+
+#: functions.php:32
+msgid "Footer Widget Area"
+msgstr ""
+
+#: functions.php:34
+msgid "The footer widget area"
+msgstr ""
+
+#: functions.php:206 functions.php:218
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:218
+msgid "[Edit]"
+msgstr ""
+
+#: functions.php:223
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: header.php:32
+msgid "Menu"
+msgstr ""
+
+#: header.php:85
+msgid "RSS Feed"
+msgstr ""
+
+#: index.php:10
+msgid "All posts"
+msgstr ""
+
+#: index.php:18
+#, php-format
+msgid "<h1>Search Results for %s</h1>"
+msgstr ""
+
+#: index.php:21
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: index.php:35
+msgid "Sticky post!"
+msgstr ""
+
+#: page.php:14 single.php:16
+msgid "Go to respond"
+msgstr ""
+
+#: page.php:14 single.php:16
+msgid "Leave a comment"
+msgstr ""
+
+#: page.php:15 single.php:17
+msgid "Go to comments"
+msgstr ""
+
+#: page.php:21 single.php:23
+msgid "Pages:"
+msgstr ""
+
+#: page.php:25
+msgid "Page maintained by"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search ..."
+msgstr ""
+
+#: searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:7
+msgid "Recent Posts"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Random Posts"
+msgstr ""
+
+#: sidebar.php:32
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:39
+msgid "Blogrolls"
+msgstr ""
+
+#: single.php:26
+msgid "Filed under"
+msgstr ""
+
+#: single.php:27
+msgid "Tags:"
+msgstr ""
+
+#: single.php:31
+msgid "(This is the latest article)"
+msgstr ""
+
+#: inc/theme-options.php:7
+msgid "Custom Favicon"
+msgstr ""
+
+#: inc/theme-options.php:8
+msgid "Put your full favicon image address here.(with http://)."
+msgstr ""
+
+#: inc/theme-options.php:17
+msgid "Logo URL"
+msgstr ""
+
+#: inc/theme-options.php:18
+msgid ""
+"Put your full logo image address here.(with http://) Image size: 200px*100px"
+msgstr ""
+
+#: inc/theme-options.php:27
+msgid "Hide description"
+msgstr ""
+
+#: inc/theme-options.php:28
+msgid "You can hide description here."
+msgstr ""
+
+#: inc/theme-options.php:37
+msgid "Header image link"
+msgstr ""
+
+#: inc/theme-options.php:38
+msgid "Custom header image link. The default is Home Page."
+msgstr ""
+
+#: inc/theme-options.php:47
+msgid "RSS URL"
+msgstr ""
+
+#: inc/theme-options.php:48
+msgid "Put your full rss subscribe address here.(with http://)"
+msgstr ""
+
+#: inc/theme-options.php:57
+msgid "Excerpt?"
+msgstr ""
+
+#: inc/theme-options.php:58
+msgid "If excerpt of posts display in home and archive page, check."
+msgstr ""
+
+#: inc/theme-options.php:67
+msgid "Disable the comment notes"
+msgstr ""
+
+#: inc/theme-options.php:68
+msgid ""
+"Disabling this will remove the note text that displays with more options for "
+"adding to comments (html)."
+msgstr ""
+
+#: inc/theme-options.php:77
+msgid "Disable the comments smilies"
+msgstr ""
+
+#: inc/theme-options.php:78
+msgid "Disabling this will remove the comments smilies."
+msgstr ""
+
+#: inc/theme-options.php:87
+msgid "twitter URL"
+msgstr ""
+
+#: inc/theme-options.php:88
+msgid ""
+"Put your full twitter address here.(with http:// , leave it blank for "
+"display none.)<br /><strong>This can be replaced by the following custom.</"
+"strong>"
+msgstr ""
+
+#: inc/theme-options.php:92
+msgid "Social Links"
+msgstr ""
+
+#: inc/theme-options.php:97 inc/theme-options.php:137
+#: inc/theme-options.php:177
+msgid "Custom social network name"
+msgstr ""
+
+#: inc/theme-options.php:98 inc/theme-options.php:138
+#: inc/theme-options.php:178
+msgid "Social network name"
+msgstr ""
+
+#: inc/theme-options.php:107 inc/theme-options.php:147
+#: inc/theme-options.php:187
+msgid "Custom social network icon"
+msgstr ""
+
+#: inc/theme-options.php:108 inc/theme-options.php:148
+#: inc/theme-options.php:188
+msgid "Social network icon address: (image size: 26px*26px)"
+msgstr ""
+
+#: inc/theme-options.php:117 inc/theme-options.php:157
+#: inc/theme-options.php:197
+msgid "Custom social network url"
+msgstr ""
+
+#: inc/theme-options.php:118 inc/theme-options.php:158
+#: inc/theme-options.php:198
+msgid "Social network links address"
+msgstr ""
+
+#: inc/theme-options.php:127
+msgid "facebook URL"
+msgstr ""
+
+#: inc/theme-options.php:128
+msgid ""
+"Put your full facebook address here.(with http:// , leave it blank for no "
+"display none.)<br /><strong>This can be replaced by the following custom.</"
+"strong>"
+msgstr ""
+
+#: inc/theme-options.php:167
+msgid "Google+ URL"
+msgstr ""
+
+#: inc/theme-options.php:168
+msgid ""
+"Put your full Google+ address here.(with http:// , leave it blank for no "
+"display none.)<br /><strong>This can be replaced by the following custom.</"
+"strong>"
+msgstr ""
+
+#: inc/theme-options.php:215
+msgid "Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:248
+#, php-format
+msgid "%1$s Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:254
+msgid "Donation"
+msgstr ""
+
+#: inc/theme-options.php:257
+#, php-format
+msgid ""
+"Created, Developed and maintained by %s . If you feel my work is useful and "
+"want to support the development of more free resources, you can donate me. "
+"Thank you very much!"
+msgstr ""
+
+#: inc/theme-options.php:274
+msgid "General settings"
+msgstr ""
+
+#: inc/theme-options.php:354
+msgid "Save Options"
+msgstr ""
+
+#: inc/theme-options.php:358
+msgid "Reset All Settings"
+msgstr ""
+
+#: inc/theme-options.php:358
+msgid "Click OK to reset. Any settings will be lost!"
+msgstr ""

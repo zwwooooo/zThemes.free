@@ -1,0 +1,469 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zborder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-10 22:48+0800\n"
+"PO-Revision-Date: 2014-01-10 22:48+0800\n"
+"Last-Translator: zwwooooo <zwwblog@gmail.com>\n"
+"Language-Team: zwwooooo <http://zww.me/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:4 archive.php:85 index.php:51
+msgid "Error 404 - Not Found"
+msgstr "错误 404 - 没有找到"
+
+#: 404.php:6 archive.php:87 index.php:53
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "对不起，没有找到您要的东东，或许下面的内容你感兴趣。"
+
+#: archive.php:19
+msgid "Category Archives:"
+msgstr "分类目录归档:"
+
+#: archive.php:23
+msgid "Tag Archives:"
+msgstr "标签归档:"
+
+#: archive.php:34
+msgid "Date Archives:"
+msgstr "按日期归档:"
+
+#: archive.php:38
+#, php-format
+msgid "All posts by <span>%s</span>"
+msgstr "所有由<span>%s</span>发布的文章 "
+
+#: archive.php:39
+#, php-format
+msgid "All posts by <h1>%s</h1>"
+msgstr "所有由<h1>%s</h1>发布的文章 "
+
+#: archive.php:41 archive.php:42
+msgid "Blog Archives"
+msgstr "博客归档"
+
+#: archive.php:44 functions.php:69 index.php:10 index.php:22
+#, php-format
+msgid "Page %s"
+msgstr "第%s页"
+
+#: archive.php:46 index.php:18 page.php:6 single.php:6
+msgid "You are here:"
+msgstr "您当前位置:"
+
+#: archive.php:46 index.php:18 page.php:6 single.php:6
+msgid "Go to homepage"
+msgstr "返回首页"
+
+#: archive.php:46 header.php:28 index.php:18 page.php:6 single.php:6
+msgid "Home"
+msgstr "首页"
+
+#: archive.php:55 index.php:31
+msgid "read more"
+msgstr "readmore"
+
+#: archive.php:62 index.php:41 page.php:12 single.php:14
+msgid "Edit"
+msgstr "编辑"
+
+#: archive.php:78 index.php:71
+msgid "&laquo; Previous page"
+msgstr "&laquo; 上一页"
+
+#: archive.php:78 index.php:71
+msgid "Next page &raquo;"
+msgstr "下一页 &raquo;"
+
+#: comments.php:10
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "这是受保护的文章，输入密码才能查看评论。"
+
+#: comments.php:18 comments.php:25
+msgid "Leave a comment ?"
+msgstr "发表评论？"
+
+#: comments.php:18 comments.php:25
+msgid "Comments."
+msgstr "条评论。"
+
+#: comments.php:27
+msgid "Comments are closed."
+msgstr "评论关闭。"
+
+#: comments.php:98
+msgid "NOTE - You can use these "
+msgstr "注意 - 你可以用以下 "
+
+#: comments.php:98
+msgid "tags and attributes:"
+msgstr "tags and attributes:"
+
+#: comments.php:102
+msgid "NAME"
+msgstr "昵称"
+
+#: comments.php:104
+msgid "EMAIL"
+msgstr "邮箱"
+
+#: comments.php:106
+msgid "Website URL"
+msgstr "网址"
+
+#: comments.php:113
+msgid "Leave a Comment"
+msgstr "发表评论"
+
+#: comments.php:114
+#, php-format
+msgid "Reply to %s &not;<br />"
+msgstr "回复给 %s &not;<br />"
+
+#: comments.php:115
+msgid "<small>Cancel reply</small>"
+msgstr "<small>取消回复</small>"
+
+#: comments.php:116
+msgid "SUBMIT"
+msgstr "提交"
+
+#: footer.php:10
+msgid "Copyright"
+msgstr "版权所有"
+
+#: footer.php:11
+#, php-format
+msgid "%1$s powered by %2$s"
+msgstr "%1$s 由 %2$s 驱动"
+
+#: footer.php:13
+msgid "Back to top"
+msgstr "返回顶部"
+
+#: functions.php:5
+msgid "Primary Widget Area"
+msgstr "主小工具区域"
+
+#: functions.php:7
+msgid "The primary widget area"
+msgstr "全部页面显示的小工具区域"
+
+#: functions.php:14
+msgid "Singular Widget Area"
+msgstr "单页小工具区域"
+
+#: functions.php:16
+msgid "The singular widget area"
+msgstr "只在单页显示的小工具区域"
+
+#: functions.php:23
+msgid "Not Singular Widget Area"
+msgstr "非单页小工具区域"
+
+#: functions.php:25
+msgid "Not the singular widget area"
+msgstr "非单页页面显示的小工具区域"
+
+#: functions.php:32
+msgid "Footer Widget Area"
+msgstr "底部小工具区域"
+
+#: functions.php:34
+msgid "The footer widget area"
+msgstr "侧边栏底部的小工具区域"
+
+#: functions.php:206 functions.php:218
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s 在 %2$s"
+
+#: functions.php:218
+msgid "[Edit]"
+msgstr "[编辑]"
+
+#: functions.php:223
+msgid "Your comment is awaiting moderation."
+msgstr "您的评论正在等待审核。"
+
+#: header.php:32
+msgid "Menu"
+msgstr "菜单"
+
+#: header.php:85
+msgid "RSS Feed"
+msgstr "RSS 订阅"
+
+#: index.php:10
+msgid "All posts"
+msgstr "全部文章"
+
+#: index.php:18
+#, php-format
+msgid "<h1>Search Results for %s</h1>"
+msgstr "<h1>%s的搜索结果</h1>"
+
+#: index.php:21
+#, php-format
+msgid "Search Results for %s"
+msgstr "%s的搜索结果"
+
+#: index.php:35
+msgid "Sticky post!"
+msgstr "置顶文章！"
+
+#: page.php:14 single.php:16
+msgid "Go to respond"
+msgstr "跳到评论框"
+
+#: page.php:14 single.php:16
+msgid "Leave a comment"
+msgstr "发表评论"
+
+#: page.php:15 single.php:17
+msgid "Go to comments"
+msgstr "查看评论"
+
+#: page.php:21 single.php:23
+msgid "Pages:"
+msgstr "分页:"
+
+#: page.php:25
+msgid "Page maintained by"
+msgstr "页面维护:"
+
+#: searchform.php:2
+msgid "Search ..."
+msgstr "搜索..."
+
+#: searchform.php:3
+msgid "Search"
+msgstr "搜索..."
+
+#: sidebar.php:7
+msgid "Recent Posts"
+msgstr "最新文章"
+
+#: sidebar.php:19
+msgid "Random Posts"
+msgstr "随机文章"
+
+#: sidebar.php:32
+msgid "Archives"
+msgstr " 归档"
+
+#: sidebar.php:39
+msgid "Blogrolls"
+msgstr "友链"
+
+#: single.php:26
+msgid "Filed under"
+msgstr "分类:"
+
+#: single.php:27
+msgid "Tags:"
+msgstr "标签:"
+
+#: single.php:31
+msgid "(This is the latest article)"
+msgstr "（当前为最新文章）"
+
+#: inc/theme-options.php:7
+msgid "Custom Favicon"
+msgstr "自定义 Favicon"
+
+#: inc/theme-options.php:8
+msgid "Put your full favicon image address here.(with http://)."
+msgstr "填入网站 favicon 图片地址。（以http://开头）"
+
+#: inc/theme-options.php:17
+msgid "Logo URL"
+msgstr "Logo图片地址"
+
+#: inc/theme-options.php:18
+msgid ""
+"Put your full logo image address here.(with http://) Image size: 200px*100px"
+msgstr ""
+"填入你的logo图片地址（以http://开头，不自定义保留空白，默认显示文字标题）图片"
+"大小：200px*100px"
+
+#: inc/theme-options.php:27
+msgid "Hide description"
+msgstr "隐藏副标题"
+
+#: inc/theme-options.php:28
+msgid "You can hide description here."
+msgstr "勾选可以隐藏网站副标题。"
+
+#: inc/theme-options.php:37
+msgid "Header image link"
+msgstr "头部图片链接自定义"
+
+#: inc/theme-options.php:38
+msgid "Custom header image link. The default is Home Page."
+msgstr "自定义头部图片的链接地址，默认是首页。"
+
+#: inc/theme-options.php:47
+msgid "RSS URL"
+msgstr "RSS订阅地址"
+
+#: inc/theme-options.php:48
+msgid "Put your full rss subscribe address here.(with http://)"
+msgstr ""
+"填入你的自定义订阅地址。（以http://开头，不自定义保留空白，默认会显示wp原生订"
+"阅地址。）"
+
+#: inc/theme-options.php:57
+msgid "Excerpt?"
+msgstr "显示摘录？"
+
+#: inc/theme-options.php:58
+msgid "If excerpt of posts display in home and archive page, check."
+msgstr "如果要在首页和存档页以摘录方式显示文章内容，勾选此项。"
+
+#: inc/theme-options.php:67
+msgid "Disable the comment notes"
+msgstr "关闭评论提示"
+
+#: inc/theme-options.php:68
+msgid ""
+"Disabling this will remove the note text that displays with more options for "
+"adding to comments (html)."
+msgstr "勾选后移除评论可以使用的（HTML）提示说明。"
+
+#: inc/theme-options.php:77
+msgid "Disable the comments smilies"
+msgstr "关闭评论表情"
+
+#: inc/theme-options.php:78
+msgid "Disabling this will remove the comments smilies."
+msgstr "勾选后关闭评论表情。"
+
+#: inc/theme-options.php:87
+msgid "twitter URL"
+msgstr "twitter地址"
+
+#: inc/theme-options.php:88
+msgid ""
+"Put your full twitter address here.(with http:// , leave it blank for "
+"display none.)<br /><strong>This can be replaced by the following custom.</"
+"strong>"
+msgstr ""
+"填入你的twitter地址。（以http://开头，如果没有保留空白。）<br /><strong>可以"
+"通过下面的自定义来替换为其他社交网站链接。</strong>"
+
+#: inc/theme-options.php:92
+msgid "Social Links"
+msgstr "社交链接"
+
+#: inc/theme-options.php:97 inc/theme-options.php:137
+#: inc/theme-options.php:177
+msgid "Custom social network name"
+msgstr "自定义社交网站名称"
+
+#: inc/theme-options.php:98 inc/theme-options.php:138
+#: inc/theme-options.php:178
+msgid "Social network name"
+msgstr "社交网络名"
+
+#: inc/theme-options.php:107 inc/theme-options.php:147
+#: inc/theme-options.php:187
+msgid "Custom social network icon"
+msgstr "自定义社交网站图标"
+
+#: inc/theme-options.php:108 inc/theme-options.php:148
+#: inc/theme-options.php:188
+msgid "Social network icon address: (image size: 26px*26px)"
+msgstr "社交网络图标地址：（图片大小：26px*26px）"
+
+#: inc/theme-options.php:117 inc/theme-options.php:157
+#: inc/theme-options.php:197
+msgid "Custom social network url"
+msgstr "自定义社交网站链接地址"
+
+#: inc/theme-options.php:118 inc/theme-options.php:158
+#: inc/theme-options.php:198
+msgid "Social network links address"
+msgstr "社交网络链接地址"
+
+#: inc/theme-options.php:127
+msgid "facebook URL"
+msgstr "facebook地址"
+
+#: inc/theme-options.php:128
+msgid ""
+"Put your full facebook address here.(with http:// , leave it blank for no "
+"display none.)<br /><strong>This can be replaced by the following custom.</"
+"strong>"
+msgstr ""
+"填入你的Facebook地址。（以http://开头，如果没有保留空白。）<br /><strong>可以"
+"通过下面的自定义来替换为其他社交网站链接。</strong>"
+
+#: inc/theme-options.php:167
+msgid "Google+ URL"
+msgstr "Google+地址"
+
+#: inc/theme-options.php:168
+msgid ""
+"Put your full Google+ address here.(with http:// , leave it blank for no "
+"display none.)<br /><strong>This can be replaced by the following custom.</"
+"strong>"
+msgstr ""
+"填入你的Google+地址。（以http://开头，如果没有保留空白。）<br /><strong>可以"
+"通过下面的自定义来替换为其他社交网站链接。</strong>"
+
+#: inc/theme-options.php:215
+msgid "Theme Options"
+msgstr "主题设置"
+
+#: inc/theme-options.php:248
+#, php-format
+msgid "%1$s Theme Options"
+msgstr "%1$s 主题设置"
+
+#: inc/theme-options.php:254
+msgid "Donation"
+msgstr "捐赠"
+
+#: inc/theme-options.php:257
+#, php-format
+msgid ""
+"Created, Developed and maintained by %s . If you feel my work is useful and "
+"want to support the development of more free resources, you can donate me. "
+"Thank you very much!"
+msgstr ""
+"本主题由 %s 创建、开发和维护，如果您觉得我的主题不错、支持更多的免费资源开"
+"发，您可以捐赠支持我。非常感谢您！"
+
+#: inc/theme-options.php:274
+msgid "General settings"
+msgstr "常规设置"
+
+#: inc/theme-options.php:354
+msgid "Save Options"
+msgstr "保存设置"
+
+#: inc/theme-options.php:358
+msgid "Reset All Settings"
+msgstr "所有设置复位"
+
+#: inc/theme-options.php:358
+msgid "Click OK to reset. Any settings will be lost!"
+msgstr "点击[确定]设置复位。原来的设置将丢失！"
+
+#~ msgid "Search by Tags!"
+#~ msgstr "标签云"
+
+#~ msgid "Links"
+#~ msgstr "链接"
+
+#~ msgid "Meta"
+#~ msgstr "管理"
