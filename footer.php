@@ -12,6 +12,7 @@
 		</div>
 		<a class="back_to_top" href="javascript:scroll(0,0)" rel="nofollow" title="<?php _e('Back to top', 'zborder'); ?>">&#9650;</a>
 	</div>
+	<span class="back_to_top_mobile"><a href="#" rel="nofollow" title="<?php _e('Back to top', 'zborder'); ?>">&#9650;</a></span>
 </div>
 
 <?php wp_footer(); ?>
