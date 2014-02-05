@@ -1,4 +1,0 @@
-zborder
-=======
-
-WordPress Theme: zBorder
