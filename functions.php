@@ -192,6 +192,13 @@ function single_term_id_by_zww( $prefix = '', $display = true, $value='term_id' 
 		return $return;
 }
 
+//////// get userdata in archive.php
+function get_userdata_in_author_archive() {
+	if (is_author()) { //work in wp2.8+
+		return (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
+	}
+	return false;
+}
 
 //////// Custom Comments List.
 function zborder_mytheme_comment($comment, $args, $depth) {

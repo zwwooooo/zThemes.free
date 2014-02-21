@@ -39,6 +39,9 @@ zBorder has theme options page: Go into your Wordpress Admin, navigate to 'Appea
 
 == Changelog ==
 
+= 0.9.5 =
+* Fix: add lost custom function get_userdata_in_author_archive()
+
 = 0.9.4 =
 * Add theme options user guide on theme page.
 * Fix menu hover background style.
