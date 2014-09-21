@@ -29,7 +29,7 @@
 	<?php $logo=''; if($zbench_options['logo_url']!='') $logo=' class="header_logo" style="background:url('.$zbench_options['logo_url'].') no-repeat 0 0"'; ?>
 	<div class="site_title">
 		<h1<?php if($logo) echo $logo; ?>><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></h1>
-		<h2><?php bloginfo('description');?></h2>
+		<h2<?php if($logo) echo ' class="hidden"'; ?>><?php bloginfo('description');?></h2>
 		<div class="clear"></div>
 	</div>
 	<?php if ( get_header_image() != '' ) {

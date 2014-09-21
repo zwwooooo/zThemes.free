@@ -2,10 +2,10 @@
 Theme Name:zBench
 Theme URI:http://zww.me/archives/25131
 Description:It is a simple WordPress theme without any plugin needed (support plugin WP-PageNavi, WP Page Numbers, WP-PostViews, wp-utf8-excerpt, Related Posts of Simple Tags, WP-RecentComments), little images, custom-menu, widgets, threaded-comments. For WordPress version 3.0+
-Version:1.3.9
+Version:1.4.0
 Author:zwwooooo
 Author URI:http://zww.me/
-Tags:custom-menu, threaded-comments, two-columns, fixed-width, right-sidebar, theme-options
+Tags:custom-menu, threaded-comments, two-columns, fluid-layout, right-sidebar, theme-options
 
 License:GNU General Public License, v2 (or newer)
 License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -68,9 +68,9 @@ hr{color:#ddd;background-color:#ddd;height:1px;border:0px;}
 #menus ul li.current-menu-item:hover > a,
 #menus ul li.current-menu-parent:hover > a{background:#222;color:#fff;text-shadow:0 1px 0 #000;}
 #menus ul li:hover > ul{display:block;}
-#menus ul ul a{background:#222;width:160px;height:auto;color:#abaaaa;text-shadow:0 0 0 #222;}
-#menus ul ul{display:none;position:absolute;top:31px;left:0;float:left;width:150px;z-index:99999;}
-#menus ul ul li{min-width:150px;}
+#menus ul ul a{background:#222;height:auto;color:#abaaaa;text-shadow:0 0 0 #222;white-space:nowrap;}
+#menus ul ul{display:none;position:absolute;top:31px;left:0;float:left;z-index:99999;}
+#menus ul ul li{float:none;}
 #menus ul ul li.current_page_item > a,
 #menus ul ul li.current-menu-ancestor > a,
 #menus ul ul li.current-menu-item > a,
@@ -88,8 +88,9 @@ hr{color:#ddd;background-color:#ddd;height:1px;border:0px;}
 .site_title{overflow:hidden;margin-bottom:30px;}
 .st_hidden .site_title{display:none;}
 .site_title h1{float:left;padding:0 0 0 10px;text-shadow:1px 1px 1px #999;font-size:28px;font-family:Georgia,"Times New Roman",Times,serif;}
+.site_title h1.header_logo{width:100%;}
 .site_title h1 a{color:#222;line-height:36px;}
-.site_title h1 .header_logo a{overflow:hidden;display:block;width:100%;height:36px;text-indent:-9999px;}
+.site_title h1.header_logo a{overflow:hidden;display:block;height:36px;text-indent:-9999px;}
 .site_title h2{float:left;height:20px;overflow:hidden;line-height:18px;padding:10px 0 0 20px;color:#222;font-size:12px;font-weight:normal;text-shadow:0 1px 0 #fff;}
 #header_image{max-width:952px;max-height:182px;margin-bottom:30px;padding:3px;border:1px solid #ccc;}
 .st_hidden #header_image{margin-top:10px;}
@@ -254,7 +255,7 @@ span#comments-addcomment a:hover{color:#4a630f;text-decoration:none;}
 .navigation{border-bottom:1px solid #fff;text-align:center;line-height:24px;padding:2px 10px;}
 .page-numbers{margin:0 5px;}
 .navigation .current{font-weight:bold;}
-#nav-below{display:inline-block;padding:20px 10px;border-top:1px solid #ddd;border-bottom:1px solid #fff;}
+#nav-below{overflow:hidden;padding:20px 10px;border-top:1px solid #ddd;border-bottom:1px solid #fff;}
 .nav-previous{float:left;width:49%;}
 .nav-next{float:right;width:49%;text-align:right;}
 
@@ -317,19 +318,27 @@ span#comments-addcomment a:hover{color:#4a630f;text-decoration:none;}
 	#menus{position:relative;padding:0 10px 0 25px;}
 	#menus ul.menus-m{display:block;}
 	#menus ul.menus-dt{overflow:hidden;display:none;z-index:9999;position:absolute;left:25px;top:0;min-width:200px;padding-top:31px;-webkit-border-radius:0 0 6px 6px;-moz-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px;}
-	#menus li{margin:0;background:#333;}
-	#menus li:first-child{padding-top:10px;}
-	#menus li a{width:200px;margin:0;border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
+	#menus li{width:240px;margin:0;background:#333;}
+	#menus ul.menus-m li{width:auto;}
+	#menus li:first-child{}
+	#menus li a{line-height:20px;padding:8px 10px;margin:0;border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
+	#menus ul li:hover > a,
 	#menus ul li.current_page_item > a,
 	#menus ul li.current-menu-ancestor > a,
 	#menus ul li.current-menu-item > a,
-	#menus ul li.current-menu-parent > a{background:#222;color:#eee;text-shadow:none;}
+	#menus ul li.current-menu-parent > a{background:transparent!important;color:#eee;text-shadow:none;}
 	#menus ul ul{position:static;display:block;}
-	#menus ul ul li, #menus ul ul ul li{width:200px;margin-left:19px;background:#333;border-left:1px solid #555;}
-	#menus ul ul a, #menus ul ul ul a{width:180px;background:#333;}
-	#menus ul ul ul li{width:180px;}
-	#menus ul ul ul a{width:160px;}
-	#menus ul ul ul li:hover > ul{display:none;}
+	#menus ul ul li, #menus ul ul ul li{width:220px;margin-left:19px;background:#333;border-left:1px solid #555;}
+	#menus ul ul a{white-space:normal;}
+	#menus ul ul a, #menus ul ul ul a{background:#333;}
+	#menus ul ul li:hover > a,
+	#menus ul ul li.current_page_item:hover > a,
+	#menus ul ul li.current-menu-ancestor:hover > a,
+	#menus ul ul li.current-menu-item:hover > a,
+	#menus ul ul li.current-menu-parent:hover > a{background:transparent;}
+	#menus ul ul ul li{width:200px;}
+	#menus ul ul ul a{width:180px;}
+		#menus ul ul ul li:hover > ul{display:none;}
 	#menus ul ul ul ul{display:none;}
 
 	/* simulate click */
