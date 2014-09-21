@@ -52,6 +52,10 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 1.4.0 =
+* Fix: A little bug in "Hide the title and description"
+* Fix: style of "#nav-below" in single post
+
 = 1.3.9 =
 * Fix: header style css
 
