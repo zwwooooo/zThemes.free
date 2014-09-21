@@ -2,6 +2,7 @@
 <div id="content">
 	<div class="post">
 		<h2 class="title title_page"><?php _e('Error 404 - Not Found', 'zbench'); ?></h2>
+		<div class="post-info-top post-info-top-nocomment"></div>
 		<div class="entry">
 			<p><?php _e('Sorry, but you are looking for something that isn&#8217;t here.', 'zbench'); ?></p>
 			<h3><?php _e('Random Posts', 'zbench'); ?></h3>

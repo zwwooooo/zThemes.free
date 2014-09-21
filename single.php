@@ -20,9 +20,13 @@
 			<?php the_content(); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page_link"><strong>' . __( 'Pages:', 'zbench' ) . '</strong>' , 'after' => '</div>' ) ); ?>
 		</div><!-- END entry -->
-		<div class="add-info">
-			<?php if(function_exists('st_related_posts')) { st_related_posts('title=<h3>'._e('Related Posts','zbench').'</h3>'); } ?>
-		</div>
+		
+		<?php if(function_exists('st_related_posts')) {
+			echo '<div class="add-info">';
+			st_related_posts('title=<h3>'._e('Related Posts','zbench').'</h3>');
+			echo '</div>';
+		} ?>
+		
 		<div class="post-info-bottom">
 			<span class="post-info-category"><?php the_category(', '); ?></span><span class="post-info-tags"><?php the_tags('', ', ', ''); ?></span>
 		</div>

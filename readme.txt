@@ -2,7 +2,7 @@
 Author:zwwooooo
 Tags:custom-menu, threaded-comments, two-columns, fixed-width, right-sidebar, theme-options
 Requires at least: 3.0.0
-Tested up to: 3.2.1
+Tested up to: 4.0.0
 
 
 == Description ==
@@ -55,6 +55,8 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 = 1.4.0 =
 * Fix: A little bug in "Hide the title and description"
 * Fix: style of "#nav-below" in single post
+* Fix: Theme Options Style for WP3.9+
+* Adjust Navi' style
 
 = 1.3.9 =
 * Fix: header style css
