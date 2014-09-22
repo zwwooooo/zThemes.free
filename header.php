@@ -32,8 +32,7 @@
 		<h2<?php if($logo) echo ' class="hidden"'; ?>><?php bloginfo('description');?></h2>
 		<div class="clear"></div>
 	</div>
-	<?php if ( get_header_image() != '' ) {
-		?>
+	<?php if ( get_header_image() != '' ) { ?>
 	<div id="header_image">
 		<div id="header_image_border">
 			<a href="<?php if($zbench_options['header_image_url']!='') { echo $zbench_options['header_image_url']; } else { echo home_url('/'); } ?>"><img src="<?php header_image(); ?>" width="950" height="180" alt="" /></a>

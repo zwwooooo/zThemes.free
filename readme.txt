@@ -1,7 +1,7 @@
 === zBench Wordpress Theme ===
 Author:zwwooooo
 Tags:custom-menu, threaded-comments, two-columns, fixed-width, right-sidebar, theme-options
-Requires at least: 3.0.0
+Requires at least: 3.8.0
 Tested up to: 4.0.0
 
 
@@ -51,6 +51,10 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 * Serbo Croatian (sr_RS): Andrijana Nikolic
 
 == Changelog ==
+
+= 1.4.1 =
+* remove back-compat for 3.4
+* update screenshot to support HiDPI
 
 = 1.4.0 =
 * Fix: A little bug in "Hide the title and description"

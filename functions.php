@@ -184,71 +184,26 @@ function zbench_setup() {
 	}
 	add_filter( 'post_thumbnail_html', 'zbench_post_image_html', 10, 3 );
 
-	global $wp_version;
-	if ( version_compare( $wp_version, '3.4', '>=' ) ) {
-	
-		// This theme allows users to set a custom background
-		add_theme_support('custom-background');
-	
-		// Custom Headers: Since WP3.4
-		$defaults = array(
-			'default-image'          => '',
-			'random-default'         => false,
-			'width'                  => 950,
-			'height'                 => 180,
-			'flex-height'            => false,
-			'flex-width'             => false,
-			'default-text-color'     => '',
-			'header-text'            => false,
-			'uploads'                => true,
-			'wp-head-callback'       => '',
-			'admin-head-callback'    => '',
-			'admin-preview-callback' => '',
-		);
-		add_theme_support( 'custom-header', $defaults );
 
-	} else { //backwards compatibility for older versions,
-	
-		// This theme allows users to set a custom background
-		add_custom_background();
-	
-		// Your changeable header business starts here
-		define( 'HEADER_TEXTCOLOR', '' );
-		// No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-		define( 'HEADER_IMAGE', '' ); // default: none IMG
+	// This theme allows users to set a custom background
+	add_theme_support('custom-background');
 
-		// The height and width of your custom header. You can hook into the theme's own filters to change these values.
-		// Add a filter to zbench_header_image_width and zbench_header_image_height to change these values.
-		define( 'HEADER_IMAGE_WIDTH', apply_filters( 'zbench_header_image_width', 950 ) );
-		define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'zbench_header_image_height', 180 ) );
-
-		// We'll be using post thumbnails for custom header images on posts and pages.
-		// We want them to be 950 pixels wide by 180 pixels tall.
-		// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-		set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-
-		// Don't support text inside the header image.
-		define( 'NO_HEADER_TEXT', true );
-
-		// Add a way for the custom header to be styled in the admin panel that controls
-		// custom headers. See zbench_admin_header_style(), below.
-		add_custom_image_header( '', 'zbench_admin_header_style' );
-		if ( ! function_exists( 'zbench_admin_header_style' ) ) {
-		//Styles the header image displayed on the Appearance > Header admin panel.
-			function zbench_admin_header_style() {
-			?>
-				<style type="text/css">
-				/* Shows the same border as on front end */
-				#headimg { }
-				/* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-					#headimg #name { }
-					#headimg #desc { }
-				*/
-				</style>
-			<?php
-			}
-		}
-	}
+	// Custom Headers: Since WP3.4
+	$defaults = array(
+		'default-image'          => '',
+		'random-default'         => false,
+		'width'                  => 950,
+		'height'                 => 180,
+		'flex-height'            => false,
+		'flex-width'             => false,
+		'default-text-color'     => '',
+		'header-text'            => false,
+		'uploads'                => true,
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-header', $defaults );
 
 } // end of zbench_setup()
 endif;
