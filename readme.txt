@@ -52,6 +52,10 @@ License URI:http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 1.4.2 =
+* add js function: Handles toggling the navigation menu for small screens
+* update screenshot
+
 = 1.4.1 =
 * remove back-compat for 3.4
 * update screenshot to support HiDPI

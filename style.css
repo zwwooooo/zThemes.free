@@ -2,7 +2,7 @@
 Theme Name:zBench
 Theme URI:http://zww.me/archives/25131
 Description:It is a simple WordPress theme without any plugin needed (support plugin WP-PageNavi, WP Page Numbers, WP-PostViews, wp-utf8-excerpt, Related Posts of Simple Tags, WP-RecentComments), little images, custom-menu, widgets, threaded-comments. For WordPress version 3.0+
-Version:1.4.1
+Version:1.4.2
 Author:zwwooooo
 Author URI:http://zww.me/
 Tags:custom-menu, threaded-comments, two-columns, fluid-layout, right-sidebar, theme-options
@@ -317,9 +317,11 @@ span#comments-addcomment a:hover{color:#4a630f;text-decoration:none;}
 	#nav{padding-top:10px;}
 	#menus{position:relative;padding:0 10px 0 25px;}
 	#menus ul.menus-m{display:block;}
-	#menus ul.menus-dt{overflow:hidden;display:none;z-index:9999;position:absolute;left:25px;top:0;min-width:200px;padding-top:31px;-webkit-border-radius:0 0 6px 6px;-moz-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px;}
+	#menus ul.menus-dt{overflow:hidden;display:none;z-index:9999;position:absolute;left:25px;top:31px;min-width:200px;-webkit-border-radius:0 0 6px 6px;-moz-border-radius:0 0 6px 6px;border-radius:0 0 6px 6px;}
+	#menus ul.toggled-on{display:block;}
 	#menus li{width:240px;margin:0;background:#333;}
-	#menus ul.menus-m li{width:auto;}
+	#menus ul.menus-m li{width:auto;cursor:pointer;}
+	#menus ul.b-toggled-on li{background:#333;color:#fff;font-weight:700;text-shadow:0 1px 0 #000;}
 	#menus li:first-child{}
 	#menus li a{line-height:20px;padding:8px 10px;margin:0;border:none;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
 	#menus ul li:hover > a,
@@ -341,9 +343,9 @@ span#comments-addcomment a:hover{color:#4a630f;text-decoration:none;}
 		#menus ul ul ul li:hover > ul{display:none;}
 	#menus ul ul ul ul{display:none;}
 
-	/* simulate click */
+	/* simulate click
 	#menus:active .menus-dt{display:block;}
-	#menus .menus-dt:hover{display:block;}
+	#menus .menus-dt:hover{display:block;} */
 
 	#search{bottom:0;right:25px;width:180px;-webkit-box-shadow:0 0 0 #333;-moz-box-shadow:0 0 0 #333;box-shadow:0 0 0 #333;-webkit-border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;border-bottom:none;}
 	#search input#s{width:140px;}
