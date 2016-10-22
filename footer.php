@@ -5,7 +5,7 @@
 	<footer id="footer" class="footer">
 		<div class="footer-copyright">
 			<?php _e('Copyright', 'zsimple'); ?> &copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?>.
-			<?php printf(__('Powered by %1$s and %2$s', 'zsimple'), '<a href="http://zww.me">zSimple</a>', '<a href="http://wordpress.org/">WordPress</a>'); ?>.
+			<?php printf(__('由 %1$s 和 %2$s 驱动', 'zsimple'), '<a href="http://zww.me">zSimple</a>', '<a href="http://wordpress.org/">WordPress</a>'); ?>.
 		</div>
 
 		<span id="scroll" rel="nofollow"></span>

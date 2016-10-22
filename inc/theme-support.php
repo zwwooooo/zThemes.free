@@ -119,27 +119,27 @@ function zsimple_wp_title($title, $sep) {
 		$title = "$title $sep $site_description";
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$havepage = sprintf( ' - Page %s ', max( $paged, $page ) );
+		$havepage = sprintf( ' - 第%s页 ', max( $paged, $page ) );
 	}
 
 	$title_split=explode(' | ', $title);
 	if ( is_category() ) {
-		$title = 'Catetory Archives: ' . $title_split[0] . $havepage . " $sep " .  $title_split[1];
+		$title = '分类: ' . $title_split[0] . $havepage . " $sep " .  $title_split[1];
 	} elseif ( is_tag() ) {
-		$title = 'Tag Archives: ' . $title_split[0] . $havepage . " $sep " .  $title_split[1];
+		$title = '标签: ' . $title_split[0] . $havepage . " $sep " .  $title_split[1];
 	} elseif ( is_search() ) {
-		$title = 'Search Results for: ' . $title_split[0] . $havepage . " $sep " .  $title_split[2];
+		$title = '搜索: ' . $title_split[0] . $havepage . " $sep " .  $title_split[2];
 	} elseif ( is_date() ) {
 		if(is_day()) {
-			$date = date('M',get_the_date('U')).get_the_date(' jS, Y');
+			$date = the_time(get_option('date_format')); //date('M',get_the_date('U')).get_the_date(' jS, Y');
 		} elseif(is_year()) {
 			$date = get_the_date('Y');
 		} else {
-			$date = date('M',get_the_date('U')).get_the_date(', Y');
+			$date = get_the_date('Y年m月'); //;
 		}
-		$title = 'Date Archives: ' . $date . $havepage . " $sep " .  $site_title;
+		$title = '归档: ' . $date . $havepage . " $sep " .  $site_title;
 	} elseif ( is_author() ) {
-		$title = 'Author Archives: ' . $title_split[0] . $havepage . " $sep " .  $title_split[1];
+		$title = '作者: ' . $title_split[0] . $havepage . " $sep " .  $title_split[1];
 	} else {
 		$title = "$title" . $havepage;
 	}
@@ -170,27 +170,27 @@ function zsimple_wp_list_categories(){
  */
 function zsimple_widgets_init() {
 	register_sidebar(array(
-		'name' => __('Primary Widget Area','zsimple'),
+		'name' => __('主小工具区域','zsimple'),
 		'id' => 'primary-widget-area',
-		'description' => __('The primary widget area','zsimple'),
+		'description' => __('此小工具区域在最上面，所有页面显示。','zsimple'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Singular Widget Area','zsimple'),
+		'name' => __('单一页面小工具区域','zsimple'),
 		'id' => 'singular-widget-area',
-		'description' => __('The singular widget area','zsimple'),
+		'description' => __('在主小工具区域下面。只在文章、页面显示。','zsimple'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>'
 	));
 	register_sidebar(array(
-		'name' => __('Not Singular Widget Area','zsimple'),
+		'name' => __('列表页面小工具区域','zsimple'),
 		'id' => 'not-singular-widget-area',
-		'description' => __('Not the singular widget area','zsimple'),
+		'description' => __('在单一页面小工具区域下面。除了单一页面外都显示。','zsimple'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle">',

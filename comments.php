@@ -40,9 +40,9 @@
 <?php else : // this is displayed if there are no comments so far ?>
 
 	<?php if ('open' == $post->comment_status) : //If comments are open, but there are no comments. ?>
-		<h3 id="comments"><?php comments_number('0 comment', '1 comment', '% comments');?></h3>
+		<h3 id="comments"><?php comments_number('没有评论', '1条评论', '%条评论');?></h3>
 	<?php elseif (!is_page()) : //If comments are closed	?>
-		<h3 id="comments">Comments are closed.</h3>
+		<h3 id="comments">评论已关闭。</h3>
 	<?php endif; ?>
 	
 <?php endif; ?>
@@ -57,19 +57,19 @@
 			</div>
 		
 			<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-					<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
+					<p>你必须<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">登入</a>才能评论。</p>
 			<?php else : ?>
 			<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 			
 				<?php if ( $user_ID ) : ?>
-				<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
+				<p>当前登入: <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>。 <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">登出 &raquo;</a></p>
 				<?php else : ?>
 				<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-				<label for="author"><small>Name <?php if ($req) echo "*"; ?></small></label></p>
+				<label for="author"><small>昵称 <?php if ($req) echo "*"; ?></small></label></p>
 				<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-				<label for="email"><small>Mail <?php if ($req) echo "*"; ?></small></label></p>
+				<label for="email"><small>邮箱 <?php if ($req) echo "*"; ?></small></label></p>
 				<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-				<label for="url"><small>Website</small></label></p>
+				<label for="url"><small>网站</small></label></p>
 				<?php endif; ?>
 				<?php if (function_exists('zoo_smiley_button')) zoo_smiley_button(true, '<p class="smiley">', '</p>'); ?>
 				<div class="textarea" id="textareaID">
@@ -84,7 +84,7 @@
 						<a href="javascript:SIMPALED.Editor.quote()">Quote</a>
 					</div>
 				</div>
-				<p><input name="submit" type="submit" id="submit" tabindex="5" value="SUBMIT / Ctrl + Enter" /><?php comment_id_fields(); ?></p>
+				<p><input name="submit" type="submit" id="submit" tabindex="5" value="提交" /><?php comment_id_fields(); ?></p>
 				<?php do_action('comment_form', $post->ID); ?>
 				
 			</form>

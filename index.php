@@ -6,15 +6,15 @@
 
 	<?php if ( is_home() || is_front_page() ){ ?>
 			<nav class="breadcrumbs">
-				You are here: <a class="first_home" rel="nofollow" title="Go to homepage" href="<?php echo home_url('/'); ?>">Home</a>
-				<?php if ($paged > 1 ) echo '&raquo; All posts | Page ', $paged; ?>
+				您在这里: <a class="first_home" rel="nofollow" title="返回首页" href="<?php echo home_url('/'); ?>">首页</a>
+				<?php if ($paged > 1 ) echo '&raquo; 全部文章 | 第', $paged, '页'; ?>
 			</nav>
 	<?php } ?>
 
 	<?php if (is_search()) : ?>
 		<nav class="breadcrumbs">
-			You are here: <a class="first_home" rel="nofollow" title="Go to homepage" href="<?php echo home_url('/'); ?>">Home</a>
-			&raquo; <?php echo sprintf( '<h1>Search Results for <strong>%s</strong></h1>', get_search_query() ); ?>
+			您在这里: <a class="first_home" rel="nofollow" title="返回首页" href="<?php echo home_url('/'); ?>">首页</a>
+			&raquo; <?php echo sprintf( '<h1>搜索结果: <strong>%s</strong></h1>', get_search_query() ); ?>
 			<?php if ($paged > 1) echo '| Page ', $paged; ?>
 		</nav>
 	<?php endif; ?>
@@ -49,18 +49,18 @@
 			<div class="post-meta">
 				<?php if ($paged<2) {
 					if (is_sticky()) {
-						echo '<span class="sticky-mark">Sticky post!</span>';
+						echo '<span class="sticky-mark">文章置顶!</span>';
 					} else {
 						echo zoo_time_since('post',get_the_time('U'),7,'',true);
 					}
 				} else {
-					echo date('M',get_the_time('U')), get_the_time(' jS, Y');
+					the_time(get_option('date_format')); //echo date('M',get_the_time('U')), get_the_time(' jS, Y');
 				}
 				if (get_the_category()) { echo ' | '; the_category(', '); }
 				?>
 				<?php if (function_exists('the_views')) { echo '| '; the_views(); } ?>
-				| <?php comments_popup_link('No Comment', '1 Comment', '% Comments'); ?>
-				<?php edit_post_link('Edit', '[', ']'); ?>
+				| <?php comments_popup_link('没有评论', '1条评论', '%条评论'); ?>
+				<?php edit_post_link('编辑', '[', ']'); ?>
 			</div>
 			<?php if ($class) { ?>
 				<a class="thumb-img" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $thumb_img_src; ?>);"></a>
@@ -73,17 +73,11 @@
 <?php else: ?>
 
 	<article class="post">
+		<div class="post-header">
+			<h2 class="title" style="padding-left: 0;">未找到</h2>
+		</div>
 		<div class="entry">
-			<p>Sorry, but you are looking for something that isn't here.</p>
-			<p><strong>Random Posts</strong></p>
-			<ul>
-				<?php
-					$rand_posts = get_posts('numberposts=5&orderby=rand');
-					foreach( $rand_posts as $post ) :
-				?>
-				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-				<?php endforeach; ?>
-			</ul>
+			<p>抱歉，没有符合您搜索条件的结果。请换其它关键词再试。</p>
 		</div>
 	</article>
 

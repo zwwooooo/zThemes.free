@@ -14,9 +14,9 @@ class zoo_widget_recent_comments extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'zoo_widget_recent_comments', // Base ID
-			'zSimple: Recent Comments', // Name
+			'zSimple: 最新评论', // Name
 			array( // Args
-				'description' => '',
+				'description' => '带头像显示的最新评论',
 			)
 		);
 	}
@@ -57,7 +57,7 @@ class zoo_widget_recent_comments extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = 'Recent Comments';
+		$title = '最新评论';
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		}
@@ -67,9 +67,9 @@ class zoo_widget_recent_comments extends WP_Widget {
 		}
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label> 
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">标题:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>">Number:</label> 
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>">显示数量:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" value="<?php echo $number; ?>">
 		</p>
 		<?php 
@@ -113,7 +113,7 @@ class zoo_widget_recently_updated_posts extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'zoo_widget_recently_updated_posts', // Base ID
-			'zSimple: Recently Updated Posts', // Name
+			'zSimple: 老文章更新', // Name
 			array( // Args
 				'description' => '',
 			)
@@ -160,7 +160,7 @@ class zoo_widget_recently_updated_posts extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = 'Recently Updated Posts';
+		$title = '老文章更新';
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		}
@@ -174,11 +174,11 @@ class zoo_widget_recently_updated_posts extends WP_Widget {
 		}
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label> 
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">标题:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>">Number:</label> 
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>">显示数量:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" value="<?php echo $number; ?>">
-			<label for="<?php echo $this->get_field_id( 'days' ); ?>">How many days ago:</label> 
+			<label for="<?php echo $this->get_field_id( 'days' ); ?>">多少天以前的文章:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'days' ); ?>" name="<?php echo $this->get_field_name( 'days' ); ?>" type="number" value="<?php echo $days; ?>">
 		</p>
 		<?php 
@@ -223,7 +223,7 @@ class zoo_widget_mostactive extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'zoo_widget_mostactive', // Base ID
-			'zSimple: Most Active Friends', // Name
+			'zSimple: 读者墙', // Name
 			array( // Args
 				'description' => '',
 			)
@@ -270,7 +270,7 @@ class zoo_widget_mostactive extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = 'Most Active Friends';
+		$title = '读者墙';
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		}
@@ -284,11 +284,11 @@ class zoo_widget_mostactive extends WP_Widget {
 		}
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label> 
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">标题:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>">Number:</label> 
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>">显示数量:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" value="<?php echo $number; ?>">
-			<label for="<?php echo $this->get_field_id( 'months' ); ?>">How many months:</label> 
+			<label for="<?php echo $this->get_field_id( 'months' ); ?>">多少月内:</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'months' ); ?>" name="<?php echo $this->get_field_name( 'months' ); ?>" type="number" value="<?php echo $months; ?>">
 		</p>
 		<?php 

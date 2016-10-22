@@ -2,23 +2,14 @@
 
 <div id="content" class="col-8 content">
 	<nav class="breadcrumbs">
-		You are here: <a class="first_home" rel="nofollow" title="Go to homepage" href="<?php echo home_url('/'); ?>">Home</a>
-		&raquo; 404 Error - Not found
+		您在这里: <a class="first_home" rel="nofollow" title="返回首页" href="<?php echo home_url('/'); ?>">首页</a>
+		&raquo; 未找到
 	</nav>
 
 	<article class="post">
-		<h1 class="title" style="padding-left: 0;">404 Error - Not found</h1>
+		<h1 class="title" style="padding-left: 0;">未找到</h1>
 		<div class="entry">
-			<p>Sorry, but you are looking for something that isn't here.</p>
-			<p><strong>Random Posts</strong></p>
-			<ul>
-				<?php
-					$rand_posts = get_posts('numberposts=5&orderby=rand');
-					foreach( $rand_posts as $post ) :
-				?>
-				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-				<?php endforeach; ?>
-			</ul>
+			<p>抱歉，没有符合您搜索条件的结果。请换其它关键词再试。</p>
 		</div>
 	</article>
 

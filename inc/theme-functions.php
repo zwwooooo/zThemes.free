@@ -70,7 +70,7 @@ function zoo_content_nav( $nav_id ) {
 			<?php if(function_exists('pagenavi')) { ?>
 				<?php pagenavi(); ?>
 			<?php } else { ?>
-				<?php posts_nav_link(' | ', __('&laquo; Previous page'), __('Next page &raquo;')); ?>
+				<?php posts_nav_link(' | ', __('&laquo; 前一页'), __('后一页 &raquo;')); ?>
 			<?php } ?>
 		</div>
 	<?php endif;
@@ -124,9 +124,19 @@ function zoo_time_since( $type='post', $older_date, $days=30, $NEED_ID='', $new=
 	if ($timediff <= 60*60*24*$days) { // Show Time Diff
 		$output = ($type=='post' && $new==true && $timediff <= 60*60*24) ? '<span class="post-new">NEW!</span>' : human_time_diff($older_date,current_time('timestamp')).'前';
 	} else { // Show Datetime
-		$output = ($tf=='get_post_time') ? date('M',$older_date).$tf($tformat,$NEED_ID) : $tf($tformat,$NEED_ID);
+		$output = ($tf=='get_post_time') ? get_the_time(get_option('date_format')) : $tf($tformat,$NEED_ID);
 	}
 	return $output;
+}
+
+/**
+ * 在archive list页面获取 userdata
+ */
+function get_userdata_in_author_archive() {
+	if (is_author()) { //work in wp2.8+
+		return (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
+	}
+	return false;
 }
 
 /**
@@ -174,7 +184,7 @@ function zoo_rc_comments($show_comments = 8, $my_email = '', $get_comments_num=1
 			}
 		}
 	}
-	$output=($output == '') ? '<li>No data.</li>' : $output;
+	$output=($output == '') ? '<li>没有找到。</li>' : $output;
 	return $output;
 }
 
@@ -207,7 +217,7 @@ function zoo_mostactive($limit_num = 12, $months = 1) {
 			. '">'.get_avatar($count->comment_author_email,$size='40',$default='',$title_alt).'</a>';
 		}
 	}
-	$output=($output == '') ? 'No data.' : $output;
+	$output=($output == '') ? '没有找到。' : $output;
 	return $output;
 }
 
@@ -255,7 +265,7 @@ function zoo_recently_updated_posts($num=10, $days=7) {
 	endwhile;
 	wp_reset_query();
 	if ( false != $cache_expire ) wp_cache_set('recently_updated_posts', $output, 'simple_wp_cache', $cache_expire);
-	$output = ($output == '') ? '<li>No data.</li>' : $output;
+	$output = ($output == '') ? '<li>没有找到。</li>' : $output;
 
 	return $output;
 }
@@ -427,23 +437,6 @@ add_action('save_post', 'clear_db_cache_archives_list'); // 新发表文章/修�
 // Content
 // -----------------------------------------------
 
-/**
- * 文章末加版权或者其他，Feed也有
- * @param  [type] $content [description]
- * @return [type]          [description]
- */
-function insertFootNote($content) {
-	global $post;
-	if(is_single() || is_feed()) {
-		$wzlj = get_permalink($post->ID);
-		$content.= '<p class="announce">';
-		$content.= '<span><strong>声明:</strong></span> 除非注明，<a href="http://zww.me/">ZWWoOoOo</a>文章均为原创，转载请以链接形式标明本文地址';
-		$content.= '<br />本文地址: <a href="' . $wzlj . '">' . $wzlj . '</a>';
-		$content.= '</p>';
-	}
-	return $content;
-}
-add_filter ('the_content', 'insertFootNote');
 
 
 // -----------------------------------------------
@@ -660,7 +653,6 @@ function mytheme_comment($comment, $args, $depth) {
 //主评论计数器初始化 begin - by zwwooooo
 	global $commentcount,$page;
 	if(!$commentcount) { //初始化楼层计数器
-		#$page = ( !empty($in_comment_loop) ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args ); //获取当前评论列表页码
 		$page = ( get_query_var('cpage') ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args ); //获取当前评论列表页码
 		$cpp=get_option('comments_per_page'); //获取每页评论显示数量
 		$commentcount = $cpp * ($page - 1);
@@ -764,7 +756,6 @@ function mytheme_comment_top3($comment, $args, $depth) {
 //主评论计数器初始化 begin - by zwwooooo
 	global $commentcount_top,$page;
 	if(!$commentcount_top) { //初始化楼层计数器
-		#$page = ( !empty($in_comment_loop) ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args ); //获取当前评论列表页码
 		$page = ( get_query_var('cpage') ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args ); //获取当前评论列表页码
 		$cpp=get_option('comments_per_page'); //获取每页评论显示数量
 		$commentcount_top = $cpp * ($page - 1);
@@ -858,5 +849,3 @@ function mytheme_comment_top3($comment, $args, $depth) {
 		break;
 	}
 }
-
-

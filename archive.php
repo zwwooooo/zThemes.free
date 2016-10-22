@@ -5,9 +5,9 @@
 <?php if (have_posts()) : ?>
 
 	<?php
-	$home = 'You are here: <a class="first_home" rel="nofollow" title="Go to homepage" href="' . home_url('/') . '">Home</a>';
-	$categories = (get_page_by_path('categories')) ? ' &raquo; <a href="'.home_url('/categories').'">All Categories</a>' : '';
-	$tags= (get_page_by_path('tags')) ? ' &raquo; <a href="'.home_url('/tags').'">All Tags</a>' : '';
+	$home = '您在这里: <a class="first_home" rel="nofollow" title="返回首页" href="' . home_url('/') . '">首页</a>';
+	$categories = (get_page_by_path('categories')) ? ' &raquo; <a href="'.home_url('/categories').'">全部分类</a>' : '';
+	$tags= (get_page_by_path('tags')) ? ' &raquo; <a href="'.home_url('/tags').'">全部标签</a>' : '';
 
 	if ( is_category() ) {
 		$breadcrumbs = single_cat_title( '', false );
@@ -27,23 +27,23 @@
 	} elseif ( is_date() ) {
 		$breadcrumbs='';
 		if(is_day()) {
-			$breadcrumbs = date('M',get_the_date('U')).get_the_date(' jS, Y');
+			$breadcrumbs = get_the_date(get_option('date_format'));
 		} elseif(is_year()) {
-			$breadcrumbs = get_the_date('Y');
+			$breadcrumbs = get_the_date('Y年');
 		} else {
-			$breadcrumbs = date('M',get_the_date('U')).get_the_date(', Y');
+			$breadcrumbs = get_the_date('Y年m月');
 		}
-		$breadcrumbs = $home. ' &raquo; Date Archives: <h1>' .$breadcrumbs. '</h1>';
+		$breadcrumbs = $home. ' &raquo; 归档: <h1>' .$breadcrumbs. '</h1>';
 	} elseif ( is_author() ) {
 		$curauth = get_userdata_in_author_archive();
-		$breadcrumbs = $home. ' &raquo; Archives for <h1><a href="' . esc_url( get_author_posts_url( get_the_author_meta('ID',$curauth->ID) ) ). '" title="' .esc_attr( $curauth->display_name ). '" rel="author">' .$curauth->display_name. '</a></h1>';
+		$breadcrumbs = $home. ' &raquo; 作者: <h1><a href="' . esc_url( get_author_posts_url( get_the_author_meta('ID',$curauth->ID) ) ). '" title="' .esc_attr( $curauth->display_name ). '" rel="author">' .$curauth->display_name. '</a></h1>';
 	} else {
-		$breadcrumbs=$home. ' &raquo; Blog Archives';
+		$breadcrumbs=$home. ' &raquo; 博客归档';
 	}
 	?>
 	<nav class="breadcrumbs">
 		<?php echo $breadcrumbs; ?>
-		<?php if ($paged > 1 ) echo ' | Page ', $paged; ?>
+		<?php if ($paged > 1 ) echo ' | 第', $paged, '页'; ?>
 	</nav>
 
 	<?php while (have_posts()) : the_post();?>
@@ -74,14 +74,14 @@
 				<p><?php echo zoo_substr(strip_tags(apply_filters('the_content', $post->post_content)), 0, $num); ?></p>
 			</div>
 			<div class="post-meta">
-				<?php echo date('M',get_the_time('U')), get_the_time(' jS, Y'); ?>
+				<?php the_time(get_option('date_format')); //echo date('M',get_the_time('U')), get_the_time(' jS, Y'); ?>
 				| <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><?php the_author(); ?></a>
 				<?php
 				if (get_the_category()) { echo ' | '; the_category(', '); }
 				?>
 				<?php if (function_exists('the_views')) { echo '| '; the_views(); } ?>
-				| <?php comments_popup_link('0 Comment', '1 Comment', '% Comment'); ?>
-				<?php edit_post_link('Edit', '[', ']'); ?>
+				| <?php comments_popup_link('没有评论', '1条评论', '%条评论'); ?>
+				<?php edit_post_link('编辑', '[', ']'); ?>
 			</div>
 			<?php if ($class) { ?>
 				<a class="thumb-img" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $thumb_img_src; ?>);"></a>
@@ -94,17 +94,11 @@
 <?php else: ?>
 
 	<article class="post">
+		<div class="post-header">
+			<h2 class="title" style="padding-left: 0;">未找到</h2>
+		</div>
 		<div class="entry">
-			<p>Sorry, but you are looking for something that isn't here.</p>
-			<p><strong>Random Posts</strong></p>
-			<ul>
-				<?php
-					$rand_posts = get_posts('numberposts=5&orderby=rand');
-					foreach( $rand_posts as $post ) :
-				?>
-				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-				<?php endforeach; ?>
-			</ul>
+			<p>抱歉，没有符合您搜索条件的结果。请换其它关键词再试。</p>
 		</div>
 	</article>
 

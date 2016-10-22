@@ -7,7 +7,7 @@
 
 <div id="content" class="col-8 content">
 	<nav class="breadcrumbs">
-		You are here: <a class="first_home" rel="nofollow" title="Go to homepage" href="<?php echo home_url('/'); ?>">Home</a>
+		您在这里: <a class="first_home" rel="nofollow" title="返回首页" href="<?php echo home_url('/'); ?>">首页</a>
 		&raquo; <?php the_title(); ?>
 	</nav>
 
@@ -19,9 +19,9 @@
 		</div>
 		<div class="entry">
 			<?php the_content(); ?>
-			<?php wp_link_pages('before=<div class="wp_link_pages"><strong>'. __('Pages:', 'zsimple') . '</strong>&after=</div>&next_or_number=number&pagelink=<span class="page_number">%</span>'); ?>
+			<?php wp_link_pages('before=<div class="wp_link_pages"><strong>'. __('分页: ', 'zsimple') . '</strong>&after=</div>&next_or_number=number&pagelink=<span class="page_number">%</span>'); ?>
 			<div id="tags">
-				<h3>Tags</h3>
+				<h3>全部标签</h3>
 				<div class="tags">
 					<?php
 					$zoo_tag_cloud_new = wp_tag_cloud( array(
