@@ -1,3 +1,7 @@
+===============================
+     zSimple 中文增强版
+===============================
+
 === zSimple Wordpress Theme ===
 Author:zwwooooo
 Tags:custom-menu, threaded-comments, two-columns, fixed-layout, right-sidebar, theme-options, responsive-layout
@@ -34,8 +38,3 @@ zSimple has theme options page: Go into your Wordpress Admin, navigate to 'Appea
 
 == Language Package: (Thx for volunteers) ==
 * Chinese (zh_CN): zwwooooo
-
-== Changelog ==
-
-= 1.0.0 =
-zSimple released.
