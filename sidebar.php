@@ -23,12 +23,6 @@ global $zsimple_theme_options;
 			<?php endif; ?>
 		<?php } else {	?>
 			<?php if ( !dynamic_sidebar('not-singular-widget-area') ) : ?>
-				<div class="widget">
-					<h3>Recent Comments</h3>
-					<ul class="zsimple-rc">
-						<?php zoo_wp_cache( 'zoo_rc_comments', 'simple_wp_cache', zoo_rc_comments(5), 0); ?>
-					</ul>
-				</div>
 			<?php endif; ?>
 		<?php }	?>
 
