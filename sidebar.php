@@ -1,7 +1,9 @@
 <?php
 global $zsimple_theme_options;
+if ( isset($zsimple_theme_options['page_loading']) && $zsimple_theme_options['page_loading'] ) {
 ?>
-<script>(function(b,a,c){b(function(){b(".progressbar i").css("width","75%");});})(jQuery,window);</script>
+	<script>(function(b,a,c){b(function(){b(".progressbar i").css("width","75%");});})(jQuery,window);</script>
+<?php } ?>
 
 <div class="col-4">
 	<aside class="sidebar">
@@ -32,4 +34,8 @@ global $zsimple_theme_options;
 	</aside>
 </div>
 
-<script>(function(b,a,c){b(function(){b(".progressbar i").css("width","85%");});})(jQuery,window);</script>
+<?php
+if ( isset($zsimple_theme_options['page_loading']) && $zsimple_theme_options['page_loading'] ) {
+?>
+	<script>(function(b,a,c){b(function(){b(".progressbar i").css("width","85%");});})(jQuery,window);</script>
+<?php } ?>

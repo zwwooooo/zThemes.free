@@ -46,15 +46,15 @@ add_theme_support( 'post-thumbnails' );
  * post_thumbnail by zwwooooo
  */
 function zoo_post_thumbnail($size = 'thumbnail', $return = 'img', $use_default = false, $custom_default = '' ){
-	global $post;
+	global $post, $zsimple_theme_options;
 	
 	if( has_post_thumbnail() ){
 		$timthumb_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size);
 		$post_timthumb_src = $timthumb_src[0];
 	} elseif ($auto_thumb_img_src = zoo_auto_thumb_img_src()) {
 			$post_timthumb_src = $auto_thumb_img_src;
-	} elseif ($use_default == true) {
-		$post_timthumb_src =  get_template_directory_uri() . '/img/thumb_default.png';
+	} elseif ( isset($zsimple_theme_options['default_thumb']) && !empty($zsimple_theme_options['default_thumb']) ) {
+		$post_timthumb_src = $zsimple_theme_options['default_thumb'];
 		if ($custom_default) $post_timthumb_src = $custom_default;
 	} else {
 		$post_timthumb_src = '';
@@ -72,7 +72,10 @@ function zoo_post_thumbnail($size = 'thumbnail', $return = 'img', $use_default =
  * Auto Thumbnail
  */
 function zoo_auto_thumb_img_src($size = 'thumbnail') {
-	global $post;
+	global $post, $zsimple_theme_options;
+	if ( !isset($zsimple_theme_options['auto_thumb']) || empty($zsimple_theme_options['auto_thumb']) )
+		return;
+
 	$args = array(
 		'numberposts' => 1,
 		'order'=> 'ASC',

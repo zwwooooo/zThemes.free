@@ -49,7 +49,7 @@
 			<div class="post-meta">
 				<?php if ($paged<2) {
 					if (is_sticky()) {
-						echo '<span class="sticky-mark">文章置顶!</span>';
+						echo '<span class="sticky-mark">置顶!</span>';
 					} else {
 						echo zoo_time_since('post',get_the_time('U'),7,'',true);
 					}

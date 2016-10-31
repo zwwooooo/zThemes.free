@@ -13,8 +13,7 @@ if ( 'POST' != $_SERVER['REQUEST_METHOD'] ) {
 }
 
 /** Sets up the WordPress Environment. */
-#require( dirname(__FILE__) . '/../../../wp-load.php' ); // 此 comments-ajax.php 位於主題資料夾,所以位置已不同
-require( realpath(dirname(dirname(dirname(dirname($_SERVER["SCRIPT_FILENAME"]))))).'/wp-load.php' ); // 此 comments-ajax.php 位於主題資料夾,所以位置已不同
+require( realpath(dirname(dirname(dirname(dirname($_SERVER["SCRIPT_FILENAME"]))))).'/wp-load.php' );
 
 nocache_headers();
 
@@ -32,7 +31,7 @@ $status = get_post_status($post);
 
 $status_obj = get_post_status_object($status);
 
-/* if ( !comments_open($comment_post_ID) ) {
+ if ( !comments_open($comment_post_ID) ) {
 	do_action('comment_closed', $comment_post_ID);
 	wp_die( __('Sorry, comments are closed for this item.') );
 } elseif ( 'trash' == $status ) {
@@ -44,15 +43,14 @@ $status_obj = get_post_status_object($status);
 } elseif ( post_password_required($comment_post_ID) ) {
 	do_action('comment_on_password_protected', $comment_post_ID);
 	wp_die(__('Password Protected')); // 將 exit 改為錯誤提示
-} else { */
+} else { 
 	do_action('pre_comment_on_post', $comment_post_ID);
-//}
+}
 
 $comment_author       = ( isset($_POST['author']) )  ? trim(strip_tags($_POST['author'])) : null;
 $comment_author_email = ( isset($_POST['email']) )   ? trim($_POST['email']) : null;
 $comment_author_url   = ( isset($_POST['url']) )     ? trim($_POST['url']) : null;
 $comment_content      = ( isset($_POST['comment']) ) ? trim($_POST['comment']) : null;
-// $edit_id              = ( isset($_POST['edit_id']) ) ? $_POST['edit_id'] : null; // 提取 edit_id，再编辑功能 by willin
 
 // If the user is logged in
 $user = wp_get_current_user();
@@ -87,10 +85,6 @@ if ( '' == $comment_content )
 
 $comment_parent = isset($_POST['comment_parent']) ? absint($_POST['comment_parent']) : 0;
 
-/* 公告栏禁止访客发主评论 by zwwooooo */
-if (!$user->ID && $comment_post_ID==25111 && $comment_parent==0)
-	wp_die(__('抱歉，这里只有博主才能发公告/吐槽（主评论），您只能回复博主的某条公告。'));
-
 $commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'comment_parent', 'user_ID');
 
 $comment_id = wp_new_comment( $commentdata );
@@ -116,8 +110,6 @@ $tmp_c = get_comment($tmp_c->comment_parent);
 	<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
-			<?php /* <img src="http://im.zww.im/gravatar/cache/avatar/<?php echo md5(strtolower($comment->comment_author_email)); ?>" alt="" class='avatar' />
-			printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) */  ?>
 			<cite class="fn"><?php comment_author_link(); ?></cite>
 			<span class="comment-meta commentmetadata"><?php printf(__('%1$s %2$s'), get_comment_date(),  get_comment_time()); ?> <a rel="nofollow" href="<?php echo get_permalink($comment->comment_post_ID).'/comment-page-'.($page+1).'#comment-'.$comment->comment_ID; //esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">#</a><?php edit_comment_link(__('(Edit)'),'  ',''); ?></span>
 		</div>

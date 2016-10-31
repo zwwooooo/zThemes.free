@@ -2,9 +2,7 @@
 
 
 //本js文件常用参数
-// var zdo_themeurl=zoo_themeurl();
 var zdo_themeurl = zdo_ajax_url.theme_url;
-// alert(zdo_isMobile.any());
 
 //============================================== jq 函数
 
@@ -176,17 +174,15 @@ zdo_modules_S.Archives = function() {
 	});
 };
 
-//////// z \\\\\\\\ 评论 ajax 提交（原 comments-ajax-zww-dev.js）
+//////// z \\\\\\\\ 评论 ajax 提交
 zdo_modules_S.AjaxComment = function() {
 	var $commentform = $('#commentform'),
 			comment_ajax_php_file = 'comments-ajax.php';
 			ajax_php_url=zdo_themeurl+'/'+comment_ajax_php_file,
-			// wp_url = ajax_php_url.substr(0,ajax_php_url.indexOf('wp-content')),
-			// wp_url = $commentform.attr('action').replace('wp-comments-post.php', ''), //mufeng的另一种获取方法
 			pic_sb = ajax_php_url.replace(comment_ajax_php_file,'')+'img/spinner.gif',//提交ajax_c_loading图片位置
 			pic_no = zdo_themeurl+'/img/no.png', // 错误 icon
 			pic_ys = zdo_themeurl+'/img/yes.png', // 成功 icon
-			loading_htm = '<div id="ajax_c_loading" style="display:none;margin-bottom:10px;padding:8px;background-color:#fff;border:1px solid #e4e5e1;"><span id="ajax_c_zl" style="color:#999;"></span> | Submitting, please wait... 嘿咻!嘿咻!努力提交中...</div>',
+			loading_htm = '<div id="ajax_c_loading" style="display:none;margin-bottom:10px;padding:8px;background-color:#fff;border:1px solid #e4e5e1;"><span id="ajax_c_zl" style="color:#999;"></span> | Submitting, please wait... 努力提交中...</div>',
 			ok_htm = '<div id="ajax_c_ok" style="display:none;margin-bottom:10px;padding:8px;background:#fff;border:1px solid #e4e5e1;"><img src="' + pic_ys + '" style="vertical-align:middle;" alt="" /> Submit success! 提交成功!</div>',
 			error_htm = '<div id="ajax_c_error" style="display:none;margin-bottom:10px;padding:8px;background:#fff;border:1px solid #e4e5e1;color:#f00;"><img src="' + pic_no + '" style="vertical-align:middle;" alt="" /> <span>#</span></div>',
 			num_z = 1;
@@ -343,30 +339,6 @@ zdo_modules_S.AjaxCommentLoad = function() {
 	});
 };
 
-//////// z \\\\\\\\ Others
-/*zdo_modules_S.Others = function() {
-	$('#thecomments').on('mouseover', '.comment-content a', function(){
-		var href=$(this).attr('href').split('#comment-');
-		console.log(href);
-		if ( href.length > 1) {
-			$('#footer').after('<div id="replyto" style="border:3px solid #5dbef7;padding:5px 10px;position:absolute;width:450px;height:auto;background:#fff;z-index:9999;"><span style="position:absolute;top:-15px;left:5px;width:3px;height:15px;background:#5dbef7;"></span><div id="replyto_content">Loading...</div></div>');
-
-			//// wp rest api
-			$.getJSON(zdo_ajax_url.home_url+'/wp-json/wp/v2/comments/'+href[1],
-				function (data) {
-					// console.log(data.id);
-					$('#replyto_content').html(data.content.rendered);
-				}
-			);
-		}
-	}).mousemove(function(e){
-		$('#replyto').css({left:e.pageX-2,top:e.pageY+10});
-	}).mouseout(function(){
-		$('#replyto').remove();
-	});
-};*/
-
-// jQuery(document).ready(function($) { //change to use $(function() {
 $(function() {
 	if ( $('#archives').length ) {
 		zdo_modules_S.Archives();
@@ -375,7 +347,6 @@ $(function() {
 		zdo_modules_S.AjaxComment();
 		zdo_modules_S.ReplyQuoteAndRespond();
 		zdo_modules_S.AjaxCommentLoad();
-		// zdo_modules_S.Others();
 	}
 });
 
@@ -438,32 +409,7 @@ $(function() {
 	window['SIMPALED'] = {};
 	window['SIMPALED']['Editor'] = Editor;
 })();
-// (function(){
-		// if(document.getElementById('commentform')||0)
-				// document.getElementById('commentform').onsubmit=function(){
-						// var myField=document.getElementById('comment');
-						// var str=myField.value;
-						// var start=str.indexOf('<code>');
-						// var end=str.indexOf('</code>');
-						// if(start>-1&&end>-1&&start<end){
-								// myField.value='';
-						// }else return;
-						// while(end!=-1){
-								// myField.value+=str.substring(0,start+6)+str.substring(start+6,end).replace(/<(?=[^>]*?>)/gi,'&lt;').replace(/>/gi,'&gt;');
-								// str=str.substring(end+7,str.length);
-								// start=str.indexOf('<code>')==-1?-6:str.indexOf('<code>');
-								// end=str.indexOf('</code>');
-								// if(end==-1){
-										// myField.value+='</code>'+str;
-								// }else if(start==-6){
-										// myField.value+='&lt;/code&gt;';
-								// }else{
-										// myField.value+='</code>';
-								// }
-						// }
-				// }
-// })();
-//换为jQ函数
+
 function editcode(){
 	var myField='',
 		str=$('#comment').val(),

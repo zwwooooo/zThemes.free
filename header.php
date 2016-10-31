@@ -21,9 +21,18 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php global $zsimple_theme_options; ?>
+<?php
+global $zsimple_theme_options;
+$classes = '';
+if ( isset($zsimple_theme_options['chong_jiong']) && $zsimple_theme_options['chong_jiong'] ) {
+	$classes .= ' jiong';
+}
+if ( isset($zsimple_theme_options['disable_before_title_tag']) && $zsimple_theme_options['disable_before_title_tag'] ) {
+	$classes .= ' dbtt';
+}
+?>
 
-<div id="container" class="site">
+<div id="container" class="site<?php echo $classes; ?>">
 
 	<header id="site-header" class="site-header">
 		<div class="wrapper header-main cf">
@@ -42,9 +51,35 @@
 				</ul>
 
 				<div id="rss">
-					<a class="twitter tr-4s" href="https://twitter.com/zwwooooo" title="Follow me!">Twitter</a>
-					<a class="googleplus tr-4s" href="https://plus.google.com/111156613658126773405" title="Circle me!" rel="publisher">Google+</a>
-					<a class="feed tr-4s" href="http://feed.zww.me" title="RSS Feed">RSS</a>
+					<?php
+					$social1_name = 'Twitter';
+					$social1_link = '#';
+					if ( isset($zsimple_theme_options['social1_name']) && $zsimple_theme_options['social1_name'] ) {
+						$social1_name = $zsimple_theme_options['social1_name'];
+						$social1_link = $zsimple_theme_options['social1_link'];
+					}
+					$social2_name = 'Google+';
+					$social2_link = '#';
+					if ( isset($zsimple_theme_options['social2_name']) && $zsimple_theme_options['social2_name'] ) {
+						$social2_name = $zsimple_theme_options['social2_name'];
+						$social2_link = $zsimple_theme_options['social2_link'];
+					}
+					$rss_name = 'RSS';
+					$rss_link = get_bloginfo('rss2_url');
+					if ( isset($zsimple_theme_options['rss_name']) && $zsimple_theme_options['rss_name'] ) {
+						$rss_name = $zsimple_theme_options['rss_name'];
+						$rss_link = $zsimple_theme_options['rss_link'];
+					}
+					?>
+					<?php if ($social1_name != -1) { ?>
+						<a class="twitter tr-4s" href="<?php echo $social1_link; ?>" title="<?php echo $social1_name; ?>"><?php echo $social1_name; ?></a>
+					<?php } ?>
+					<?php if ($social2_name != -1) { ?>
+						<a class="googleplus tr-4s" href="<?php echo $social2_link; ?>" title="<?php echo $social2_name; ?>" rel="publisher"><?php echo $social2_name; ?></a>
+					<?php } ?>
+					<?php if ($rss_name != -1) { ?>
+						<a class="feed tr-4s" href="<?php echo $rss_link; ?>" title="<?php echo $rss_name; ?>"><?php echo $rss_name; ?></a>
+					<?php } ?>
 				</div>
 			</nav>
 			<span id="site-navi-mobile"></span>
@@ -56,4 +91,8 @@
 
 	<div id="site-main" class="wrapper site-main cols">
 
+<?php
+if ( isset($zsimple_theme_options['page_loading']) && $zsimple_theme_options['page_loading'] ) {
+?>
 	<script>(function(b,a,c){b(function(){b(".progressbar i").css("width","20%");});})(jQuery,window);</script>
+<?php } ?>

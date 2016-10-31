@@ -23,21 +23,26 @@
 			<?php wp_link_pages('before=<div class="wp_link_pages"><strong>'. '分页: ' . '</strong>&after=</div>&next_or_number=number&pagelink=<span class="page_number">%</span>'); ?>
 		</div>
 
-		<div class="related-posts cf">
-			<div class="rp-left">
-				<h3 id="entry_fl">相关文章</h3>
-				<ul>
-					<?php zoo_wp_cache( 'rp_'.$post->ID, 'simple_wp_cache', zoo_related_posts(5), 28800); ?>
-				</ul>
+		<?php
+		global $zsimple_theme_options;
+		if ( isset($zsimple_theme_options['rp_and_mp']) && $zsimple_theme_options['rp_and_mp'] ) {
+		?>
+			<div class="related-posts cf">
+				<div class="rp-left">
+					<h3 id="entry_fl">相关文章</h3>
+					<ul>
+						<?php zoo_wp_cache( 'rp_'.$post->ID, 'simple_wp_cache', zoo_related_posts(5), 28800); ?>
+					</ul>
+				</div>
+				<div class="rp-right">
+					<h3>热门文章</h3>
+					<ul>
+						<?php zoo_wp_cache( 'zoo_most_popular', 'simple_wp_cache', zoo_most_popular(5), 0); ?>
+					</ul>
+				</div>
+				<span class="rp-bg-top"></span><span class="rp-bg-bottom"></span>
 			</div>
-			<div class="rp-right">
-				<h3>热门文章</h3>
-				<ul>
-					<?php zoo_wp_cache( 'zoo_most_popular', 'simple_wp_cache', zoo_most_popular(5), 0); ?>
-				</ul>
-			</div>
-			<span class="rp-bg-top"></span><span class="rp-bg-bottom"></span>
-		</div>
+		<?php } ?>
 
 		<div id="nav-below" class="cf">
 			<div class="nav-previous"><?php previous_post_link( '%link ', '%title' ); ?></div>

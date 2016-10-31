@@ -1,4 +1,6 @@
 <?php
+global $zsimple_theme_options;
+
 // -----------------------------------------------
 // Modify
 // -----------------------------------------------
@@ -6,23 +8,25 @@
 /**
  * Modify: Admin bar style
  */
-add_action('get_header', 'remove_admin_bar_style');
-add_action( 'wp_head', 'diy_admin_bar_style' );
-function remove_admin_bar_style() {
-		remove_action('wp_head', 'wp_admin_bar_header');
-		remove_action('wp_head', '_admin_bar_bump_cb');
-}
-function diy_admin_bar_style() {
-	echo '
-	<style type="text/css">
-		#wpadminbar{width:35px;min-width:0;background:transparent;opacity:0.85;}
-		#wpadminbar:hover{width:100%;}
-		#wp-toolbar ul > li{display:none;}
-		#wp-toolbar li#wp-admin-bar-wp-logo{display:block;background-color:#49629e;border-radius:0 0 50%;}
-		#wpadminbar:hover li#wp-admin-bar-wp-logo{background-color:#333;border-radius:0;}
-		#wp-toolbar:hover ul > li{display:block;background-color:#333;}
-		#wpadminbar .ab-top-secondary{float:left;}
-	</style>';
+if ( isset($zsimple_theme_options['custom_admin_tools']) && $zsimple_theme_options['custom_admin_tools'] ) {
+	add_action('get_header', 'remove_admin_bar_style');
+	add_action( 'wp_head', 'diy_admin_bar_style' );
+	function remove_admin_bar_style() {
+			remove_action('wp_head', 'wp_admin_bar_header');
+			remove_action('wp_head', '_admin_bar_bump_cb');
+	}
+	function diy_admin_bar_style() {
+		echo '
+		<style type="text/css">
+			#wpadminbar{width:35px;min-width:0;background:transparent;opacity:0.85;}
+			#wpadminbar:hover{width:100%;}
+			#wp-toolbar ul > li{display:none;}
+			#wp-toolbar li#wp-admin-bar-wp-logo{display:block;background-color:#49629e;border-radius:0 0 50%;}
+			#wpadminbar:hover li#wp-admin-bar-wp-logo{background-color:#333;border-radius:0;}
+			#wp-toolbar:hover ul > li{display:block;background-color:#333;}
+			#wpadminbar .ab-top-secondary{float:left;}
+		</style>';
+	}
 }
 
 // -----------------------------------------------
@@ -33,16 +37,20 @@ function diy_admin_bar_style() {
  * use wp_cache to cache data - by zww.me
  */
 function zoo_wp_cache($key='', $group='default', $data='', $expire=0, $cache = true){
-	if ($cache) {
-		$output = wp_cache_get($key, $group);
-		if(false === $output){
+	if ( defined('WP_CACHE') && WP_CACHE == true ) {
+		if ($cache) {
+			$output = wp_cache_get($key, $group);
+			if(false === $output){
+				$output = $data;
+				wp_cache_set($key, $data, $group, $expire);
+			}
+		} else {
 			$output = $data;
-			wp_cache_set($key, $data, $group, $expire);
 		}
+		echo $output;
 	} else {
-		$output = $data;
+		echo $data;
 	}
-	echo $output;
 }
 //// 清空缓存
 function clear_wp_cache_when_save_post() {
@@ -175,7 +183,7 @@ function zoo_rc_comments($show_comments = 8, $my_email = '', $get_comments_num=1
 	if ( !empty($comments) ) {
 		foreach ($comments as $rc_comment) {
 			if ($rc_comment->comment_author_email != $my_email) {
-				$output .= '<li>'.get_avatar_zlazyload($rc_comment->comment_author_email,32,'',$rc_comment->comment_author)
+				$output .= '<li>'.get_avatar($rc_comment->comment_author_email,32,'',$rc_comment->comment_author)
 					.'<a rel="nofollow" href="'.get_comment_link( $rc_comment->comment_ID, array('type' => 'all')).'" title="'.strip_tags($rc_comment->comment_content).' on《'.get_the_title($rc_comment->comment_post_ID).'》">'
 					.convert_smilies(zoo_substr(strip_tags($rc_comment->comment_content),0,20))
 					.'</a><span class="rc-info">by '.$rc_comment->comment_author.' '.get_comment_date('Y/m/d H:i',$rc_comment->comment_ID).'</span></li>';
@@ -597,16 +605,6 @@ function AjaxCommentsPage(){
 add_action('init', 'AjaxCommentsPage');
 
 /**
- * LazyLoad for avatar
- */
-function get_avatar_zlazyload($comment_author_email,$size='50',$default='',$alt='') {
-	$avatar = get_avatar($comment_author_email,$size='50',$default,$alt);
-	$avatar = str_replace(' src=', ' zlazyload=', $avatar);
-	$avatar = str_replace('<img', '<img class="avatar zlazyload" src="'.ZOO_THEME_URI.'/img/zlazyload.gif"', $avatar);
-	return $avatar;
-}
-
-/**
  * Mini Pagenavi v1.0 by Willin Kan. Edit by zwwooooo
  */
 if ( !function_exists('pagenavi') ) {
@@ -694,7 +692,7 @@ function mytheme_comment($comment, $args, $depth) {
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<div id="comment-<?php comment_ID(); ?>">
 				<div class="comment-author vcard">
-					<?php echo get_avatar_zlazyload($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
+					<?php echo get_avatar($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
 					<?php /* <img src="http://im.zww.im/gravatar/cache/avatar/<?php echo md5(strtolower($comment->comment_author_email)); ?>" alt="" class='avatar' />
 					printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) */  ?>
 					<cite class="fn"><?php comment_author_link(); ?></cite>
@@ -796,7 +794,7 @@ function mytheme_comment_top3($comment, $args, $depth) {
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<div id="comment-<?php comment_ID(); ?>">
 				<div class="comment-author vcard">
-					<?php echo get_avatar_zlazyload($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
+					<?php echo get_avatar($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
 					<?php /* <img src="http://im.zww.im/gravatar/cache/avatar/<?php echo md5(strtolower($comment->comment_author_email)); ?>" alt="" class='avatar' />
 					printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) */  ?>
 					<cite class="fn"><?php comment_author_link(); ?></cite>
