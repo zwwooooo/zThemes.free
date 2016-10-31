@@ -514,11 +514,17 @@ i{
 	border-bottom: 4px dashed transparent;
 	border-left: 4px solid #e68a8a;
 }
+.site-navi ul ul ul > li.menu-item-has-children:after{
+	display: none;
+}
 .site-navi ul ul ul{
 	z-index: 9999;
 	top: -1px;
 	left: 100%;
 	margin-left: -1px;
+}
+.site-navi ul ul ul ul{
+	display: none;
 }
 
 /* rss */
