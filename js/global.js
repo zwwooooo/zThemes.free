@@ -122,7 +122,7 @@ zdo_modules_G.Other = function(){
 	$(window).on('load', function () {
 		$('.progressbar i').css('left', '100%');
 
-		if ( $('#container').hasClass('jiong') ) {
+		if ( $('body').hasClass('jiong') ) {
 			var clone_num = 7,
 					tr_time = 600,
 					change_time = 3600,

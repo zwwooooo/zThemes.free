@@ -9,7 +9,7 @@ global $zsimple_theme_options;
  * Modify: Admin bar style
  */
 if ( isset($zsimple_theme_options['custom_admin_tools']) && $zsimple_theme_options['custom_admin_tools'] ) {
-	add_action('get_header', 'remove_admin_bar_style');
+	// add_action('get_header', 'remove_admin_bar_style');
 	add_action( 'wp_head', 'diy_admin_bar_style' );
 	function remove_admin_bar_style() {
 			remove_action('wp_head', 'wp_admin_bar_header');
@@ -18,13 +18,18 @@ if ( isset($zsimple_theme_options['custom_admin_tools']) && $zsimple_theme_optio
 	function diy_admin_bar_style() {
 		echo '
 		<style type="text/css">
-			#wpadminbar{width:35px;min-width:0;background:transparent;opacity:0.85;}
-			#wpadminbar:hover{width:100%;}
-			#wp-toolbar ul > li{display:none;}
-			#wp-toolbar li#wp-admin-bar-wp-logo{display:block;background-color:#49629e;border-radius:0 0 50%;}
-			#wpadminbar:hover li#wp-admin-bar-wp-logo{background-color:#333;border-radius:0;}
-			#wp-toolbar:hover ul > li{display:block;background-color:#333;}
-			#wpadminbar .ab-top-secondary{float:left;}
+			@media screen and (min-width:1120px){
+				.custom-admin-bar{
+					margin-top: -32px;
+				}
+				.custom-admin-bar #wpadminbar{width:35px;min-width:0;background:transparent;opacity:0.85;}
+				.custom-admin-bar #wpadminbar:hover{width:100%;}
+				.custom-admin-bar #wp-toolbar ul > li{display:none;}
+				.custom-admin-bar #wp-toolbar li#wp-admin-bar-wp-logo{display:block;background-color:#49629e;border-radius:0 0 50%;}
+				.custom-admin-bar #wpadminbar:hover li#wp-admin-bar-wp-logo{background-color:#333;border-radius:0;}
+				.custom-admin-bar #wp-toolbar:hover ul > li{display:block;background-color:#333;}
+				.custom-admin-bar #wpadminbar .ab-top-secondary{float:left;}
+			}
 		</style>';
 	}
 }
@@ -479,51 +484,40 @@ add_filter('smilies_src', 'custom_smilies_src', 12, 2); // 優先級10(默認), 
  * 获取表情按钮: WP表情/自定义表情路径
  */
 function zoo_smiley_button($custom=false, $before='', $after=''){
-	if ($custom==true)
-		$smiley_url=ZOO_THEME_URI.'/smilies';
-	else
-		$smiley_url=site_url().'/wp-includes/images/smilies';
-	echo $before;
-	?>
-		<a href="javascript:zoo_grin(':?:')"><img src="<?php echo $smiley_url; ?>/icon_question.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':razz:')"><img src="<?php echo $smiley_url; ?>/icon_razz.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':sad:')"><img src="<?php echo $smiley_url; ?>/icon_sad.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':evil:')"><img src="<?php echo $smiley_url; ?>/icon_evil.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':!:')"><img src="<?php echo $smiley_url; ?>/icon_exclaim.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':smile:')"><img src="<?php echo $smiley_url; ?>/icon_smile.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':oops:')"><img src="<?php echo $smiley_url; ?>/icon_redface.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':grin:')"><img src="<?php echo $smiley_url; ?>/icon_biggrin.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':eek:')"><img src="<?php echo $smiley_url; ?>/icon_surprised.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':shock:')"><img src="<?php echo $smiley_url; ?>/icon_eek.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':???:')"><img src="<?php echo $smiley_url; ?>/icon_confused.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':cool:')"><img src="<?php echo $smiley_url; ?>/icon_cool.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':lol:')"><img src="<?php echo $smiley_url; ?>/icon_lol.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':mad:')"><img src="<?php echo $smiley_url; ?>/icon_mad.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':twisted:')"><img src="<?php echo $smiley_url; ?>/icon_twisted.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':roll:')"><img src="<?php echo $smiley_url; ?>/icon_rolleyes.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':wink:')"><img src="<?php echo $smiley_url; ?>/icon_wink.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':idea:')"><img src="<?php echo $smiley_url; ?>/icon_idea.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':arrow:')"><img src="<?php echo $smiley_url; ?>/icon_arrow.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':neutral:')"><img src="<?php echo $smiley_url; ?>/icon_neutral.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':cry:')"><img src="<?php echo $smiley_url; ?>/icon_cry.gif" alt="" /></a>
-		<a href="javascript:zoo_grin(':mrgreen:')"><img src="<?php echo $smiley_url; ?>/icon_mrgreen.gif" alt="" /></a>
-<?php
-	echo $after;
-}
-
-/**
- * Ajax_data_zoo_smiley_button
- */
-function Ajax_data_zoo_smiley_button(){
-	if( isset($_GET['action'])&& $_GET['action'] == 'Ajax_data_zoo_smiley_button'  ){
-		nocache_headers();	//(FIX for IE)
-		
-		zoo_smiley_button(true, '<br />');
-
-		die();
+	global $zsimple_theme_options;
+	if ( isset($zsimple_theme_options['custom_smiley']) && $zsimple_theme_options['custom_smiley'] ) {
+		if ($custom==true)
+			$smiley_url=ZOO_THEME_URI.'/smilies';
+		else
+			$smiley_url=site_url().'/wp-includes/images/smilies';
+		echo $before;
+		?>
+			<a href="javascript:zoo_grin(':?:')"><img src="<?php echo $smiley_url; ?>/icon_question.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':razz:')"><img src="<?php echo $smiley_url; ?>/icon_razz.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':sad:')"><img src="<?php echo $smiley_url; ?>/icon_sad.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':evil:')"><img src="<?php echo $smiley_url; ?>/icon_evil.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':!:')"><img src="<?php echo $smiley_url; ?>/icon_exclaim.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':smile:')"><img src="<?php echo $smiley_url; ?>/icon_smile.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':oops:')"><img src="<?php echo $smiley_url; ?>/icon_redface.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':grin:')"><img src="<?php echo $smiley_url; ?>/icon_biggrin.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':eek:')"><img src="<?php echo $smiley_url; ?>/icon_surprised.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':shock:')"><img src="<?php echo $smiley_url; ?>/icon_eek.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':???:')"><img src="<?php echo $smiley_url; ?>/icon_confused.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':cool:')"><img src="<?php echo $smiley_url; ?>/icon_cool.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':lol:')"><img src="<?php echo $smiley_url; ?>/icon_lol.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':mad:')"><img src="<?php echo $smiley_url; ?>/icon_mad.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':twisted:')"><img src="<?php echo $smiley_url; ?>/icon_twisted.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':roll:')"><img src="<?php echo $smiley_url; ?>/icon_rolleyes.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':wink:')"><img src="<?php echo $smiley_url; ?>/icon_wink.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':idea:')"><img src="<?php echo $smiley_url; ?>/icon_idea.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':arrow:')"><img src="<?php echo $smiley_url; ?>/icon_arrow.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':neutral:')"><img src="<?php echo $smiley_url; ?>/icon_neutral.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':cry:')"><img src="<?php echo $smiley_url; ?>/icon_cry.gif" alt="" /></a>
+			<a href="javascript:zoo_grin(':mrgreen:')"><img src="<?php echo $smiley_url; ?>/icon_mrgreen.gif" alt="" /></a>
+	<?php
+		echo $after;
 	}
 }
-add_action('init', 'Ajax_data_zoo_smiley_button');
 
 /**
  * for Ajax: guest_comments
@@ -693,10 +687,8 @@ function mytheme_comment($comment, $args, $depth) {
 			<div id="comment-<?php comment_ID(); ?>">
 				<div class="comment-author vcard">
 					<?php echo get_avatar($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
-					<?php /* <img src="http://im.zww.im/gravatar/cache/avatar/<?php echo md5(strtolower($comment->comment_author_email)); ?>" alt="" class='avatar' />
-					printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) */  ?>
 					<cite class="fn"><?php comment_author_link(); ?></cite>
-					<span class="comment-meta commentmetadata"><?php printf(__('%1$s %2$s'), get_comment_date(),  get_comment_time()); ?> <a rel="nofollow" href="<?php echo get_permalink($comment->comment_post_ID).($page > 1 ? '/comment-page-'.$page : '' ).'#comment-'.$comment->comment_ID; //esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">#</a><?php edit_comment_link(__('(Edit)'),'  ',''); ?></span>
+					<span class="comment-meta commentmetadata"><?php printf(__('%1$s %2$s'), get_comment_date(),  get_comment_time()); ?> <a rel="nofollow" href="<?php echo get_permalink($comment->comment_post_ID).($page >= 1 ? '/comment-page-'.$page : '' ).'#comment-'.$comment->comment_ID; //esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">#</a><?php edit_comment_link(__('(Edit)'),'  ',''); ?></span>
 					<?php if(function_exists('useragent_output_custom')){ ?><span class="useragent_output_custom"><?php useragent_output_custom(); ?></span> <?php } ?>
 				</div>
 				<?php if ($comment->comment_approved == '0') : ?>
@@ -754,9 +746,9 @@ function mytheme_comment_top3($comment, $args, $depth) {
 //主评论计数器初始化 begin - by zwwooooo
 	global $commentcount_top,$page;
 	if(!$commentcount_top) { //初始化楼层计数器
-		$page = ( get_query_var('cpage') ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args ); //获取当前评论列表页码
-		$cpp=get_option('comments_per_page'); //获取每页评论显示数量
-		$commentcount_top = $cpp * ($page - 1);
+		//因为获取的是评论列表第1页，所以直接赋初始值即可
+		$page = 1;
+		$commentcount_top = 0;
 	}
 //主评论计数器初始化 end - by zwwooooo
 	switch ($pingtype=$comment->comment_type) {
@@ -795,8 +787,6 @@ function mytheme_comment_top3($comment, $args, $depth) {
 			<div id="comment-<?php comment_ID(); ?>">
 				<div class="comment-author vcard">
 					<?php echo get_avatar($comment->comment_author_email,$size='50',$default='',$comment->comment_author); ?>
-					<?php /* <img src="http://im.zww.im/gravatar/cache/avatar/<?php echo md5(strtolower($comment->comment_author_email)); ?>" alt="" class='avatar' />
-					printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) */  ?>
 					<cite class="fn"><?php comment_author_link(); ?></cite>
 					<span class="comment-meta commentmetadata"><?php printf(__('%1$s %2$s'), get_comment_date(),  get_comment_time()); ?> <a rel="nofollow" href="<?php echo get_permalink($comment->comment_post_ID).($page > 1 ? '/comment-page-'.$page : '' ).'#comment-'.$comment->comment_ID; //esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">#</a><?php edit_comment_link(__('(Edit)'),'  ',''); ?></span>
 					<?php if(function_exists('useragent_output_custom')){ ?><span class="useragent_output_custom"><?php useragent_output_custom(); ?></span> <?php } ?>

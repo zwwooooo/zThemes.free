@@ -51,6 +51,12 @@ function zoo_customize_register( $wp_customize ) {
 		'type'           => 'option',
 		'default'        => '',
 	) );
+	$wp_customize->add_setting( 'zsimple_theme_options[custom_smiley]', array(
+		'capability'     => 'edit_theme_options',
+		'transport'      => 'postMessage', // refresh or postMessage
+		'type'           => 'option',
+		'default'        => '',
+	) );
 	$wp_customize->add_setting( 'zsimple_theme_options[default_thumb]', array(
 		'capability'     => 'edit_theme_options',
 		'transport'      => 'postMessage', // refresh or postMessage
@@ -147,6 +153,13 @@ function zoo_customize_register( $wp_customize ) {
 		'settings'   => 'zsimple_theme_options[rp_and_mp]',
 		'type'        => 'checkbox',
 		'label'      => '文章末尾显示相关文章和热评文章',
+		'description' => '',
+	) ) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'custom_smiley_html_id', array(
+		'section'    => 'zsimple_themes_page_option_section',
+		'settings'   => 'zsimple_theme_options[custom_smiley]',
+		'type'        => 'checkbox',
+		'label'      => '启用自定义评论表情',
 		'description' => '',
 	) ) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'default_thumb_html_id', array(

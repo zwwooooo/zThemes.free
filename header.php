@@ -20,19 +20,24 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
 <?php
 global $zsimple_theme_options;
-$classes = '';
+
+$body_classes = '';
 if ( isset($zsimple_theme_options['chong_jiong']) && $zsimple_theme_options['chong_jiong'] ) {
-	$classes .= ' jiong';
+	$body_classes .= ' jiong';
 }
 if ( isset($zsimple_theme_options['disable_before_title_tag']) && $zsimple_theme_options['disable_before_title_tag'] ) {
-	$classes .= ' dbtt';
+	$body_classes .= ' dbtt';
+}
+
+if ( isset($zsimple_theme_options['custom_admin_tools']) && $zsimple_theme_options['custom_admin_tools'] ) {
+	$body_classes .= ' custom-admin-bar';
 }
 ?>
+<body <?php body_class($body_classes); ?>>
 
-<div id="container" class="site<?php echo $classes; ?>">
+<div id="container" class="site">
 
 	<header id="site-header" class="site-header">
 		<div class="wrapper header-main cf">
