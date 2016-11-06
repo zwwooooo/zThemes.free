@@ -31,7 +31,7 @@ if ( isset($zsimple_theme_options['disable_before_title_tag']) && $zsimple_theme
 	$body_classes .= ' dbtt';
 }
 
-if ( isset($zsimple_theme_options['custom_admin_tools']) && $zsimple_theme_options['custom_admin_tools'] ) {
+if ( is_user_logged_in() && isset($zsimple_theme_options['custom_admin_tools']) && $zsimple_theme_options['custom_admin_tools'] ) {
 	$body_classes .= ' custom-admin-bar';
 }
 ?>

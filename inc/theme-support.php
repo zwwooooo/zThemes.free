@@ -54,7 +54,6 @@ function zoo_post_thumbnail($size = 'thumbnail', $return = 'img'){
 		$post_timthumb_src = $timthumb_src[0];
 	}
 
-
 	if ( isset($zsimple_theme_options['auto_thumb']) && !empty($zsimple_theme_options['auto_thumb']) ) {
 		if ($auto_thumb_img_src = zoo_auto_thumb_img_src()) {
 				$post_timthumb_src = $auto_thumb_img_src;
@@ -72,7 +71,7 @@ function zoo_post_thumbnail($size = 'thumbnail', $return = 'img'){
 			return $post_timthumb_src;
 		}
 	} else {
-		return false;
+		return;
 	}
 }
 /**
@@ -109,7 +108,7 @@ function zoo_get_content_first_image($content){
 	if($images){       
 		return $images[1][0];
 	}else{
-		return false;
+		return;
 	}
 }
 
