@@ -47,17 +47,23 @@ add_theme_support( 'post-thumbnails' );
  */
 function zoo_post_thumbnail($size = 'thumbnail', $return = 'img', $use_default = false, $custom_default = '' ){
 	global $post, $zsimple_theme_options;
-	
+
+	$post_timthumb_src = '';
 	if( has_post_thumbnail() ){
 		$timthumb_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size);
 		$post_timthumb_src = $timthumb_src[0];
-	} elseif ($auto_thumb_img_src = zoo_auto_thumb_img_src()) {
-			$post_timthumb_src = $auto_thumb_img_src;
-	} elseif ( isset($zsimple_theme_options['default_thumb']) && !empty($zsimple_theme_options['default_thumb']) ) {
-		$post_timthumb_src = $zsimple_theme_options['default_thumb'];
-		if ($custom_default) $post_timthumb_src = $custom_default;
-	} else {
-		$post_timthumb_src = '';
+	}
+
+
+	if ( isset($zsimple_theme_options['auto_thumb']) && !empty($zsimple_theme_options['auto_thumb']) ) {
+		if ($auto_thumb_img_src = zoo_auto_thumb_img_src()) {
+				$post_timthumb_src = $auto_thumb_img_src;
+		} elseif ($zoo_get_content_first_image = zoo_get_content_first_image(get_the_content())) {
+				$post_timthumb_src = $zoo_get_content_first_image;
+		} elseif ( isset($zsimple_theme_options['default_thumb']) && !empty($zsimple_theme_options['default_thumb']) ) {
+			$post_timthumb_src = $zsimple_theme_options['default_thumb'];
+			if ($custom_default) $post_timthumb_src = $custom_default;
+		}
 	}
 
 	if ($post_timthumb_src) {
@@ -66,15 +72,15 @@ function zoo_post_thumbnail($size = 'thumbnail', $return = 'img', $use_default =
 		} else {
 			return $post_timthumb_src;
 		}
+	} else {
+		return false;
 	}
 }
 /**
  * Auto Thumbnail
  */
 function zoo_auto_thumb_img_src($size = 'thumbnail') {
-	global $post, $zsimple_theme_options;
-	if ( !isset($zsimple_theme_options['auto_thumb']) || empty($zsimple_theme_options['auto_thumb']) )
-		return;
+	global $post;
 
 	$args = array(
 		'numberposts' => 1,
@@ -96,7 +102,17 @@ function zoo_auto_thumb_img_src($size = 'thumbnail') {
 
 	return $imageUrl;
 }
+function zoo_get_content_first_image($content){
+	if ( $content === false ) $content = get_the_content(); 
 
+	preg_match_all('|<img.*?src=[\'"](.*?)[\'"].*?>|i', $content, $images);
+
+	if($images){       
+		return $images[1][0];
+	}else{
+		return false;
+	}
+}
 
 /*
  * Let WordPress manage the document title.

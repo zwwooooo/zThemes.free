@@ -174,7 +174,7 @@ function zoo_customize_register( $wp_customize ) {
 		'settings'   => 'zsimple_theme_options[auto_thumb]',
 		'type'        => 'checkbox',
 		'label'      => '启用自动缩略图',
-		'description' => '开启后，如果没有设置“特色图片”的文章将调用文章里面插入的第一张图片作为缩略图。',
+		'description' => '开启后，如果没有设置“特色图片”的文章将：调用文章里面第一张媒体库图片作为缩略图（thumbnail尺寸）。如果图片全部是外链的，那么第一张外链图片作为缩略图（Full尺寸）。',
 	) ) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'social1_name_html_id', array(
 		'section'    => 'zsimple_themes_page_option_section',
