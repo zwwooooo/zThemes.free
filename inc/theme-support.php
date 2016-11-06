@@ -45,7 +45,7 @@ add_theme_support( 'post-thumbnails' );
 /**
  * post_thumbnail by zwwooooo
  */
-function zoo_post_thumbnail($size = 'thumbnail', $return = 'img', $use_default = false, $custom_default = '' ){
+function zoo_post_thumbnail($size = 'thumbnail', $return = 'img'){
 	global $post, $zsimple_theme_options;
 
 	$post_timthumb_src = '';
@@ -62,7 +62,6 @@ function zoo_post_thumbnail($size = 'thumbnail', $return = 'img', $use_default =
 				$post_timthumb_src = $zoo_get_content_first_image;
 		} elseif ( isset($zsimple_theme_options['default_thumb']) && !empty($zsimple_theme_options['default_thumb']) ) {
 			$post_timthumb_src = $zsimple_theme_options['default_thumb'];
-			if ($custom_default) $post_timthumb_src = $custom_default;
 		}
 	}
 
