@@ -167,7 +167,7 @@ function zoo_customize_register( $wp_customize ) {
 		'settings'   => 'zsimple_theme_options[default_thumb]',
 		'type'        => 'text',
 		'label'      => '默认缩略图地址',
-		'description' => '可选，图片大小 135px*120px',
+		'description' => '(可选)，这里填默认缩略图地址 (http://..../default.png)，图片大小为 135px*120px。留空时，没图片的文章不显示任何缩略图。',
 	) ) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'auto_thumb_html_id', array(
 		'section'    => 'zsimple_themes_page_option_section',

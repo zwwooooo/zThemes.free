@@ -29,7 +29,7 @@ function zoo_after_setup_theme() {
 if (!is_admin()) {
 
 	function themeslug_enqueue_script() {
-		$ver = '1.0.3';
+		$ver = '1.0.4';
 
 		// Load main stylesheet.
 		wp_enqueue_style( 'main-style', ZOO_THEME_URI . '/style-main.css', false, $ver );

@@ -57,7 +57,7 @@ function zoo_post_thumbnail($size = 'thumbnail', $return = 'img'){
 	if ( isset($zsimple_theme_options['auto_thumb']) && !empty($zsimple_theme_options['auto_thumb']) ) {
 		if ($auto_thumb_img_src = zoo_auto_thumb_img_src()) {
 				$post_timthumb_src = $auto_thumb_img_src;
-		} elseif ($zoo_get_content_first_image = zoo_get_content_first_image(get_the_content())) {
+		} elseif ($zoo_get_content_first_image = zoo_get_content_first_image()) {
 				$post_timthumb_src = $zoo_get_content_first_image;
 		} elseif ( isset($zsimple_theme_options['default_thumb']) && !empty($zsimple_theme_options['default_thumb']) ) {
 			$post_timthumb_src = $zsimple_theme_options['default_thumb'];
@@ -100,14 +100,12 @@ function zoo_auto_thumb_img_src($size = 'thumbnail') {
 
 	return $imageUrl;
 }
-function zoo_get_content_first_image($content){
-	if ( $content === false ) $content = get_the_content(); 
-
-	preg_match_all('|<img.*?src=[\'"](.*?)[\'"].*?>|i', $content, $images);
-
-	if($images){       
-		return $images[1][0];
-	}else{
+function zoo_get_content_first_image(){
+	global $post;
+	preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content,$index_matches);
+	if ($index_matches) {       
+		return $index_matches[1];
+	} else {
 		return;
 	}
 }
