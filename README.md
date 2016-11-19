@@ -1,0 +1,9 @@
+####WordPress Theme
+Theme Name: zSimple  
+Theme URI: http://zww.me/  
+Description: It is a simple WordPress theme without any plugin needed, no images, custom-menu, widgets, threaded-comments. For WordPress version 4.0+  
+Author: zwwooooo  
+Author URI:http: //zww.me/  
+Tags:custom-menu, threaded-comments, two-columns, fixed-layout, right-sidebar, theme-options, responsive-layout  
+License: GNU General Public License, v2 (or newer)  
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
