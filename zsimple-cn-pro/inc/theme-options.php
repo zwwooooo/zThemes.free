@@ -283,7 +283,7 @@ function zoo_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'zsimple_announcement_section' , array(
 		'title'       => 'zSimple: 公告栏',
 		'priority'    => 150,
-		'description' => '',
+		'description' => '<strong style="color:#d6492f;">支持主题作者？</strong><a href="http://zww.me/wordpress-theme-zsimple.z-turn#donation" target="_blank">去打赏 &raquo;</a>',
 	) );
 
 	//settings
@@ -309,7 +309,7 @@ function zoo_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'zsimple_custom_style_section' , array(
 		'title'       => 'zSimple: 自定义样式',
 		'priority'    => 155,
-		'description' => '',
+		'description' => '<strong style="color:#d6492f;">支持主题作者？</strong><a href="http://zww.me/wordpress-theme-zsimple.z-turn#donation" target="_blank">去打赏 &raquo;</a>',
 	) );
 
 	//settings
