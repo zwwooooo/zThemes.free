@@ -19,10 +19,15 @@
 	<script src="<?php echo ZOO_THEME_URI; ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+
+	<?php
+	global $zsimple_theme_options;
+	if ( isset($zsimple_theme_options['custom_style']) && $zsimple_theme_options['custom_style'] ) {
+		echo "<style>\n" . $zsimple_theme_options['custom_style'] . "\n</style>\n";
+	}
+	?>
 </head>
 <?php
-global $zsimple_theme_options;
-
 $body_classes = '';
 if ( isset($zsimple_theme_options['chong_jiong']) && $zsimple_theme_options['chong_jiong'] ) {
 	$body_classes .= ' jiong';
@@ -43,7 +48,13 @@ if ( is_user_logged_in() && isset($zsimple_theme_options['custom_admin_tools']) 
 		<div class="wrapper header-main cf">
 
 			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php if ( isset($zsimple_theme_options['logo']) && $zsimple_theme_options['logo'] ) { ?>
+					<img src="<?php echo $zsimple_theme_options['logo']; ?>" alt="<?php bloginfo('name'); ?>">
+				<?php } else { ?>
+					<?php bloginfo('name'); ?>
+				<?php } ?>
+				</a>
 			</h1>
 
 			<div class="search-form">
@@ -92,6 +103,13 @@ if ( is_user_logged_in() && isset($zsimple_theme_options['custom_admin_tools']) 
 		</div>
 
 		<span class="progressbar"><i></i></span>
+
+		<?php
+		if (isset($zsimple_theme_options['announcement']) && $zsimple_theme_options['announcement'] ) {
+		?>
+			<div class="announcement"><strong>[公告]</strong> <?php echo $zsimple_theme_options['announcement']; ?></div>
+		<?php } ?>
+
 	</header>
 
 	<div id="site-main" class="wrapper site-main cols">

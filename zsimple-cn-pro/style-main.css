@@ -324,7 +324,7 @@ i{
 	     -o-transition: all .6s ease-out;
 	        transition: all .6s ease-out;
 }
-.progressbar i.s36{
+.progressbar i.s3600{
 	-webkit-transition: all 3.6s ease-out;
 	   -moz-transition: all 3.6s ease-out;
 	    -ms-transition: all 3.6s ease-out;
@@ -339,7 +339,6 @@ i{
 .site-title{
 	font-size: 40px;
 	line-height: 1;
-
 	margin-left: 5px;
 }
 .site-title a{
@@ -347,6 +346,11 @@ i{
 
 	color: #49629e;
 	text-shadow: 1px 1px 0 #ccc;
+}
+.site-title a img{
+	vertical-align: top;
+	max-height: 40px;
+	width: auto;
 }
 
 /* .site-navi ---------- */
@@ -1956,6 +1960,7 @@ span.comment-meta a:hover{
 	word-wrap: break-word;
 
 	overflow-wrap: break-word;
+	font-size: 14px;
 }
 .commentlist p,
 .commentlist blockquote{
@@ -2578,6 +2583,20 @@ a.page-numbers:hover{
 	color: #49629e;
 }
 
+/* announcement */
+.announcement{
+	position: absolute;
+	left: 0;
+	bottom: -35px;
+	width: 100%;
+	line-height: 26px;
+	text-align: center;
+	color: #49629e;
+}
+.announcement strong{
+	color: #d6492f;
+}
+
 /* =for IE
 -------------------------------------------------------------- */
 .ie7 .footer{
@@ -2773,6 +2792,10 @@ img.wp-smiley{
 		font-size: 30px;
 		margin-left: 30px;
 	}
+	.site-title a img{
+		max-height: 30px;
+	}
+
 	/* site-navi for Moblie */
 	.site-navi{
 	}
