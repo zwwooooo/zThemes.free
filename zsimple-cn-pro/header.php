@@ -102,7 +102,7 @@ if ( is_user_logged_in() && isset($zsimple_theme_options['custom_admin_tools']) 
 
 		</div>
 
-		<span class="progressbar"><i></i></span>
+		<span class="progressbar"><i class="s600"></i></span>
 
 		<?php
 		if (isset($zsimple_theme_options['announcement']) && $zsimple_theme_options['announcement'] ) {

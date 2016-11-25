@@ -318,6 +318,8 @@ i{
 	width: 0;
 	height: 2px;
 	background: #b91f1f;
+}
+.progressbar i.s600{
 	-webkit-transition: all .6s ease-out;
 	   -moz-transition: all .6s ease-out;
 	    -ms-transition: all .6s ease-out;

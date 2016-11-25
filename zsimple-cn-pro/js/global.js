@@ -25,26 +25,6 @@
 		}
 	};
 
-	//// visibilitychange事件
-	var hidden, state, visibilityChange; 
-	if (typeof document.hidden !== "undefined") {
-		hidden = "hidden";
-		visibilityChange = "visibilitychange";
-		state = "visibilityState";
-	} else if (typeof document.mozHidden !== "undefined") {
-		hidden = "mozHidden";
-		visibilityChange = "mozvisibilitychange";
-		state = "mozVisibilityState";
-	} else if (typeof document.msHidden !== "undefined") {
-		hidden = "msHidden";
-		visibilityChange = "msvisibilitychange";
-		state = "msVisibilityState";
-	} else if (typeof document.webkitHidden !== "undefined") {
-		hidden = "webkitHidden";
-		visibilityChange = "webkitvisibilitychange";
-		state = "webkitVisibilityState";
-	}
-
 	//----------------------------------------------- js/jq函数
 	//// zwooooo - loading效果
 	$.fn.zdo_loading = function(cc){
@@ -136,75 +116,80 @@
 	// 囧效果
 	zdo_modules_G.Other = function(){
 		$(window).on('load', function () {
-			var clone_num = 7,
-					time_tr = 600,
-					time_change = 3600,
-					time_clone = 7200,
-					time_standy = 7200,
-					s_go = '150%',
-					b_where = '-100%';
-
 			$('.progressbar i').css('left', '100%');
-			setTimeout(function(){
-				$('.progressbar i').css({'width':'2px','border-radius':'2px','background-color':'#49629e'}).addClass('s3600');
 
-				var fcc_l = '0',
-						fcc_w = '0';
-				var func_css_change = function(){
-					$('.progressbar i').each(function(){
-						fcc_l = Math.ceil(Math.random()*100) +'%';
-						fcc_w = Math.ceil(Math.random()*50) +'px';
-						$(this).css({'left':fcc_l, 'width':fcc_w});
-					});
-				};
-				var int1 = setInterval(func_css_change, time_change);
-				
-				var fc_l = '',
-						fc_clone = '';
-				var func_clone = function() {
-					if ( $('.progressbar i').length < clone_num+1 ) {
+			if ( $('body').hasClass('jiong') ) {
+				var clone_num = 8,
+						time_tr = 600,
+						time_change = 3600,
+						time_clone = 7200,
+						time_standy = 7200,
+						s_go = '150%',
+						b_where = '-100%';
+
+				setTimeout(function(){
+					$('.progressbar i').remove();
+
+					//initialize
+					//short
+					var fc_l = '';
+					for (var i = clone_num; i >= 0; i--) {
 						fc_l = Math.ceil(Math.random()*2)==1 ? '-300%' : '200%';
-						fc_clone = $('.progressbar i:last').clone().css({'left':fc_l});
-						fc_clone.appendTo($('.progressbar'));
-					} else {
-						window.clearInterval(int2);
-						if ( Math.ceil(Math.random()*2) == 1 ) {
-							s_go = '-150%', b_where = '100%';
+						$('.progressbar').append('<i class="hide" style="left:'+ fc_l +';width:2px;border-radius:2px;background-color:#49629e;"></i>');
+					};
+					//long
+					$('.progressbar').append('<i class="long" style="left:105%;width:100%;background-color:#b91f1f;"></i>');
+
+					$('.progressbar i.hide:first').addClass('s3600 show').removeClass('hide');
+
+					var fcc_l = '0',
+							fcc_w = '0';
+					var func_css_change = function(){
+						$('.progressbar i.show').each(function(){
+							fcc_l = Math.ceil(Math.random()*100) +'%';
+							fcc_w = Math.ceil(Math.random()*50) +'px';
+							$(this).css({'left':fcc_l, 'width':fcc_w});
+						});
+					};
+					var int1 = setInterval(func_css_change, time_change);
+					
+					var func_clone = function() {
+						if ( $('.progressbar i.hide').length ) {
+							$('.progressbar i.hide:first').addClass('s3600 show').removeClass('hide');
 						} else {
-							s_go = '150%', b_where = '-100%';
-						};
-						setTimeout(function(){
-							fc_clone = $('.progressbar i:last').clone().removeClass('s3600').css({'left':b_where, 'width':'100%','background-color':'#b91f1f'});
-							$('.progressbar i').removeClass('s3600').css({'left':s_go});
+							window.clearInterval(int2);
+							if ( Math.ceil(Math.random()*2) == 1 ) {
+								s_go = '-150%', b_where = '105%', s_go_return = '-105%';
+							} else {
+								s_go = '150%', b_where = '-105%', s_go_return = '105%';
+							};
 							setTimeout(function(){
+								$('.progressbar i.long').css({'left':b_where});
+
+								$('.progressbar i.show').removeClass('s3600').addClass('s600').css({'left':s_go});
 								window.clearInterval(int1);
-								$('.progressbar i').remove();
-								fc_clone.appendTo($('.progressbar'));
 								setTimeout(function(){
-									$('.progressbar i').css({'left':s_go});
+									$('.progressbar i.show').removeClass('show s600').addClass('hide');
 									setTimeout(function(){
-										$('.progressbar i').addClass('s3600').css({'width':'10px','background-color':'#49629e'});
-										int1 = setInterval(func_css_change, time_change);
-										int2 = setInterval(func_clone, time_clone);
+										$('.progressbar i.long').addClass('s600').css({'left':s_go});
+										setTimeout(function(){
+											//initialize
+											$('.progressbar i.hide').each(function(){
+												fc_l = Math.ceil(Math.random()*2)==1 ? '-300%' : '200%';
+												$(this).css({'width':'10px','left':fc_l});
+											});
+											$('.progressbar i.long').removeClass('s600').css({'left':s_go_return});
+											int1 = setInterval(func_css_change, time_change);
+											int2 = setInterval(func_clone, time_clone);
+										}, time_tr);
 									}, time_tr);
 								}, time_tr);
-							}, time_tr);
-						}, time_standy);
+							}, time_standy);
+						};
 					};
-				};
-				var int2 = setInterval(func_clone, time_clone);
-
-				document.addEventListener(visibilityChange, function() {
-					if ( document[state] == 'hidden' ) {
-						window.clearInterval(int1);
-						window.clearInterval(int2);
-					} else {
-						$('.progressbar i.s3600').css({'left':'50%'});
-						int1 = setInterval(func_css_change, time_change);
-						int2 = setInterval(func_clone, time_clone);
-					}
-				}, false);
-			}, 1000);
+					var int2 = setInterval(func_clone, time_clone);
+				}, 1000);
+			}
 		});
 	};
 
