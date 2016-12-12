@@ -31,7 +31,7 @@ if ( isset($zsimple_theme_options['page_loading']) && $zsimple_theme_options['pa
 					if ($user->exists()) {
 						echo '<span>您好, </span><strong>'. $user->user_login .', </strong><a id="guest_comments_click" href="#" class="'. $user->user_email .'" rel="nofollow"><span>点击这里可以查看</span>您最近的评论</a>';
 					} else {
-						if($_COOKIE["comment_author_" . COOKIEHASH]!=""){
+						if( isset($_COOKIE["comment_author_" . COOKIEHASH]) && !empty($_COOKIE["comment_author_" . COOKIEHASH]) ){
 							echo '<span>您好, </span><strong>' , $_COOKIE["comment_author_" . COOKIEHASH] , ', </strong><a id="guest_comments_click" href="#" class="'. $_COOKIE["comment_author_email_" . COOKIEHASH] .'" rel="nofollow"><span>点击这里可以查看</span>您最近的评论</a>';
 						} else {
 							echo 'Welcome!<span> o(∩_∩)o</span>';
