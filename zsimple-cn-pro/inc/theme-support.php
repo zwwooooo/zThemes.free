@@ -123,6 +123,7 @@ add_theme_support( 'title-tag' );
 add_filter( 'wp_title', 'zsimple_wp_title', 10, 2 );
 function zsimple_wp_title($title, $sep) {
 	global $paged, $page;
+	$havepage = '';
 	if ( is_feed() )
 		return $title;
 	// Add the site name.

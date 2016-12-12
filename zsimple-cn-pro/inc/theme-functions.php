@@ -206,6 +206,7 @@ function zoo_rc_comments($show_comments = 8, $my_email = '', $get_comments_num=1
  */
 function zoo_mostactive($limit_num = 12, $months = 1) {
 	global $wpdb;
+	$output = '';
 	$time = $months . ' MONTH';
 	$noneurl = home_url();
 	$my_email = "'" . get_bloginfo ('admin_email') . "'";
@@ -290,6 +291,7 @@ function zoo_related_posts($post_num=5, $type_cat='category', $type_tag='post_ta
 	global $post;
 	$exclude_id = $post->ID;
 	$i = 0;
+	$args = $output = '';
 	if ( $type_tag=='post_tag' ) {
 		$posttags = get_the_tags();
 		if ( $posttags ) {
@@ -379,6 +381,7 @@ function zoo_related_posts($post_num=5, $type_cat='category', $type_tag='post_ta
  */
 function zoo_most_popular($post_num = 5, $post_type='post'){
 	global $post, $wpdb;
+	$output = '';
 	$post_type = "'" . $post_type . "'";
 	$exclude_id = $post->ID;
 	$myposts = $wpdb->get_results("
@@ -399,6 +402,7 @@ function zoo_most_popular($post_num = 5, $post_type='post'){
 
 /* Archives list v2014 by zwwooooo | http://zww.me */
 function zoo_archives_list($post_type='post') {
+	$output = '';
 	if( !$output = get_option('zww_db_cache_archives_list') ){
 		$output = '<div id="archives"><p><a id="al_expand_collapse" href="#">全部展开/收缩</a> <em>(注: 点击月份可以展开)</em></p>';
 		$args = array(
