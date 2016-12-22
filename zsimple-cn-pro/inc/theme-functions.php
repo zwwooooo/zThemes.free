@@ -258,7 +258,7 @@ function zoo_recent_posts($num=12, $post_type='post'){
 function zoo_recently_updated_posts($num=10, $days=7) {
 	global $post;
 	$output='';
-	$arg = array(
+	$args = array(
 		'post_type'      => array('post', 'archives'),
 		'post_status'    => 'publish',
 		'orderby'        => 'modified',
