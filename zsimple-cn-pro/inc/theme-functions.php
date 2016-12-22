@@ -264,21 +264,24 @@ function zoo_recently_updated_posts($num=10, $days=7) {
 		'orderby'        => 'modified',
 		'order'          => 'DESC',
 		'posts_per_page' => -1,
-		'no_found_rows'  => true
+		'no_found_rows'  => true,
+		'ignore_sticky_posts' => 1
 	);
-	query_posts($arg);
-	$i=0;
-	while ( have_posts() && $i<$num ) : the_post();
-		if (current_time('timestamp') - get_the_time('U') > 60*60*24*$days) {
-			$i++;
-			$the_title_value=get_the_title();
-			$output .= '<li><a href="' . get_permalink() . '" title="' . $the_title_value.'">'
-			. zoo_substr($the_title_value,0,18) . '</a><span class="updatetime"><br />&raquo; 修改时间: '
-			. get_the_modified_time('Y.m.d G:i') . '</span></li>';
-		}
-	endwhile;
-	wp_reset_query();
-	if ( false != $cache_expire ) wp_cache_set('recently_updated_posts', $output, 'simple_wp_cache', $cache_expire);
+	$loop = new WP_Query($args);
+	if ( $loop->have_posts() ) {
+		$i=0;
+		while ( $loop->have_posts() && $i<$num ) : $loop->the_post();
+			if (current_time('timestamp') - get_the_time('U') > 60*60*24*$days) {
+				$i++;
+				$the_title_value=get_the_title();
+				$output .= '<li><a href="' . get_permalink() . '" title="' . $the_title_value.'">'
+				. zoo_substr($the_title_value,0,18) . '</a><span class="updatetime"><br />&raquo; 修改时间: '
+				. get_the_modified_time('Y.m.d G:i') . '</span></li>';
+			}
+		endwhile;
+	}
+	wp_reset_postdata();
+
 	$output = ($output == '') ? '<li>没有找到。</li>' : $output;
 
 	return $output;
