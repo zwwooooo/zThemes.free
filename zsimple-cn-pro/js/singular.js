@@ -40,137 +40,139 @@
 
 	//// zShowBox 图片点击放大效果 by zwwooooo
 	zdo_modules_S.zShowBox = function() {
-		zShowBox('#content .entry');
+		if ( $('.zshowbox-on').length ) {
+			zShowBox('#content .entry');
 
-		function zShowBox(domChunk) {
-			// 为每张图片链接加上 class="zshowbox"
-			var zcounter=0;
-			$(domChunk+' a').each(function(){
-				var a_href = $(this).attr('href').toLowerCase();
-				var file_type = a_href.substring(a_href.lastIndexOf('.'));
-				if (file_type == '.jpeg' || file_type == '.jpg' || file_type == '.png' || file_type == '.gif' || file_type == '.bmp'){ $(this).addClass('zshowbox').attr('id','zsb-'+zcounter); zcounter++; };
-			});
-			$(domChunk+' a.zshowbox').click(function(){
-				var current=$(this).attr('id').split(/zsb-/)[1],
-						pagesize=zsb_getPageSize(),
-						zsb_img_url=$(this).attr('href'),
-						css_zsb_bg='z-index:9999;overflow:hidden;position:fixed;left:0;top:0;width:100%;height:100%;background-color:#000;',
-						css_zshowbox_loading = 'z-index:0;position:absolute;left:50%;top:50%;margin:-50px 0 0 -50px;font-size:16px;color:#fff;',
-						css_zsb='z-index:99999;position:fixed;left:50%;top:50%;min-width:180px;min-height:80px;margin-left:-90px;margin-top:-40px;',
-						css_zsb_img='z-index:1;position:relative;display:none;border:6px solid rgba(119, 119, 119, .45);box-shadow:1px 1px 5px #333,-1px -1px 5px #333;-moz-box-shadow:1px 1px 5px #333,-1px -1px 5px #333;-webkit-box-shadow:1px 1px 5px #333,-1px -1px 5px #333;',
-						css_zsb_p_n='display:none;cursor:pointer;position:absolute;top:50%;line-height:80px;margin:-40px 0 0 0;color:#eee;text-shadow:1px 3px 5px #000;font-size:40px;font-family:Arial,Tahoma;';
-						zsb_big='position:absolute;width:160px;line-height:20px;left:50%;margin-left:-80px;bottom:-25px;text-align:center;color:#333;background:#fff;border-radius:6px;opacity:0.65;';
-				if (typeof document.body.style.maxHeight === "undefined") { //if IE 6
-					alert('zShowBox不支持IE6！请你们放过IE6吧，它太老了，就让它安心的去吧……');
-					return false;
-				} else {
-					// alert('zww'); //test
-					jQuery('body').append(
-						'<div id="zsb_bg" style="'+css_zsb_bg+'"></div>'
-					+ '<div id="zsb" style="'+css_zsb+'">'
-							+ '<span id="zshowbox_loading" style="'+css_zshowbox_loading+'"></span>'
-							+ '<img id="zsb_img" style="'+css_zsb_img+'" />'
-							+ '<span id="zsb_prev" style="left:-30px;'+css_zsb_p_n+'">&laquo;</span>'
-							+ '<span id="zsb_next" style="right:-30px;'+css_zsb_p_n+'">&raquo;</span>'
-							+ '<a href="' +zsb_img_url+'" target="_blank" style="' +zsb_big+ '">新窗口查看原图</a>'
-					+ '</div>'
-					);
-					$('#zsb_bg').fadeTo(600,0.85);
-					zdo_loading=0;
-					$zshowbox_loading=$('#zshowbox_loading');
-					$zshowbox_loading.zdo_loading('#49629e');
-					zsh_img('#zsb_img',zsb_img_url,pagesize,current,zcounter);
-					$('#zsb_prev,#zsb_next').click(function(){
-						if ($(this).attr('id')=='zsb_prev') current--; else current++;
-						$('#zsb').find('img').remove().end().append('<img id="zsb_img" style="'+css_zsb_img+'" />');
-						zsb_img_url=$('#zsb-'+current).attr('href');
+			function zShowBox(domChunk) {
+				// 为每张图片链接加上 class="zshowbox"
+				var zcounter=0;
+				$(domChunk+' a').each(function(){
+					var a_href = $(this).attr('href').toLowerCase();
+					var file_type = a_href.substring(a_href.lastIndexOf('.'));
+					if (file_type == '.jpeg' || file_type == '.jpg' || file_type == '.png' || file_type == '.gif' || file_type == '.bmp'){ $(this).addClass('zshowbox').attr('id','zsb-'+zcounter); zcounter++; };
+				});
+				$(domChunk+' a.zshowbox').click(function(){
+					var current=$(this).attr('id').split(/zsb-/)[1],
+							pagesize=zsb_getPageSize(),
+							zsb_img_url=$(this).attr('href'),
+							css_zsb_bg='z-index:9999;overflow:hidden;position:fixed;left:0;top:0;width:100%;height:100%;background-color:#000;',
+							css_zshowbox_loading = 'z-index:0;position:absolute;left:50%;top:50%;margin:-50px 0 0 -50px;font-size:16px;color:#fff;',
+							css_zsb='z-index:99999;position:fixed;left:50%;top:50%;min-width:180px;min-height:80px;margin-left:-90px;margin-top:-40px;',
+							css_zsb_img='z-index:1;position:relative;display:none;border:6px solid rgba(119, 119, 119, .45);box-shadow:1px 1px 5px #333,-1px -1px 5px #333;-moz-box-shadow:1px 1px 5px #333,-1px -1px 5px #333;-webkit-box-shadow:1px 1px 5px #333,-1px -1px 5px #333;',
+							css_zsb_p_n='display:none;cursor:pointer;position:absolute;top:50%;line-height:80px;margin:-40px 0 0 0;color:#eee;text-shadow:1px 3px 5px #000;font-size:40px;font-family:Arial,Tahoma;';
+							zsb_big='position:absolute;width:160px;line-height:20px;left:50%;margin-left:-80px;bottom:-25px;text-align:center;color:#333;background:#fff;border-radius:6px;opacity:0.65;';
+					if (typeof document.body.style.maxHeight === "undefined") { //if IE 6
+						alert('zShowBox不支持IE6！请你们放过IE6吧，它太老了，就让它安心的去吧……');
+						return false;
+					} else {
+						// alert('zww'); //test
+						jQuery('body').append(
+							'<div id="zsb_bg" style="'+css_zsb_bg+'"></div>'
+						+ '<div id="zsb" style="'+css_zsb+'">'
+								+ '<span id="zshowbox_loading" style="'+css_zshowbox_loading+'"></span>'
+								+ '<img id="zsb_img" style="'+css_zsb_img+'" />'
+								+ '<span id="zsb_prev" style="left:-30px;'+css_zsb_p_n+'">&laquo;</span>'
+								+ '<span id="zsb_next" style="right:-30px;'+css_zsb_p_n+'">&raquo;</span>'
+								+ '<a href="' +zsb_img_url+'" target="_blank" style="' +zsb_big+ '">新窗口查看原图</a>'
+						+ '</div>'
+						);
+						$('#zsb_bg').fadeTo(600,0.85);
+						zdo_loading=0;
+						$zshowbox_loading=$('#zshowbox_loading');
+						$zshowbox_loading.zdo_loading('#49629e');
 						zsh_img('#zsb_img',zsb_img_url,pagesize,current,zcounter);
+						$('#zsb_prev,#zsb_next').click(function(){
+							if ($(this).attr('id')=='zsb_prev') current--; else current++;
+							$('#zsb').find('img').remove().end().append('<img id="zsb_img" style="'+css_zsb_img+'" />');
+							zsb_img_url=$('#zsb-'+current).attr('href');
+							zsh_img('#zsb_img',zsb_img_url,pagesize,current,zcounter);
+							return false;
+						});
+						$('#zsb_bg,#zsb_img').click(function(){
+							zdo_loading=1;
+							$zshowbox_loading.remove();
+							$('#zsb_bg,#zsb_img').unbind('click');
+							$('#zsb_bg,#zsb').fadeOut(400,function(){$(this).remove();});
+							return false;
+						});
 						return false;
-					});
-					$('#zsb_bg,#zsb_img').click(function(){
-						zdo_loading=1;
-						$zshowbox_loading.remove();
-						$('#zsb_bg,#zsb_img').unbind('click');
-						$('#zsb_bg,#zsb').fadeOut(400,function(){$(this).remove();});
-						return false;
-					});
-					return false;
-				};
-			});
-		};
-		function zsh_img(img_id,zsb_img_url,pagesize,current,zcounter) { //图片放大load function
-			$(img_id).parent().css({"margin-left":'-90px',"margin-top":'-40px'});
-			$('#zsb_prev,#zsb_next').hide();
-			var ni = new Image();
-			ni.onload = function(){
-				var x = pagesize[0] - 50, y = pagesize[1] - 50, img_w=ni.width, img_h=ni.height;
-				if (img_w > x) {
-					img_h = img_h * (x / img_w);
-					img_w = x;
-					if (img_h > y) {
-						img_w = img_w * (y / img_h);
-						img_h = y;
-					}
-				} else if (img_h > y) {
-					img_w = img_w * (y / img_h);
-					img_h = y;
+					};
+				});
+			};
+			function zsh_img(img_id,zsb_img_url,pagesize,current,zcounter) { //图片放大load function
+				$(img_id).parent().css({"margin-left":'-90px',"margin-top":'-40px'});
+				$('#zsb_prev,#zsb_next').hide();
+				var ni = new Image();
+				ni.onload = function(){
+					var x = pagesize[0] - 50, y = pagesize[1] - 50, img_w=ni.width, img_h=ni.height;
 					if (img_w > x) {
 						img_h = img_h * (x / img_w);
 						img_w = x;
+						if (img_h > y) {
+							img_w = img_w * (y / img_h);
+							img_h = y;
+						}
+					} else if (img_h > y) {
+						img_w = img_w * (y / img_h);
+						img_h = y;
+						if (img_w > x) {
+							img_h = img_h * (x / img_w);
+							img_w = x;
+						}
 					}
-				}
-				var marginleft=-(img_w/2+5)+'px', margintop=-(img_h/2+5)+'px';
-				img_w=img_w+'px', img_h=img_h+'px'; 
-				$(img_id).attr('src',zsb_img_url).css({"width":img_w,"height":img_h}).fadeIn(600).parent().css({"margin-left":marginleft,"margin-top":margintop}).prev().css("background-image","none");
-				if (current>0) $('#zsb_prev').show();
-				if (current<zcounter-1) $('#zsb_next').show();
+					var marginleft=-(img_w/2+5)+'px', margintop=-(img_h/2+5)+'px';
+					img_w=img_w+'px', img_h=img_h+'px'; 
+					$(img_id).attr('src',zsb_img_url).css({"width":img_w,"height":img_h}).fadeIn(600).parent().css({"margin-left":marginleft,"margin-top":margintop}).prev().css("background-image","none");
+					if (current>0) $('#zsb_prev').show();
+					if (current<zcounter-1) $('#zsb_next').show();
+				};
+				ni.src = zsb_img_url;
 			};
-			ni.src = zsb_img_url;
+			function zsb_getPageSize(){ //获取浏览器窗口大小
+				var de = document.documentElement;
+				var w = window.innerWidth || self.innerWidth || (de&&de.clientWidth) || document.body.clientWidth;
+				var h = window.innerHeight || self.innerHeight || (de&&de.clientHeight) || document.body.clientHeight;
+				arrayPageSize = [w,h];
+				return arrayPageSize;
+			};
 		};
-		function zsb_getPageSize(){ //获取浏览器窗口大小
-			var de = document.documentElement;
-			var w = window.innerWidth || self.innerWidth || (de&&de.clientWidth) || document.body.clientWidth;
-			var h = window.innerHeight || self.innerHeight || (de&&de.clientHeight) || document.body.clientHeight;
-			arrayPageSize = [w,h];
-			return arrayPageSize;
-		};
-	};
 
-	//// 存档页面 jQ伸缩
-	zdo_modules_S.Archives = function() {
-		var $a = $('#archives'),
-			$m = $('.al_mon', $a),
-			$l = $('.al_post_list', $a),
-			$l_f = $('.al_post_list:first', $a);
-		$l.hide();
-		$l_f.show();
-		$m.css('cursor', 's-resize').on('click', function(){
-			$(this).next().slideToggle(400);
-		});
-		var animate = function(index, status, s) {
-			if (index > $l.length) {
-				return;
-			}
-			if (status == 'up') {
-				$l.eq(index).slideUp(s, function() {
-					animate(index+1, status, (s-10<1)?0:s-10);
-				});
-			} else {
-				$l.eq(index).slideDown(s, function() {
-					animate(index+1, status, (s-10<1)?0:s-10);
-				});
-			}
+		//// 存档页面 jQ伸缩
+		zdo_modules_S.Archives = function() {
+			var $a = $('#archives'),
+				$m = $('.al_mon', $a),
+				$l = $('.al_post_list', $a),
+				$l_f = $('.al_post_list:first', $a);
+			$l.hide();
+			$l_f.show();
+			$m.css('cursor', 's-resize').on('click', function(){
+				$(this).next().slideToggle(400);
+			});
+			var animate = function(index, status, s) {
+				if (index > $l.length) {
+					return;
+				}
+				if (status == 'up') {
+					$l.eq(index).slideUp(s, function() {
+						animate(index+1, status, (s-10<1)?0:s-10);
+					});
+				} else {
+					$l.eq(index).slideDown(s, function() {
+						animate(index+1, status, (s-10<1)?0:s-10);
+					});
+				}
+			};
+			$('#al_expand_collapse').on('click', function(e){
+				e.preventDefault();
+				if ( $(this).data('s') ) {
+					$(this).data('s', '');
+					animate(0, 'up', 100);
+				} else {
+					$(this).data('s', 1);
+					animate(0, 'down', 100);
+				}
+			});
 		};
-		$('#al_expand_collapse').on('click', function(e){
-			e.preventDefault();
-			if ( $(this).data('s') ) {
-				$(this).data('s', '');
-				animate(0, 'up', 100);
-			} else {
-				$(this).data('s', 1);
-				animate(0, 'down', 100);
-			}
-		});
 	};
 
 	//// 评论 ajax 提交

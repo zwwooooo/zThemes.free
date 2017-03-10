@@ -1658,7 +1658,7 @@ i.p-type.p-type-page{
 }
 .comment-author{
 	display: block;
-	margin: 0;
+	margin: 0	0 0 65px;
 	padding: 0;
 }
 .vcard img.avatar{
@@ -1672,7 +1672,6 @@ i.p-type.p-type-page{
 	font-size: 18px;
 	font-weight: bold;
 	font-style: normal;
-	margin-left: 65px;
 }
 .vcard cite.fn a{
 	border-bottom: 1px dotted #8c9fcc;
@@ -1680,14 +1679,14 @@ i.p-type.p-type-page{
 .vcard cite.fn a:hover{
 	border-bottom: 1px solid #8c9fcc;
 }
-.commentlist li.bypostauthor{
+.commentlist li.bypostauthor .comment-author{
+	margin: 0;
 }
 .commentlist li.bypostauthor div.vcard cite.fn a{
 }
 .commentlist li.pingback .vcard cite.fn{
 	font-size: 12px;
 	font-weight: normal;
-	margin: 0;
 	text-shadow: none;
 }
 .commentlist li.pingback .vcard cite.fn a{
@@ -2259,13 +2258,19 @@ a.page-numbers:hover{
 
 /* announcement */
 .announcement{
-	line-height: 26px;
-	position: absolute;
-	bottom: -35px;
-	left: 0;
-	width: 100%;
+	position: relative;
+	line-height: 18px;
 	text-align: center;
 	color: #49629e;
+	font-size: 12px;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+.announcement .inner{
+	position: absolute;
+	top: -28px;
+	left: 0;
+	width: 100%;
 }
 .announcement strong{
 	color: #d6492f;
@@ -2586,7 +2591,7 @@ img.wp-smiley{
 	}
 
 	.site-main{
-		padding-top: 100px;
+		padding-top: 105px;
 	}
 
 	.sidebar{
@@ -2659,6 +2664,17 @@ img.wp-smiley{
 }
 
 @media screen and (max-width:600px){
+	.admin-bar .site-header{
+		position: relative;
+	}
+	.admin-bar .site-main{
+		padding-top: 0;
+	}
+
+	.announcement{
+		padding-bottom: 8px;
+	}
+
 	.post{
 		margin-bottom: 50px;
 	}

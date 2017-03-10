@@ -7,7 +7,8 @@
 		&raquo; <?php the_title(); ?>
 	</nav>
 
-	<article class="post" id="post-<?php the_ID(); ?>">
+	<?php global $zsimple_theme_options; ?>
+	<article class="post<?php if ( empty($zsimple_theme_options['zshowbox']) ) echo ' zshowbox-on'; ?>" id="post-<?php the_ID(); ?>">
 		<div class="post-header">
 			<i class="p-type">Blog</i>
 			<?php the_title( '<h1 class="title">', '</h1>' ); ?>
@@ -24,7 +25,6 @@
 		</div>
 
 		<?php
-		global $zsimple_theme_options;
 		if ( isset($zsimple_theme_options['rp_and_mp']) && $zsimple_theme_options['rp_and_mp'] ) {
 		?>
 			<div class="related-posts cf">

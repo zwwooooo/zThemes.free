@@ -103,18 +103,15 @@ if ( is_user_logged_in() && isset($zsimple_theme_options['custom_admin_tools']) 
 
 		<span class="progressbar"><i class="s600"></i></span>
 
-		<?php
-		if (isset($zsimple_theme_options['announcement']) && $zsimple_theme_options['announcement'] ) {
-		?>
-			<div class="announcement"><strong>[公告]</strong> <?php echo $zsimple_theme_options['announcement']; ?></div>
-		<?php } ?>
 
 	</header>
 
 	<div id="site-main" class="wrapper site-main cols">
 
-<?php
-if ( isset($zsimple_theme_options['page_loading']) && $zsimple_theme_options['page_loading'] ) {
-?>
+		<?php if (isset($zsimple_theme_options['announcement']) && $zsimple_theme_options['announcement'] ) { ?>
+			<div class="announcement"><div class="inner"><strong>[公告]</strong> <?php echo $zsimple_theme_options['announcement']; ?></div></div>
+		<?php } ?>
+
+<?php if ( isset($zsimple_theme_options['page_loading']) && $zsimple_theme_options['page_loading'] ) { ?>
 	<script>(function(b,a,c){b(function(){b(".progressbar i").css("width","20%");});})(jQuery,window);</script>
 <?php } ?>
